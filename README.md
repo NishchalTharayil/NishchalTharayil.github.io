@@ -1,7 +1,34 @@
 # Nishchal T S · Portfolio
 
-Live: https://nishchaltharayil.github.io
+## 🔗 Share this link
+**https://nishchaltharayil.github.io**
 
-My portfolio, built as a code-editor workspace. Each section is a file: `README.md`, `journey.py`, `experience.json`, `projects/`, skills as extensions, `novel.md`, `education.toml` and `contact.sh`. It has git time travel (drag from 2019 to now and the workspace changes), a debugger that steps through the attendance code, hover docs, a working terminal with autocomplete (type `help`), a hire-me pull request, a command palette (Ctrl+K), and dark and light themes.
+The main site is a code-editor workspace. Each section is a file, and it has git time travel (2019 → now), a debugger that steps through the attendance code, a working terminal (type `help`) and a hire-me pull request.
 
-One static `index.html`, no build step and no dependencies. Hosted on GitHub Pages.
+## All designs
+Every design has the same content and its own live link:
+
+| # | Design | Live link |
+|---|--------|-----------|
+| 01 | **Network** | https://nishchaltharayil.github.io/designs/01-network/ |
+| 02 | **Editorial** | https://nishchaltharayil.github.io/designs/02-editorial/ |
+| 03 | **Console** | https://nishchaltharayil.github.io/designs/03-console/ |
+| 04 | **Twilight** | https://nishchaltharayil.github.io/designs/04-twilight/ |
+| 05 | **Blueprint** | https://nishchaltharayil.github.io/designs/05-blueprint/ |
+| 06 | **Editor** | https://nishchaltharayil.github.io/designs/06-editor/ |
+| 07 | **Morph** | https://nishchaltharayil.github.io/designs/07-morph/ |
+| 08 | **Command Center** | https://nishchaltharayil.github.io/designs/08-command-center/ |
+| 09 | **Flythrough** | https://nishchaltharayil.github.io/designs/09-flythrough/ |
+| 10 | **Workspace** | https://nishchaltharayil.github.io/designs/10-workspace/ |
+| 11 | **Studio** | https://nishchaltharayil.github.io/designs/11-studio/ |
+
+## Structure
+```
+index.html          main site (Workspace design)
+designs/NN-name/    each design as its own page
+nishchal.webp       portrait
+book-cover.webp     cover of my novel, Somewhere, Somehow and Some-One
+favicon.svg
+```
+
+Static HTML, no build step, hosted on GitHub Pages. Edit a file and push to `main` to update.
