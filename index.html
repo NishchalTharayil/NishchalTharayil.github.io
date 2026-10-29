@@ -292,6 +292,66 @@ a{color:var(--fn)}
 .pal li small{color:var(--muted);font-family:var(--f-code);font-size:11px}
 .pal li[aria-selected="true"]{background:var(--sel);color:var(--fg)}
 
+
+/* ===== innovation layer ===== */
+:root[data-era="java"]{--accent-bg:#f0883e}
+:root[data-era="java"] .status{background:var(--java)!important}
+.tt{margin-top:18px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--panel)}
+.tt-h{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;font-size:13px}
+.tt-h code{font-family:var(--f-code);font-size:12px;color:var(--ok)}
+.tt-h b{font-family:var(--f-code);font-size:12.5px;color:var(--accent-bg)}
+.tt-h span{color:var(--muted);font-size:12.5px}
+.tt input{width:100%;margin:10px 0 2px;accent-color:var(--accent-bg);cursor:pointer}
+.tt-ticks{display:flex;justify-content:space-between;font-family:var(--f-code);font-size:10.5px;color:var(--dim)}
+.tt-ticks span{cursor:pointer}.tt-ticks span:hover{color:var(--fg)}
+.detached{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:7px 18px;background:color-mix(in srgb,var(--java) 18%,var(--bg));border-bottom:1px solid color-mix(in srgb,var(--java) 45%,var(--line));font-family:var(--f-code);font-size:12px}
+.detached[hidden]{display:none!important}
+.detached b{color:var(--java)}
+.detached button{margin-left:auto;font-family:var(--f-code);font-size:11.5px;padding:2px 9px;border-radius:5px;border:1px solid var(--java);background:none;color:var(--fg);cursor:pointer}
+.file.future>*:not(.fh){opacity:.28;filter:grayscale(.8);pointer-events:none}
+.file.future .fh::after{content:"// not created yet at this commit";margin-left:auto;color:var(--java)}
+.tree button.future,.tabs button.future{opacity:.35;text-decoration:line-through}
+.stat.past{opacity:.35}
+.code .iv{display:inline-block;margin-left:14px;padding:0 7px;border-radius:4px;background:color-mix(in srgb,var(--accent-bg) 16%,transparent);color:var(--fg);font-style:normal;font-size:11.5px;animation:ivin .25s ease both}
+@keyframes ivin{from{opacity:0;transform:translateX(-4px)}}
+.code .l.bp::after{content:"";position:absolute;left:54px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--red)}
+.code .l.step{background:color-mix(in srgb,var(--accent-bg) 20%,transparent);box-shadow:inset 3px 0 0 var(--accent-bg)}
+.chipb.dbg{color:var(--red);border-color:color-mix(in srgb,var(--red) 50%,var(--line))}
+.tip{position:fixed;z-index:60;max-width:min(360px,90vw);background:var(--side);border:1px solid var(--line);border-radius:7px;box-shadow:0 14px 40px -12px rgba(0,0,0,.5);font-size:12.5px;pointer-events:none;overflow:hidden}
+.tip[hidden]{display:none!important}
+.tip code{display:block;padding:7px 10px;font-family:var(--f-code);font-size:12px;border-bottom:1px solid var(--line);color:var(--fn);background:var(--bg)}
+.tip p{margin:0;padding:7px 10px;color:var(--muted)}
+.code .fn[data-tip],.code .ac[data-tip]{cursor:help;text-decoration:underline dotted color-mix(in srgb,var(--fn) 50%,transparent);text-underline-offset:3px}
+.t-in{position:relative}
+.ghost{position:absolute;pointer-events:none;color:var(--dim);font-family:var(--f-code);font-size:12.5px;white-space:pre}
+.t-hint{font-family:var(--f-code);font-size:10.5px;color:var(--dim);white-space:nowrap}
+/* hire PR */
+.pull{padding:18px clamp(16px,3vw,32px) 26px;display:grid;gap:14px;max-width:980px}
+.pr-top{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pr-top h3{margin:0;font-size:1.3rem}
+.pr-st{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:12.5px;font-weight:600;background:var(--ok);color:#fff}
+.pr-st.merged{background:var(--kw)}
+.pr-sub{font-family:var(--f-code);font-size:12px;color:var(--muted)}
+.pr-sub b{color:var(--fn);font-weight:500;background:var(--hl);padding:1px 6px;border-radius:5px}
+.checks{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.checks div{display:flex;gap:10px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--line);font-size:13.5px;background:var(--panel)}
+.checks div:last-child{border-bottom:0}
+.checks i{width:16px;height:16px;border-radius:50%;flex:none;display:grid;place-items:center;font-style:normal;font-size:10px;border:2px solid var(--dim);border-top-color:transparent;animation:spin .8s linear infinite}
+.checks .ok i{border:0;background:var(--ok);color:#fff;animation:none}
+.checks .ok i::before{content:"✓"}
+.checks small{margin-left:auto;font-family:var(--f-code);font-size:11px;color:var(--muted)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.diff{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-family:var(--f-code);font-size:12.5px;line-height:1.8}
+.diff span{display:block;padding:0 14px;white-space:pre-wrap}
+.diff .h{background:var(--hl);color:var(--muted)}
+.diff .a{background:color-mix(in srgb,var(--ok) 12%,transparent);color:var(--fg)}
+.diff .a::first-letter{color:var(--ok)}
+.diff .r{background:color-mix(in srgb,var(--red) 12%,transparent);color:var(--fg)}
+.merge{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.merge p{margin:0;flex:1;min-width:200px;font-size:13.5px}
+.btn.mg{background:var(--ok);border-color:var(--ok);color:#fff;font-weight:600}
+.btn.mg[disabled]{background:var(--kw);border-color:var(--kw);cursor:default}
+
 /* responsive */
 @media (max-width:1100px){.wb{grid-template-columns:48px 200px 1fr}}
 @media (max-width:900px){
@@ -357,6 +417,7 @@ a{color:var(--fn)}
       <div class="crumbs" id="crumbs">nishchal-ts <span>›</span> <b>README.md</b></div>
       <div class="view">
         <div class="scroll" id="scroll">
+<div class="detached" id="det" hidden><span>⚠ detached HEAD at <b id="detL">2023</b>: you are viewing an older version of me.</span><button type="button" id="detBack">git checkout main</button></div>
 
 <!-- README.md -->
 <article class="file" id="readme" data-file="README.md" data-path="README.md">
@@ -378,13 +439,18 @@ a{color:var(--fn)}
     </div>
     <p>I trained as a <b>Java and Spring Boot</b> developer. In July 2024 I joined a product team whose platform runs on <b>Python, Django and Angular</b>, learned the stack on live tickets, and shipped my first feature three months later. Since then I've owned <b>IPAM</b>, built the <b>attendance module</b> end to end and adapted a run of network devices. I like the parts where software meets real hardware: making a firewall, an SD-WAN controller or a hypervisor report cleanly into one dashboard.</p>
     <div class="stats">
-      <div class="stat"><b class="cnt" data-to="362">362</b><small>work items since Jul 2024</small></div>
-      <div class="stat"><b class="cnt" data-to="62">62</b><small>features owned</small></div>
-      <div class="stat"><b class="cnt" data-to="140" data-suf="+">140+</b><small>bugs fixed</small></div>
+      <div class="stat" id="stWI"><b class="cnt" data-to="362">362</b><small id="stWIl">work items since Jul 2024</small></div>
+      <div class="stat sp2"><b class="cnt" data-to="62">62</b><small>features owned</small></div>
+      <div class="stat sp2"><b class="cnt" data-to="140" data-suf="+">140+</b><small>bugs fixed</small></div>
       <div class="stat"><b class="cnt" data-to="10" data-suf="+">10+</b><small>releases, 7.3.15 → 7.5.2</small></div>
     </div>
     <div class="now"><code>$ git branch --show-current</code><span id="nowT">feature/47195-remote-diagnosis</span></div>
-    <p class="mono" style="font-size:12.5px;color:var(--muted)">Tip: use the explorer, press <b>Ctrl K</b>, or type <b>help</b> in the terminal below.</p>
+    <div class="tt" id="tt">
+      <div class="tt-h"><code>$ git checkout</code><b id="ttLbl">main · now</b><span id="ttNote">Drag to travel through my history. The workspace changes with it.</span></div>
+      <input type="range" id="ttR" min="0" max="6" value="6" step="1" aria-label="Travel through my career history">
+      <div class="tt-ticks" id="ttTicks"><span data-v="0">2019</span><span data-v="1">2023</span><span data-v="2">Jul 24</span><span data-v="3">Oct 24</span><span data-v="4">Mar 25</span><span data-v="5">Oct 25</span><span data-v="6">now</span></div>
+    </div>
+    <p class="mono" style="font-size:12.5px;color:var(--muted)">Tip: hover dotted names in the code, press <b>Ctrl K</b>, hit <b>Debug</b> on attendance.py, or type <b>help</b> in the terminal.</p>
   </div>
 </article>
 
@@ -419,9 +485,9 @@ a{color:var(--fn)}
 
 <!-- projects -->
 <article class="file" id="p-attendance" data-file="attendance.py" data-path="projects › attendance.py">
-  <div class="fh"><b>projects/attendance.py</b><span>· simplified sketch + live preview</span></div>
+  <div class="fh"><b>projects/attendance.py</b><span>· simplified sketch + live preview</span><span class="act2"><button class="chipb dbg" type="button" id="dbgBtn">● Debug</button></span></div>
   <div class="split">
-<pre class="code"><span class="l"><span class="cm"># Attendance · Mar 2025 → present · built end to end</span></span><span class="l"><span class="kw">def</span> <span class="fn">mark_attendance</span>(user, location):</span><span class="l">    distance_m = <span class="fn">haversine</span>(location, user.base_location)</span><span class="l">    <span class="kw">if</span> distance_m &lt;= config.radius_m:</span><span class="l">        <span class="kw">return</span> Attendance.<span class="fn">auto</span>(user, distance_m)</span><span class="l">    <span class="kw">return</span> Attendance.<span class="fn">request_approval</span>(user, manager=user.reports_to)</span><span class="l"> </span><span class="l"><span class="cm"># also: auto clock-out on logout or timeout, role permissions,</span></span><span class="l"><span class="cm"># a live widget, a daily Excel report (H · P · A · WO legends)</span></span><span class="l"><span class="cm"># and absent logs generated for people with no entry</span></span></pre>
+<pre class="code" id="attCode"><span class="l"><span class="cm"># Attendance · Mar 2025 → present · built end to end</span></span><span class="l"><span class="kw">def</span> <span class="fn">mark_attendance</span>(user, location):</span><span class="l">    distance_m = <span class="fn">haversine</span>(location, user.base_location)</span><span class="l">    <span class="kw">if</span> distance_m &lt;= config.radius_m:</span><span class="l">        <span class="kw">return</span> Attendance.<span class="fn">auto</span>(user, distance_m)</span><span class="l">    <span class="kw">return</span> Attendance.<span class="fn">request_approval</span>(user, manager=user.reports_to)</span><span class="l"> </span><span class="l"><span class="cm"># also: auto clock-out on logout or timeout, role permissions,</span></span><span class="l"><span class="cm"># a live widget, a daily Excel report (H · P · A · WO legends)</span></span><span class="l"><span class="cm"># and absent logs generated for people with no entry</span></span></pre>
     <div class="pv">
       <div class="pv-h"><span>preview · geofence</span><span>live</span></div>
       <svg class="vis" id="geo" viewBox="0 0 320 220" role="img" aria-label="Engineers moving around a geofence: inside are marked automatically, outside go to the manager">
@@ -545,6 +611,24 @@ a{color:var(--fn)}
 <pre class="code"><span class="l"><span class="pu">[</span><span class="ky">degree</span><span class="pu">]</span></span><span class="l">name    = <span class="st">"B.E. Computer Science Engineering"</span></span><span class="l">college = <span class="st">"GM Institute of Technology, Davanagere"</span></span><span class="l">years   = <span class="st">"2019–2023"</span></span><span class="l">studied = [<span class="st">"OOP"</span>, <span class="st">"data structures"</span>, <span class="st">"RDBMS"</span>, <span class="st">"web development"</span>, <span class="st">"networks"</span>]</span><span class="l"> </span><span class="l"><span class="pu">[</span><span class="ky">pre_university</span><span class="pu">]</span></span><span class="l">stream  = <span class="st">"PCMB"</span></span><span class="l">college = <span class="st">"Siddaganga PU College, Davanagere"</span></span><span class="l">years   = <span class="st">"2017–2019"</span></span><span class="l"> </span><span class="l"><span class="pu">[[</span><span class="ky">recognition</span><span class="pu">]]</span></span><span class="l">title = <span class="st">"Best Project Implementation 2022–23"</span>  <span class="cm"># team award for EasyNBA</span></span><span class="l"><span class="pu">[[</span><span class="ky">recognition</span><span class="pu">]]</span></span><span class="l">title = <span class="st">"NPTEL · Database Management Systems · IIT Kharagpur"</span></span><span class="l"><span class="pu">[[</span><span class="ky">recognition</span><span class="pu">]]</span></span><span class="l">title = <span class="st">"NPTEL Silver · The Joy of Computing using Python · IIT Madras"</span>  <span class="cm"># Python, years before it became my job</span></span></pre>
 </article>
 
+<!-- hire-me pull request -->
+<article class="file" id="hire" data-file="Pull request #1" data-path="Pull requests › #1 hire/nishchal-ts">
+  <div class="fh"><b>Pull request #1</b><span>· hire/nishchal-ts</span></div>
+  <div class="pull">
+    <div class="pr-top"><span class="pr-st" id="prSt">⇄ Open</span><h3>Add Nishchal T S to your team</h3></div>
+    <div class="pr-sub"><b>hire/nishchal-ts</b> → <b>your-team:main</b> · 1 commit · +5 −1</div>
+    <div class="checks" id="checks">
+      <div><i></i>build · python, django, angular<small>daily</small></div>
+      <div><i></i>tests · 362 work items shipped since Jul 2024<small>passing</small></div>
+      <div><i></i>coverage · IPAM, attendance, SD-WAN, topology, devices<small>5 areas</small></div>
+      <div><i></i>docs · clear writing, plus a published novel<small>1 book</small></div>
+      <div><i></i>review · 10+ product releases<small>approved</small></div>
+    </div>
+<pre class="diff"><span class="h">@@ team.py @@</span><span class="a">+ python, django, angular · daily, in production</span><span class="a">+ 2+ years shipping features on an enterprise platform</span><span class="a">+ owns modules end to end: IPAM and attendance</span><span class="a">+ makes real hardware report cleanly: SNMP, SD-WAN, firewalls</span><span class="a">+ explains things clearly, and wrote a novel</span><span class="r">- java  # moved to legacy/, still fluent</span></pre>
+    <div class="merge"><p id="mgTxt">All checks have passed. This branch has no conflicts with your team.</p><button class="btn mg" type="button" id="mgBtn">Merge pull request</button><a class="btn" href="mailto:nishchaltharayil2001@gmail.com?subject=Let%27s%20talk">Email instead</a></div>
+  </div>
+</article>
+
 <!-- contact.sh -->
 <article class="file" id="contact" data-file="contact.sh" data-path="contact.sh">
   <div class="fh"><b>contact.sh</b><span class="act2"><button class="chipb run" type="button" data-run="contact">▶ Run</button></span></div>
@@ -554,8 +638,9 @@ a{color:var(--fn)}
     <a class="btn" href="mailto:nishchaltharayil2001@gmail.com">Open mail app</a>
     <button class="btn" type="button" data-run="contact">▶ Run in terminal</button>
   </div>
-  <div class="foot">© <span id="yr">2026</span> Nishchal T S · built like an editor, because that's where I live · <span id="mailTxt">nishchaltharayil2001@gmail.com</span></div>
+  <div class="foot" id="footA">© <span id="yr">2026</span> Nishchal T S · built like an editor, because that's where I live · <span id="mailTxt">nishchaltharayil2001@gmail.com</span></div>
 </article>
+
 
         </div>
         <div class="mm" id="mm" aria-hidden="true"><canvas id="mmc"></canvas><div class="vp" id="mmv"></div></div>
@@ -566,16 +651,17 @@ a{color:var(--fn)}
   <section class="term" id="term" aria-label="Terminal">
     <div class="t-tabs"><button class="on" type="button">Terminal</button><button type="button" id="probBtn">Problems <span style="color:var(--ok)">0</span></button><span class="sp"></span><span class="t-chips" id="tChips"></span><button type="button" data-cmd="term" aria-label="Collapse or expand terminal" id="tToggle">▾</button></div>
     <div class="t-out" id="tOut" aria-live="polite"></div>
-    <form class="t-in" id="tForm" autocomplete="off"><label for="tIn">visitor@nishchal-ts:~$</label><input id="tIn" type="text" spellcheck="false" placeholder="type help" aria-label="Terminal command"></form>
+    <form class="t-in" id="tForm" autocomplete="off"><label for="tIn">visitor@nishchal-ts:~$</label><input id="tIn" type="text" spellcheck="false" placeholder="type help" aria-label="Terminal command"><span class="ghost" id="ghost" aria-hidden="true"></span><span class="t-hint">Tab ↹ complete · ↑ history</span></form>
   </section>
 
   <footer class="status">
-    <span>⎇ main</span><span class="hide-m">⟳ synced</span><span>✓ 0 problems</span><span class="hide-m">362 work items</span>
+    <span id="brS">⎇ main</span><span class="hide-m">⟳ synced</span><span>✓ 0 problems</span><span class="hide-m">362 work items</span>
     <span class="sp"></span>
-    <span class="hide-m" id="lnCol">Ln 1, Col 1</span><span class="hide-m">Python 3.13</span><span class="hide-m">UTF-8</span><span id="clock">IST</span><button type="button" class="live" data-go="contact">open to roles</button>
+    <span class="hide-m" id="lnCol">Ln 1, Col 1</span><span class="hide-m" id="langS">Python 3.13</span><span class="hide-m">UTF-8</span><span id="clock">IST</span><button type="button" class="live" data-go="contact">open to roles</button>
   </footer>
 </div>
 
+<div class="tip" id="tip" hidden><code id="tipC"></code><p id="tipP"></p></div>
 <div class="pal-w" id="pal" hidden><div class="pal" role="dialog" aria-label="Command palette"><input id="palIn" type="text" placeholder="Go to file or run a command…" aria-label="Search files and commands" autocomplete="off"><ul id="palList" role="listbox"></ul></div></div>
 
 <script>
@@ -584,21 +670,22 @@ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const root=document.documentElement,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const sc=$('#scroll');
 const FILES=[
-  {id:'readme',name:'README.md',ic:'M',col:'var(--py)',gd:'',d:0},
-  {id:'journey',name:'journey.py',ic:'py',col:'var(--accent)',gd:'M',d:0},
-  {id:'experience',name:'experience.json',ic:'{}',col:'var(--num)',gd:'M',d:0},
+  {id:'readme',name:'README.md',ic:'M',col:'var(--py)',gd:'',d:0,s:0},
+  {id:'journey',name:'journey.py',s:0,ic:'py',col:'var(--accent)',gd:'M',d:0},
+  {id:'experience',name:'experience.json',s:2,ic:'{}',col:'var(--num)',gd:'M',d:0},
   {dir:'projects',d:0},
-  {id:'p-attendance',name:'attendance.py',ic:'py',col:'var(--accent)',gd:'U',d:1},
-  {id:'p-ipam',name:'ipam.py',ic:'py',col:'var(--accent)',gd:'M',d:1},
-  {id:'p-sdwan',name:'sdwan.py',ic:'py',col:'var(--accent)',gd:'U',d:1},
-  {id:'p-topology',name:'topology.py',ic:'py',col:'var(--accent)',gd:'U',d:1},
-  {id:'p-platform',name:'platform.py',ic:'py',col:'var(--accent)',gd:'U',d:1},
+  {id:'p-attendance',name:'attendance.py',s:4,ic:'py',col:'var(--accent)',gd:'U',d:1},
+  {id:'p-ipam',name:'ipam.py',s:3,ic:'py',col:'var(--accent)',gd:'M',d:1},
+  {id:'p-sdwan',name:'sdwan.py',s:5,ic:'py',col:'var(--accent)',gd:'U',d:1},
+  {id:'p-topology',name:'topology.py',s:6,ic:'py',col:'var(--accent)',gd:'U',d:1},
+  {id:'p-platform',name:'platform.py',s:6,ic:'py',col:'var(--accent)',gd:'U',d:1},
   {dir:'legacy',d:0,legacy:true},
-  {id:'p-legacy',name:'TuneHub.java',ic:'J',col:'var(--java)',gd:'A',d:1,legacy:true},
+  {id:'p-legacy',name:'TuneHub.java',s:1,ic:'J',col:'var(--java)',gd:'A',d:1,legacy:true},
   {id:'skills',name:'extensions',ic:'⊞',col:'var(--kw)',gd:'',d:0},
   {id:'novel',name:'novel.md',ic:'M',col:'var(--kw)',gd:'',d:0},
-  {id:'education',name:'education.toml',ic:'≡',col:'var(--muted)',gd:'',d:0},
-  {id:'contact',name:'contact.sh',ic:'$',col:'var(--ok)',gd:'',d:0},
+  {id:'education',name:'education.toml',s:0,ic:'≡',col:'var(--muted)',gd:'',d:0},
+  {id:'hire',name:'hire-me.pr',ic:'⇄',col:'var(--ok)',gd:'U',d:0,s:0},
+  {id:'contact',name:'contact.sh',s:0,ic:'$',col:'var(--ok)',gd:'',d:0},
 ];
 const go=id=>{const el=document.getElementById(id);if(el)sc.scrollTo({top:el.offsetTop,behavior:reduce?'auto':'smooth'})};
 
@@ -671,7 +758,7 @@ $('#unfoldAll').onclick=()=>{$$('#xpCode .fg').forEach(g=>g.classList.remove('cl
 /* geofence */
 const geo=$('#geo'),NS='http://www.w3.org/2000/svg',U=[];
 for(let i=0;i<13;i++){const c=document.createElementNS(NS,'circle');c.setAttribute('r',4.5);geo.appendChild(c);const a=Math.random()*6.28,d=20+Math.random()*110;U.push({c,x:160+Math.cos(a)*d,y:110+Math.sin(a)*d*.75,vx:(Math.random()-.5)*.6,vy:(Math.random()-.5)*.6})}
-const gi=$('#geoIn'),gO=$('#geoOut');const gstep=()=>{let a=0,b=0;U.forEach(u=>{if(!reduce){u.x+=u.vx;u.y+=u.vy;if(u.x<8||u.x>312)u.vx*=-1;if(u.y<8||u.y>212)u.vy*=-1;if(Math.random()<.01){u.vx=(Math.random()-.5)*.7;u.vy=(Math.random()-.5)*.7}}const ins=Math.hypot(u.x-160,u.y-110)<74;ins?a++:b++;u.c.setAttribute('cx',u.x.toFixed(1));u.c.setAttribute('cy',u.y.toFixed(1));u.c.style.fill=ins?'var(--ok)':'var(--num)'});gi.textContent=a;gO.textContent=b;if(!reduce)requestAnimationFrame(gstep)};gstep();
+const gi=$('#geoIn'),gO=$('#geoOut');const gstep=()=>{let a=0,b=0;U.forEach(u=>{if(!reduce&&!u.paused){u.x+=u.vx;u.y+=u.vy;if(u.x<8||u.x>312)u.vx*=-1;if(u.y<8||u.y>212)u.vy*=-1;if(Math.random()<.01){u.vx=(Math.random()-.5)*.7;u.vy=(Math.random()-.5)*.7}}const ins=Math.hypot(u.x-160,u.y-110)<74;ins?a++:b++;u.c.setAttribute('cx',u.x.toFixed(1));u.c.setAttribute('cy',u.y.toFixed(1));u.c.style.fill=ins?'var(--ok)':'var(--num)'});gi.textContent=a;gO.textContent=b;if(!reduce)requestAnimationFrame(gstep)};gstep();
 /* subnet */
 const sg=$('#snGrid'),cells=[];for(let i=0;i<256;i++){const c=document.createElement('i');c.addEventListener('mouseenter',()=>{$('#snTip').textContent='10.20.4.'+i+' · '+(c.classList.contains('u')?'assigned':c.classList.contains('r')?'reserved':'free')});sg.appendChild(c);cells.push(c)}
 const plan=cells.map((c,i)=>i<2||i>253?'r':(Math.random()<.62?'u':(Math.random()<.07?'r':'')));
@@ -698,8 +785,10 @@ const EX=[
  ['Creative writing','Wr','#d2a8ff','Beyond code','Published a romance novel.',5,'daily'],['Problem solving','PS','#7ee787','Beyond code','Customer bug triage to root cause.',5,'daily'],
  ['Java · Spring Boot','J','#f0883e','Legacy','Where I started. Replaced by Python.',3,'disabled']];
 const cats=['All','Backend','Frontend','Data','Networking','Workflow','Beyond code','Legacy'];let cat='All';
-const lvl={daily:'d',strong:'',working:'',disabled:'x'};
-const drawEx=()=>{const q=$('#extQ').value.toLowerCase();$('#extList').innerHTML=EX.filter(e=>(cat==='All'||e[3]===cat)&&(e[0]+e[4]+e[3]).toLowerCase().includes(q)).map(e=>`<div class="xc ${e[6]==='disabled'?'off':''}"><span class="ic" style="background:${e[2]}">${e[1]}</span><div><b>${e[0]}</b><small>${e[4]}</small><div class="meta"><span class="st5">${'★'.repeat(e[5])}${'☆'.repeat(5-e[5])}</span><span class="lvl ${lvl[e[6]]}">${e[6]}</span><span>${e[3].toLowerCase()}</span></div></div></div>`).join('')||'<p class="mono" style="color:var(--muted)">No skills match.</p>';drawMM()};
+const lvl={daily:'d',strong:'',working:'',disabled:'x','not installed':'x'};
+let ERA=6;const PRE=['Python','Django · DRF','Angular','TypeScript','MongoDB','Redis','Kafka','SNMP · traps','IPAM · subnetting','Topology L2/L3','SD-WAN · firewalls · WLC','Celery · RabbitMQ','FastAPI','REST API integrations','AI-assisted development'];
+const eraOf=e=>{if(ERA<=1){if(e[0].startsWith('Java'))return [...e.slice(0,6),'daily'];if(PRE.includes(e[0]))return [...e.slice(0,6),'not installed']}return e};
+const drawEx=()=>{const q=$('#extQ').value.toLowerCase();$('#extList').innerHTML=EX.map(eraOf).filter(e=>(cat==='All'||e[3]===cat)&&(e[0]+e[4]+e[3]).toLowerCase().includes(q)).map(e=>`<div class="xc ${e[6]==='disabled'||e[6]==='not installed'?'off':''}"><span class="ic" style="background:${e[2]}">${e[1]}</span><div><b>${e[0]}</b><small>${e[4]}</small><div class="meta"><span class="st5">${'★'.repeat(e[5])}${'☆'.repeat(5-e[5])}</span><span class="lvl ${lvl[e[6]]}">${e[6]}</span><span>${e[3].toLowerCase()}</span></div></div></div>`).join('')||'<p class="mono" style="color:var(--muted)">No skills match.</p>';drawMM()};
 $('#extCats').innerHTML=cats.map(c=>`<button type="button" aria-pressed="${c==='All'}" data-c="${c}">${c}</button>`).join('');
 $('#extCats').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;cat=b.dataset.c;$$('#extCats button').forEach(x=>x.setAttribute('aria-pressed',x===b));drawEx()});
 $('#extQ').addEventListener('input',drawEx);drawEx();
@@ -732,7 +821,8 @@ const runCmd=raw=>{const s=raw.trim();line('<span class="p">visitor@nishchal-ts:
 $('#tForm').addEventListener('submit',e=>{e.preventDefault();runCmd(tin.value);tin.value=''});
 ['help','whoami','journey','stats','contact'].forEach(c=>{const b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=()=>{term.removeAttribute('data-closed');runCmd(c)};$('#tChips').appendChild(b)});
 $$('[data-run]').forEach(b=>b.addEventListener('click',()=>{term.removeAttribute('data-closed');runCmd(b.dataset.run==='journey'?'journey':'contact');if(b.dataset.run==='contact')setTimeout(()=>go('contact'),50)}));
-line('<span class="d">nishchal-ts workspace · type</span> <span class="a">help</span> <span class="d">or tap a command</span>');runCmd('whoami');
+const BOOT=['<span class="p">$</span> git clone https://github.com/NishchalTharayil/nishchal-ts.git','Cloning into \'nishchal-ts\'...','remote: Enumerating objects: 362, done.','Receiving objects: 100% (362/362) · 62 features · 140+ bugs fixed','Resolving deltas: <span class="r">java</span> → <span class="b">python</span>, done.','<span class="p">✓</span> workspace ready · type <span class="a">help</span>, or tap a command'];
+if(reduce){BOOT.forEach(l=>line(l))}else{let bi2=0;const nb=()=>{if(bi2<BOOT.length){line(BOOT[bi2++]);setTimeout(nb,bi2===1?500:280)}};nb()}
 if(matchMedia('(max-width:900px)').matches)term.setAttribute('data-closed','');
 const toggleTerm=()=>{term.toggleAttribute('data-closed');$('#tToggle').textContent=term.hasAttribute('data-closed')?'▴':'▾';setTimeout(()=>{drawMM();spy()},50)};
 
@@ -763,6 +853,99 @@ $('#copyBtn').onclick=copy;
 /* clock */
 const ck=$('#clock');const upd=()=>{try{ck.textContent=new Intl.DateTimeFormat('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date())+' IST'}catch(e){}};upd();setInterval(upd,30000);
 $('#yr').textContent=new Date().getFullYear();
+
+
+/* ===== innovation layer ===== */
+/* 1. time travel */
+const ERAS=[{l:'2019',n:'B.E. student · writing Java',wi:0,lang:'Java 8'},{l:'2023',n:'Spring Boot intern at KodNest',wi:0,lang:'Java 17'},{l:'Jul 2024',n:'day one on a Python team',wi:1,lang:'Python 3.11'},{l:'Oct 2024',n:'first feature shipped',wi:9,lang:'Python 3.11'},{l:'Mar 2025',n:'starting the attendance module',wi:42,lang:'Python 3.12'},{l:'Oct 2025',n:'into SD-WAN and device integrations',wi:165,lang:'Python 3.12'},{l:'now',n:'',wi:362,lang:'Python 3.13'}];
+const ttR=$('#ttR'),det=$('#det');
+const setEra=v=>{v=+v;ERA=v;ttR.value=v;const e=ERAS[v],now=v===6;
+  root.dataset.era=v<=1?'java':'python';
+  $('#ttLbl').textContent=now?'main · now':`${e.l} · ${e.n}`;$('#ttNote').textContent=now?'Drag to travel through my history. The workspace changes with it.':'Files, stats, skills and colours now show this point in time.';
+  det.hidden=now;$('#detL').textContent=e.l;
+  $('#brS').textContent=now?'⎇ main':`⎇ (HEAD detached at ${e.l})`;$('#langS').textContent=e.lang;
+  FILES.forEach(f=>{if(f.dir)return;const fut=(f.s||0)>v;const a=document.getElementById(f.id);if(a)a.classList.toggle('future',fut);$$(`[data-id="${f.id}"]`).forEach(b=>b.classList.toggle('future',fut))});
+  const wi=$('#stWI b');wi.textContent=e.wi;$('#stWIl').textContent=now?'work items since Jul 2024':`work items by ${e.l}`;$$('.stat.sp2').forEach(x=>x.classList.toggle('past',!now));
+  drawEx();setTimeout(drawMM,60)};
+ttR.addEventListener('input',()=>setEra(ttR.value));
+$('#ttTicks').addEventListener('click',e=>{const t=e.target.closest('[data-v]');if(t)setEra(t.dataset.v)});
+$('#detBack').onclick=()=>setEra(6);
+
+/* 2. debugger on attendance.py */
+const aL=$$('#attCode .l'),dbg=$('#dbgBtn');let debugging=false;
+const clearDbg=()=>{aL.forEach(l=>{l.classList.remove('step');l.querySelectorAll('.iv').forEach(x=>x.remove())})};
+const iv=(l,t)=>{const x=document.createElement('span');x.className='iv';x.textContent=t;l.appendChild(x)};
+const runDebug=async()=>{if(debugging)return;debugging=true;dbg.textContent='■ Stop';aL[3].classList.add('bp');
+  const wait=ms=>new Promise(r=>setTimeout(r,ms));
+  for(let round=0;round<3&&debugging;round++){
+    const u=U[(Math.random()*U.length)|0];u.paused=true;
+    const ring=document.createElementNS(NS,'circle');ring.setAttribute('r',10);ring.setAttribute('fill','none');ring.setAttribute('stroke','var(--accent-bg)');ring.setAttribute('stroke-width','2');ring.setAttribute('cx',u.x);ring.setAttribute('cy',u.y);geo.appendChild(ring);
+    const line2=document.createElementNS(NS,'line');line2.setAttribute('x1',160);line2.setAttribute('y1',110);line2.setAttribute('x2',u.x);line2.setAttribute('y2',u.y);line2.setAttribute('stroke','var(--accent-bg)');line2.setAttribute('stroke-dasharray','3 3');geo.appendChild(line2);
+    const dm=(Math.hypot(u.x-160,u.y-110)*1.62).toFixed(1),ins=+dm<=120;
+    clearDbg();aL[1].classList.add('step');iv(aL[1],`user = "engineer_${String(10+round*7).padStart(2,'0')}"`);await wait(900);if(!debugging)break;
+    clearDbg();aL[2].classList.add('step');iv(aL[2],`distance_m = ${dm}`);await wait(1000);if(!debugging)break;
+    clearDbg();aL[3].classList.add('step');iv(aL[3],`${dm} <= 120 → ${ins?'True':'False'}`);await wait(1000);if(!debugging)break;
+    clearDbg();const t=ins?aL[4]:aL[5];t.classList.add('step');iv(t,ins?'→ marked present ✓':'→ request sent to manager');await wait(1400);
+    ring.remove();line2.remove();u.paused=false}
+  clearDbg();aL[3].classList.remove('bp');debugging=false;dbg.textContent='● Debug'};
+dbg.onclick=()=>{if(debugging){debugging=false}else runDebug()};
+
+/* 3. hover docs on code */
+const TIPS={
+ haversine:['haversine(a: LatLng, b: LatLng) -> float','Distance in metres between the user and their base location.'],
+ auto:['Attendance.auto(user, distance_m) -> Attendance','Marks the user present without approval.'],
+ request_approval:['Attendance.request_approval(user, manager) -> Request','Outside the radius, the request goes to the reporting manager.'],
+ mark_attendance:['mark_attendance(user, location) -> Attendance | Request','Entry point for web clock-in.'],
+ read_csv:['read_csv(file, limit=5000) -> Iterator[Row]','Streams rows and rejects files over the row limit.'],
+ resolve_parent:['resolve_parent(row) -> Container | SubContainer | Block','Finds where the new range belongs in the hierarchy.'],
+ validate_hierarchy:['validate_hierarchy(row, parent) -> None','Range must sit inside its parent and not overlap a sibling.'],
+ check_msp_scope:['check_msp_scope(row, customer) -> None','A customer can only import into ranges they own.'],
+ generate_for:['IPAsset.generate_for(subnet) -> list[IPAsset]','Creates one IP asset per usable address in the subnet.'],
+ create:['Subnet.create(row) -> Subnet','Persists the subnet and writes an audit entry.'],
+ discover_tenants:['vmanage.discover_tenants() -> list[Tenant]','Lists every tenant configured in the vManage controller.'],
+ login:['vmanage.login(tenant) -> Session','Per-tenant authentication and session handling.'],
+ bulk_api:['session.bulk_api(kind, since) -> list[Stat]','Device, interface or IPSLA statistics since the last poll.'],
+ publish:['publish(stats) -> None','Hands the stats to the monitoring pipeline.'],
+ pick_parent:['pick_parent(a: Device, b: Device) -> Device','Runs the rules in order until one decides.'],
+ rule:['rule(a, b) -> Device | None','Returns the winner, or None on a tie.'],
+ soft_delete:['TrapConfig.soft_delete(id) -> None','Keeps the record for audit and marks it deleted.'],
+ produce:['kafka.produce(topic, message) -> None','Every consumer gets the change without polling.'],
+ '@invalidates':['@invalidates(key)','Clears the Redis licence count when assets change.'],
+};
+const tip=$('#tip'),tipC=$('#tipC'),tipP=$('#tipP');
+$$('.code .fn, .code .ac').forEach(el=>{const t=TIPS[el.textContent.trim()];if(!t)return;el.dataset.tip=1;el.tabIndex=0;
+  const show=()=>{tipC.textContent=t[0];tipP.textContent=t[1];tip.hidden=false;const r=el.getBoundingClientRect();const w=Math.min(360,innerWidth*.9);let x=Math.min(r.left,innerWidth-w-10);tip.style.left=Math.max(8,x)+'px';tip.style.top=(r.bottom+6+90>innerHeight?r.top-92:r.bottom+6)+'px'};
+  el.addEventListener('mouseenter',show);el.addEventListener('focus',show);el.addEventListener('click',show);el.addEventListener('mouseleave',()=>tip.hidden=true);el.addEventListener('blur',()=>tip.hidden=true)});
+sc.addEventListener('scroll',()=>{tip.hidden=true},{passive:true});
+
+/* 4. terminal autocomplete + history */
+const CMDS=['help','whoami','ls','journey','stats','skills','book','contact','theme','clear','hire','open README.md','open journey.py','open experience.json','open attendance.py','open ipam.py','open sdwan.py','open topology.py','open platform.py','open novel.md','open contact.sh','git checkout 2023','git checkout main','sudo'];
+const ghost=$('#ghost'),hist=[];let hi=-1;
+const meas=document.createElement('canvas').getContext('2d');
+const sugg=()=>{const v=tin.value;if(!v){ghost.textContent='';return ''}const m=CMDS.find(c=>c.startsWith(v.toLowerCase())&&c!==v.toLowerCase());if(!m){ghost.textContent='';return ''}
+  meas.font=getComputedStyle(tin).font;const x=tin.offsetLeft+meas.measureText(v).width;ghost.style.left=x+'px';ghost.style.top=tin.offsetTop+'px';ghost.style.lineHeight=getComputedStyle(tin).lineHeight;ghost.textContent=m.slice(v.length);return m};
+tin.addEventListener('input',sugg);
+tin.addEventListener('keydown',e=>{if(e.key==='Tab'||(e.key==='ArrowRight'&&tin.selectionStart===tin.value.length)){const m=sugg();if(m){e.preventDefault();tin.value=m;ghost.textContent=''}}
+  else if(e.key==='ArrowUp'){if(hist.length){hi=Math.min(hi+1,hist.length-1);tin.value=hist[hist.length-1-hi];ghost.textContent='';e.preventDefault()}}
+  else if(e.key==='ArrowDown'){hi=Math.max(hi-1,-1);tin.value=hi<0?'':hist[hist.length-1-hi];ghost.textContent='';e.preventDefault()}});
+$('#tForm').addEventListener('submit',()=>{if(tin.value.trim())hist.push(tin.value.trim());hi=-1;ghost.textContent=''},true);
+C.hire=()=>{go('hire');return['opening <span class="b">pull request #1</span> · hire/nishchal-ts → your-team:main']};
+const _run=runCmd;
+const gitCk=raw=>{const m=raw.trim().toLowerCase().match(/^git checkout\s+(.+)$/);if(!m)return false;line('<span class="p">visitor@nishchal-ts:~$</span> '+esc(raw.trim()));const t=m[1];
+  const idx=t==='main'||t==='now'?6:ERAS.findIndex(e=>e.l.toLowerCase().includes(t));if(idx<0){line(`<span class="r">error:</span> pathspec '${esc(t)}' did not match · try 2019, 2023, 2024, 2025 or main`);return true}
+  setEra(idx);go('readme');line(idx===6?'Switched to branch <span class="a">main</span>':`HEAD is now at <span class="a">${ERAS[idx].l}</span> · ${ERAS[idx].n}`);return true};
+$('#tForm').addEventListener('submit',e=>{if(gitCk(tin.value)){e.stopImmediatePropagation();e.preventDefault();tin.value=''}},true);
+C.help=()=>['<span class="a">commands</span>  whoami · ls · open &lt;file&gt; · journey · stats · skills · book · hire · contact · theme · clear','<span class="a">time travel</span> git checkout 2023 · git checkout main','<span class="d">Tab completes · ↑ ↓ history · Ctrl+K palette · Ctrl+` terminal</span>'];
+
+/* 5. pull request */
+const checks=$$('#checks div');
+const runChecks=()=>{checks.forEach((c,i)=>setTimeout(()=>c.classList.add('ok'),reduce?0:500+i*550))};
+inView($('#checks'),runChecks,.4);
+$('#mgBtn').onclick=()=>{const b=$('#mgBtn');b.disabled=true;b.textContent='Merged';$('#prSt').textContent='⇄ Merged';$('#prSt').classList.add('merged');
+  $('#mgTxt').innerHTML='Merged. Reach me at <b class="mono">nishchaltharayil2001@gmail.com</b>. Say hi!';
+  const ok=()=>{$('#mgTxt').innerHTML+=' <span style="color:var(--ok)">(copied)</span>'};try{navigator.clipboard.writeText('nishchaltharayil2001@gmail.com').then(ok,()=>{})}catch(e){}
+  term.removeAttribute('data-closed');line('<span class="p">✓</span> merged <span class="b">hire/nishchal-ts</span> into <span class="a">your-team:main</span> · reach me at <span class="a">nishchaltharayil2001@gmail.com</span>')};
+ITEMS.push(['Time travel: 2023 (Java era)','command',()=>{setEra(1);go('readme')}],['Time travel: back to main','command',()=>setEra(6)],['Debug attendance.py','command',()=>{go('p-attendance');setTimeout(runDebug,600)}],['Open pull request #1 (hire me)','command',()=>go('hire')]);
 
 spy();setTimeout(drawMM,300);addEventListener('load',drawMM);
 })();
