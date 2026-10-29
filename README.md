@@ -1,10 +1,7 @@
 # Nishchal T S · Portfolio
 
-Personal portfolio of Nishchal T S, software engineer in Bengaluru.
+Live: https://nishchaltharayil.github.io
 
-- One static page (`index.html`), no build step
-- 3D network flythrough built with three.js (loaded from cdnjs)
-- Hosted on GitHub Pages
+My portfolio, built as a code-editor workspace. Each section is a file: `README.md`, `journey.py`, `experience.json`, `projects/`, skills as extensions, `novel.md`, `education.toml` and `contact.sh`. It has a working terminal (type `help`), a command palette (Ctrl+K), a minimap, and dark and light themes.
 
-## Update the site
-Edit `index.html` or replace images in `assets/`, then commit and push to `main`. GitHub Pages redeploys in about a minute.
+One static `index.html`, no build step and no dependencies. Hosted on GitHub Pages.
