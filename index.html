@@ -1,974 +1,574 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nishchal T S · Software Engineer</title>
-<meta name="description" content="Nishchal T S, software engineer in Bengaluru. A Java developer turned Python engineer, building IPAM, network topology, device monitoring and a geofenced attendance system. Also a published author.">
+<meta name="description" content="Nishchal T S, software engineer in Bengaluru. Python, Django and Angular on an enterprise network-monitoring platform, and builder of Chailify.">
+<meta property="og:title" content="Nishchal T S · Software Engineer">
+<meta property="og:description" content="Python · Django · Angular. 362 work items shipped since July 2024. Builder of Chailify.">
+<meta property="og:image" content="https://nishchaltharayil.github.io/nishchal.webp">
+<link rel="icon" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
-<meta name="theme-color" content="#0f1216">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Nishchal T S · Software Engineer">
-<meta property="og:description" content="Java developer turned Python engineer. IPAM, topology, device monitoring, a geofenced attendance system, and a published novel.">
-<meta property="og:image" content="https://nishchaltharayil.github.io/nishchal.webp">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<style>[hidden]{display:none!important}img{max-width:100%}</style>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-/* Layout: a code-editor workspace. Title bar, activity bar, explorer, tabbed editor with gutter + minimap, bottom terminal, status bar.
-   Every portfolio section is a "file". Palette borrows Python's blue and yellow; Java-era items use Java orange. */
 :root{
-  --bg:#ffffff; --side:#f4f5f7; --panel:#f8f9fa; --bar:#eceef1; --line:#e1e4e8; --hl:#f1f3f5;
-  --fg:#1f2328; --muted:#5b6470; --dim:#8c959f;
-  --accent:#9a6700; --accent-bg:#ffd43b; --py:#3776ab; --java:#bc4c00;
-  --kw:#8250df; --fn:#0969da; --str:#1a7f37; --num:#bc4c00; --cmt:#6e7781; --key:#0550ae; --red:#cf222e; --ok:#1a7f37;
-  --sel:rgba(255,212,59,.22);
-  --f-code:"JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
-  --f-ui:"IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --bg:#0b0e12;--bg2:#10141a;--card:#131820;--line:#222a35;--fg:#e6edf3;--muted:#8b97a6;--dim:#5b6675;
+  --py:#ffd43b;--blue:#6cb0ff;--green:#7ee787;--red:#ff7b72;--purple:#d2a8ff;--orange:#f0a35e;
+  --f:"IBM Plex Sans",system-ui,sans-serif;--m:"JetBrains Mono",ui-monospace,monospace;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0f1216; --side:#0b0e11; --panel:#0c0f13; --bar:#080a0d; --line:#1d232b; --hl:#151a21;
-  --fg:#d6dbe2; --muted:#8b95a3; --dim:#4f5966;
-  --accent:#ffd43b; --accent-bg:#ffd43b; --py:#6cb0ff; --java:#f0883e;
-  --kw:#d2a8ff; --fn:#6cb0ff; --str:#7ee787; --num:#f0a35e; --cmt:#6b7684; --key:#79c0ff; --red:#ff7b72; --ok:#3fb950;
-  --sel:rgba(255,212,59,.09); color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0f1216; --side:#0b0e11; --panel:#0c0f13; --bar:#080a0d; --line:#1d232b; --hl:#151a21;
-  --fg:#d6dbe2; --muted:#8b95a3; --dim:#4f5966;
-  --accent:#ffd43b; --accent-bg:#ffd43b; --py:#6cb0ff; --java:#f0883e;
-  --kw:#d2a8ff; --fn:#6cb0ff; --str:#7ee787; --num:#f0a35e; --cmt:#6b7684; --key:#79c0ff; --red:#ff7b72; --ok:#3fb950;
-  --sel:rgba(255,212,59,.09); color-scheme:dark}
-
+[data-theme="light"]{--bg:#ffffff;--bg2:#f6f8fa;--card:#ffffff;--line:#e1e4e8;--fg:#1f2328;--muted:#59636e;--dim:#8c959f;--py:#9a6700;--blue:#0969da;--green:#1a7f37;--red:#cf222e;--purple:#8250df;--orange:#bc4c00}
 *{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;background:var(--bar);color:var(--fg);font-family:var(--f-ui);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow:hidden}
-button{font:inherit;color:inherit}
-a{color:var(--fn)}
-:focus-visible{outline:2px solid var(--accent-bg);outline-offset:2px}
-.mono{font-family:var(--f-code)}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .4s,color .4s}
+a{color:var(--blue)}
+img{max-width:100%;display:block}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--m)}
+.kicker{font-family:var(--m);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--py)}
+h2.title{font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.03em;margin:10px 0 0}
+.lead{color:var(--muted);font-size:19px;max-width:680px}
+section{position:relative}
+.sec{padding:120px 0 0}
 
-.app{height:100%;display:grid;grid-template-rows:34px 1fr auto 24px;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
-/* title bar */
-.title{display:flex;align-items:center;gap:14px;padding:0 max(12px,env(safe-area-inset-left,0px));background:var(--bar);border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted);user-select:none;min-width:0}
-.lights{display:flex;gap:7px}.lights i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.lights i:nth-child(2){background:#febc2e}.lights i:nth-child(3){background:#28c840}
-.menu{display:flex;gap:2px}
-.menu button{background:none;border:0;padding:4px 8px;border-radius:5px;cursor:pointer;color:var(--muted);font-size:12.5px}
-.menu button:hover{background:var(--hl);color:var(--fg)}
-.cmd{margin:0 auto;display:flex;align-items:center;gap:8px;min-width:0;width:min(440px,46vw);height:24px;padding:0 10px;border:1px solid var(--line);border-radius:6px;background:var(--side);color:var(--muted);cursor:pointer;font-size:12.5px}
-.cmd span{flex:1;text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-.cmd kbd{font-family:var(--f-code);font-size:11px;color:var(--dim)}
-.title .tright{display:flex;gap:6px}
-.ico{width:28px;height:24px;display:grid;place-items:center;background:none;border:0;border-radius:5px;cursor:pointer;color:var(--muted)}
-.ico:hover{background:var(--hl);color:var(--fg)}
-.ico svg{width:16px;height:16px}
+/* progress + cursor glow */
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--py));z-index:60}
+#glow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(108,176,255,.10),transparent 60%);transform:translate(-50%,-50%);transition:opacity .3s}
+[data-theme="light"] #glow{opacity:.5}
 
-/* workbench */
-.wb{display:grid;grid-template-columns:48px 240px 1fr;min-height:0}
-.act{background:var(--bar);border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;padding-top:6px;gap:2px}
-.act button{width:48px;height:46px;display:grid;place-items:center;background:none;border:0;border-left:2px solid transparent;cursor:pointer;color:var(--dim)}
-.act button:hover{color:var(--fg)}
-.act button[aria-pressed="true"]{color:var(--fg);border-left-color:var(--accent-bg)}
-.act svg{width:22px;height:22px}
-.act .sp{flex:1}
-.side{background:var(--side);border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:0;font-size:13px}
-.side h6{margin:0;padding:10px 16px 6px;font-size:11px;letter-spacing:.08em;font-weight:500;color:var(--muted);text-transform:uppercase}
-.tree{list-style:none;margin:0;padding:0 0 10px;overflow:auto}
-.tree li button{width:100%;display:flex;align-items:center;gap:7px;padding:3px 12px 3px calc(14px + var(--d,0) * 14px);background:none;border:0;cursor:pointer;text-align:left;color:var(--fg);white-space:nowrap}
-.tree li button:hover{background:var(--hl)}
-.tree li button.on{background:var(--sel);box-shadow:inset 2px 0 0 var(--accent-bg)}
-.tree .fi{width:16px;text-align:center;font-family:var(--f-code);font-size:10.5px;font-weight:700;flex:none}
-.tree .gd{margin-left:auto;font-family:var(--f-code);font-size:11px}
-.gd.m{color:var(--accent)}.gd.u{color:var(--ok)}.gd.a{color:var(--dim)}
-.tree .dir{color:var(--muted)}
-.tree .legacy{opacity:.6}
-.side .who{margin-top:auto;border-top:1px solid var(--line);padding:12px 14px;display:flex;gap:10px;align-items:center}
-.side .who img{width:40px;height:40px;border-radius:8px;object-fit:cover;object-position:50% 20%}
-.side .who b{display:block;font-size:13px}.side .who small{color:var(--muted);font-size:11.5px}
-.sidepane[hidden]{display:none!important}
-.scm{padding:0 14px 14px;overflow:auto;display:grid;gap:2px}
-.scm .c{display:grid;grid-template-columns:14px 1fr;gap:8px;padding:5px 0;font-size:12.5px;border-bottom:1px dashed var(--line)}
-.scm .c i{width:9px;height:9px;border-radius:50%;margin-top:6px;background:var(--py)}
-.scm .c small{display:block;color:var(--muted);font-family:var(--f-code);font-size:11px}
+/* nav */
+nav.top{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.top.solid{background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-color:var(--line)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.brand{font-family:var(--m);font-weight:700;color:var(--fg);text-decoration:none;font-size:15px}
+.brand b{color:var(--py)}
+.links{display:flex;gap:4px;align-items:center;flex-wrap:nowrap}
+.links a{color:var(--muted);text-decoration:none;font-size:15px;padding:8px 12px;border-radius:8px;transition:color .2s,background .2s}
+.links a:hover,.links a.on{color:var(--fg);background:var(--bg2)}
+.iconbtn{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--bg2);color:var(--fg);display:grid;place-items:center;cursor:pointer}
+@media(max-width:820px){.links a.hide-sm{display:none}}
+@media(max-width:480px){.links a.hide-xs{display:none}.links a{padding:8px 9px}.scroll-cue{display:none!important}.bgcode{opacity:.18!important}}
 
-/* editor */
-.ed{display:grid;grid-template-rows:35px 26px 1fr;min-width:0;min-height:0;background:var(--bg)}
-.tabs{display:flex;overflow-x:auto;background:var(--side);border-bottom:1px solid var(--line);scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tabs button{flex:none;display:flex;align-items:center;gap:7px;padding:0 14px;border:0;border-right:1px solid var(--line);background:none;cursor:pointer;font-size:12.5px;color:var(--muted);border-top:2px solid transparent}
-.tabs button.on{background:var(--bg);color:var(--fg);border-top-color:var(--accent-bg)}
-.tabs .fi{font-family:var(--f-code);font-size:10px;font-weight:700}
-.crumbs{display:flex;align-items:center;gap:6px;padding:0 16px;font-size:12px;color:var(--muted);border-bottom:1px solid var(--line);white-space:nowrap;overflow:hidden}
-.crumbs b{color:var(--fg);font-weight:500}
-.view{position:relative;display:grid;grid-template-columns:1fr 64px;min-height:0}
-.scroll{overflow-y:auto;overflow-x:hidden;scroll-behavior:smooth;min-width:0}
-.mm{border-left:1px solid var(--line);position:relative;background:var(--bg);cursor:pointer}
-.mm canvas{position:absolute;inset:0;width:100%;height:100%}
-.mm .vp{position:absolute;left:0;right:0;background:rgba(127,140,160,.14);border-top:1px solid rgba(127,140,160,.3);border-bottom:1px solid rgba(127,140,160,.3);pointer-events:none}
-
-/* file blocks */
-.file{border-bottom:1px solid var(--line);scroll-margin-top:0}
-.fh{position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:10px;padding:6px 18px;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);font-family:var(--f-code);font-size:12px;color:var(--muted)}
-.fh b{color:var(--fg);font-weight:500}
-.fh .act2{margin-left:auto;display:flex;gap:6px}
-.chipb{font-family:var(--f-code);font-size:11px;padding:2px 8px;border-radius:5px;border:1px solid var(--line);background:var(--side);color:var(--muted);cursor:pointer}
-.chipb:hover{color:var(--fg);border-color:var(--dim)}
-.chipb.run{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 50%,var(--line))}
-.code{margin:0;padding:14px 0 18px;font-family:var(--f-code);font-size:13px;line-height:1.75;counter-reset:ln;overflow-x:auto}
-.code .l{display:block;padding:0 24px 0 0;white-space:pre-wrap;padding-left:68px;text-indent:0;position:relative;min-height:1.75em}
-.code .l::before{counter-increment:ln;content:counter(ln);position:absolute;left:0;width:48px;text-align:right;color:var(--dim);font-size:12px}
-.code .l:hover{background:var(--hl)}
-.code .l.hl{background:var(--sel)}
-.kw{color:var(--kw)}.fn{color:var(--fn)}.st{color:var(--str)}.nu{color:var(--num)}.cm{color:var(--cmt);font-style:italic}.ky{color:var(--key)}.pu{color:var(--muted)}.ac{color:var(--accent)}.jv{color:var(--java)}
-.fold-btn{position:absolute;left:52px;top:0;width:14px;height:1.75em;border:0;background:none;color:var(--dim);cursor:pointer;padding:0;font-size:10px}
-.fg.closed>.fb{display:none}
-.fg.closed>.l .fold-btn{transform:rotate(-90deg)}
-.fg.closed>.l .ell{display:inline}
-.ell{display:none;color:var(--dim);background:var(--hl);border:1px solid var(--line);border-radius:4px;padding:0 4px;margin:0 4px}
-
-/* README preview */
-.md{padding:28px clamp(18px,4vw,48px) 36px;max-width:980px}
-.md h1{font-size:clamp(2.2rem,1.6rem + 2.6vw,3.6rem);line-height:1;letter-spacing:-.03em;margin:0;font-weight:700}
-.md h1 .cur{display:inline-block;width:.5ch;height:.85em;background:var(--accent-bg);vertical-align:-.05em;margin-left:6px;animation:blink 1s steps(1) infinite}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:110px 0 60px;overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+@media(max-width:900px){.hero .grid{grid-template-columns:1fr}}
+.status{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);font-size:14px;color:var(--muted)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(126,231,135,.6);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(126,231,135,.55)}70%{box-shadow:0 0 0 12px rgba(126,231,135,0)}100%{box-shadow:0 0 0 0 rgba(126,231,135,0)}}
+.hero h1{font-size:clamp(46px,7.4vw,92px);line-height:.98;letter-spacing:-.045em;margin:22px 0 0;font-weight:700}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom}
+.hero h1 .w>span{display:inline-block;transform:translateY(110%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes up{to{transform:none}}
+.type{font-family:var(--m);font-size:clamp(18px,2.2vw,24px);margin-top:22px;color:var(--muted);min-height:1.6em}
+.type b{color:var(--py);font-weight:500}
+.caret{display:inline-block;width:10px;height:1.1em;background:var(--py);vertical-align:-3px;margin-left:3px;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-.md h2{font-size:1.25rem;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line);font-weight:600}
-.md p{max-width:68ch;margin:10px 0}
-.md .typed{font-family:var(--f-code);color:var(--py);font-size:1rem}
-.hero-md{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,3vw,32px);align-items:center}
-.hero-md img{width:clamp(110px,16vw,170px);height:auto;aspect-ratio:1;object-fit:cover;object-position:50% 20%;border-radius:14px;border:1px solid var(--line)}
-.badges{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 4px}
-.badge{display:inline-flex;font-family:var(--f-code);font-size:11.5px;border-radius:4px;overflow:hidden;line-height:20px;border:1px solid var(--line)}
-.badge b{background:var(--hl);color:var(--muted);padding:0 7px;font-weight:400}
-.badge span{padding:0 7px;color:#111;font-weight:500}
-.badge.y span{background:#ffd43b}.badge.b span{background:#6cb0ff}.badge.g span{background:#7ee787}.badge.o span{background:#f0a35e}.badge.p span{background:#d2a8ff}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
-.stat{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--panel)}
-.stat b{display:block;font-family:var(--f-code);font-size:1.7rem;line-height:1.1;font-variant-numeric:tabular-nums}
-.stat small{color:var(--muted);font-size:12.5px}
-.now{display:flex;gap:10px;align-items:baseline;font-size:14px;margin-top:14px;flex-wrap:wrap}
-.now code{font-family:var(--f-code);font-size:12px;color:var(--ok)}
-.now span{transition:opacity .35s}
+.hero p.intro{font-size:20px;color:var(--muted);max-width:620px;margin:22px 0 0}
+.hero p.intro b{color:var(--fg)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:12px;font-weight:600;text-decoration:none;font-size:16px;border:1px solid var(--line);color:var(--fg);background:var(--bg2);transition:transform .2s,border-color .2s,background .2s;cursor:pointer;font-family:var(--f)}
+.btn:hover{border-color:var(--blue)}
+.btn.pri{background:var(--py);color:#111;border-color:var(--py)}
+[data-theme="light"] .btn.pri{color:#fff}
+.photo{position:relative;justify-self:center}
+.photo img{width:min(340px,80vw);aspect-ratio:4/5;object-fit:cover;border-radius:28px;position:relative;z-index:2;filter:saturate(1.05)}
+.ring{position:absolute;inset:-18px;border-radius:36px;z-index:1;background:conic-gradient(from var(--a,0deg),var(--blue),var(--py),var(--green),var(--purple),var(--blue));animation:spin 6s linear infinite;filter:blur(2px);opacity:.75}
+.ring::after{content:"";position:absolute;inset:3px;border-radius:33px;background:var(--bg)}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes spin{to{--a:360deg}}
+.chip-float{position:absolute;z-index:3;font-family:var(--m);font-size:13px;padding:8px 12px;border-radius:10px;background:var(--card);border:1px solid var(--line);box-shadow:0 12px 30px rgba(0,0,0,.35);animation:bob 5s ease-in-out infinite;white-space:nowrap}
+@keyframes bob{50%{transform:translateY(-12px)}}
+.bgcode{position:absolute;inset:0;z-index:-1;overflow:hidden;opacity:.5;pointer-events:none;mask-image:radial-gradient(70% 70% at 50% 50%,#000,transparent)}
+.bgcode span{position:absolute;font-family:var(--m);font-size:14px;color:var(--dim);white-space:nowrap;animation:drift linear infinite}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(-120vh)}}
+.scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);font-family:var(--m);font-size:12px;color:var(--dim);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-cue i{width:2px;height:36px;background:linear-gradient(var(--py),transparent);animation:cue 1.8s infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-/* split view (code + preview) */
-.split{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);border-top:0}
-.split>.code{border-right:1px solid var(--line)}
-.pv{padding:14px 18px 18px;display:grid;gap:10px;align-content:start;background:var(--panel);min-width:0}
-.pv-h{display:flex;justify-content:space-between;font-family:var(--f-code);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-.pv h3{margin:0;font-size:1.25rem}
-.pv p{margin:0;color:var(--muted);font-size:14px}
-.pv ul{margin:0;padding-left:18px;font-size:14px;display:grid;gap:4px}
-.vis{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
-.vk{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--f-code);font-size:11.5px;color:var(--muted)}
-.vk b{color:var(--fg);font-weight:500;font-variant-numeric:tabular-nums}
-.vk i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:-1px}
-.tags{display:flex;flex-wrap:wrap;gap:5px}
-.tags span{font-family:var(--f-code);font-size:11px;padding:1px 7px;border-radius:4px;border:1px solid var(--line);color:var(--muted)}
-/* geofence */
-.g-r{fill:color-mix(in srgb,var(--ok) 8%,transparent);stroke:var(--ok);stroke-dasharray:5 5}
-.g-p{fill:none;stroke:var(--ok);transform-origin:160px 110px;animation:gp 3s ease-out infinite}
-@keyframes gp{from{transform:scale(.3);opacity:.7}to{transform:scale(1.3);opacity:0}}
-.vis text{font-family:var(--f-code);font-size:10px;fill:var(--muted)}
-/* subnet */
-.sn{display:grid;grid-template-columns:repeat(16,1fr);gap:3px;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
-.sn i{aspect-ratio:1;border-radius:2px;background:var(--hl);transition:background .3s,transform .15s}
-.sn i.u{background:var(--py)}.sn i.r{background:var(--kw)}
-.sn i:hover{transform:scale(1.5);outline:1px solid var(--fg)}
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin-top:40px}
+@media(max-width:900px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{padding:26px;border-radius:20px;border:1px solid var(--line);background:var(--card);position:relative;overflow:hidden}
+.stat .n{font-size:48px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.stat .l{color:var(--muted);font-size:15px;margin-top:8px}
+.stat::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:var(--w,0%);background:var(--c,var(--py));transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+
+/* journey */
+.journey{margin-top:56px;position:relative}
+.jline{position:absolute;left:28px;top:0;bottom:0;width:3px;background:var(--line);border-radius:3px}
+.jfill{position:absolute;left:28px;top:0;width:3px;height:0;background:linear-gradient(var(--orange),var(--py),var(--blue));border-radius:3px}
+.jstep{position:relative;padding:0 0 56px 84px}
+.jstep .node{position:absolute;left:16px;top:2px;width:27px;height:27px;border-radius:50%;background:var(--bg);border:3px solid var(--dim);transition:border-color .4s,background .4s,transform .4s}
+.jstep.lit .node{border-color:var(--c,var(--py));background:var(--c,var(--py));transform:scale(1.15)}
+.jstep .when{font-family:var(--m);font-size:14px;color:var(--c,var(--py))}
+.jstep h3{margin:6px 0 0;font-size:28px;letter-spacing:-.02em}
+.jstep p{margin:8px 0 0;color:var(--muted);max-width:720px}
+.tag{display:inline-block;font-family:var(--m);font-size:12px;padding:3px 9px;border-radius:6px;border:1px solid var(--line);color:var(--muted);margin:10px 6px 0 0}
+.morph{font-family:var(--m);font-size:clamp(26px,4vw,44px);margin-top:28px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.morph .j{color:var(--orange);text-decoration:line-through;text-decoration-thickness:3px;opacity:.7}
+.morph .p{color:var(--py)}
+
+/* work */
+.work{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:48px}
+@media(max-width:900px){.work{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);border-radius:24px;background:var(--card);overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s;transform-style:preserve-3d}
+.card:hover{border-color:color-mix(in srgb,var(--c,var(--blue)) 60%,var(--line));box-shadow:0 30px 60px -25px color-mix(in srgb,var(--c,var(--blue)) 45%,transparent)}
+.card .viz{height:230px;background:var(--bg2);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.card .body{padding:26px 28px 28px}
+.card .when{font-family:var(--m);font-size:13px;color:var(--c,var(--blue))}
+.card h3{margin:6px 0 0;font-size:25px;letter-spacing:-.02em}
+.card p{margin:10px 0 0;color:var(--muted)}
+.card ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:15px}
+.vlabel{position:absolute;left:14px;top:12px;font-family:var(--m);font-size:11px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;display:flex;gap:8px;align-items:center}
+.vlabel .live{color:var(--green)}
+.vstat{position:absolute;right:14px;bottom:12px;font-family:var(--m);font-size:12px;color:var(--muted);display:flex;gap:14px}
+.vstat b{color:var(--fg)}
+/* subnet grid */
+#sn{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);display:grid;grid-template-columns:repeat(32,9px);gap:3px}
+#sn i{width:9px;height:9px;border-radius:2px;background:var(--line);transition:background .3s,transform .3s}
+#sn i.u{background:var(--blue)}#sn i.r{background:var(--orange)}#sn i:hover{transform:scale(1.8)}
 /* sdwan */
-.sw-l{fill:none;stroke:var(--line);stroke-width:2}
-.sw-a{fill:none;stroke:var(--accent-bg);stroke-width:2;stroke-dasharray:6 6;animation:flow 1.2s linear infinite}
-@keyframes flow{to{stroke-dashoffset:-24}}
-.sw-n{fill:var(--panel);stroke:var(--py)}
-.sw-c{fill:var(--panel);stroke:var(--ok)}
-.vis .t{fill:var(--fg);font-size:10px;text-anchor:middle}
+.sd{position:absolute;inset:44px 20px 40px;display:grid;grid-template-columns:1fr 1.2fr 1fr;align-items:center}
+.sd .col{display:grid;gap:10px}
+.pill{font-family:var(--m);font-size:12px;padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--card);text-align:center}
+.pill.k{border-color:var(--blue);color:var(--blue)}
+.lanes{position:relative;height:100%}
+.lanes svg{width:100%;height:100%}
 /* topology */
-.tp-n circle{fill:var(--panel);stroke:var(--dim);stroke-width:2;transition:all .35s}
-.tp-n.win circle{stroke:var(--accent-bg);stroke-width:3;fill:color-mix(in srgb,var(--accent-bg) 18%,var(--panel))}
-.tp-n.lose{opacity:.45}
-.tp-v{fill:var(--accent)!important;font-size:11px!important;text-anchor:middle}
-/* pipeline */
-.pipe{display:grid;gap:14px;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
-.pr{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center}
-.pn{font-family:var(--f-code);font-size:11px;padding:4px 8px;border-radius:5px;border:1px solid var(--line);white-space:nowrap}
-.pn.k{border-color:var(--py);color:var(--py)}.pn.r{border-color:var(--red);color:var(--red)}
+.tp{position:absolute;inset:40px 20px 38px}
+.tp .r{position:absolute;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-family:var(--m);font-weight:700;border:2px solid var(--line);background:var(--card);transition:all .4s}
+.tp .r.win{border-color:var(--green);box-shadow:0 0 30px rgba(126,231,135,.5);transform:scale(1.12)}
+.tp .r.lose{opacity:.45}
+.tp .meta{position:absolute;font-family:var(--m);font-size:11px;color:var(--muted);width:150px;text-align:center}
+.rules{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);display:grid;gap:6px;font-family:var(--m);font-size:12px}
+.rules span{padding:4px 10px;border-radius:6px;border:1px solid var(--line);color:var(--dim);transition:all .3s;text-align:center}
+.rules span.hl{border-color:var(--py);color:var(--py);background:color-mix(in srgb,var(--py) 10%,transparent)}
+#tpV{position:absolute;left:0;right:0;bottom:-2px;text-align:center;font-family:var(--m);font-size:13px;color:var(--green)}
+/* events */
+.ev{position:absolute;inset:46px 22px 30px;display:grid;gap:14px}
+.ev .row{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center}
 .lane{position:relative;height:2px;background:var(--line)}
-.lane i{position:absolute;top:-4px;width:10px;height:10px;border-radius:50%;background:var(--py);animation:ride var(--t,1.6s) linear forwards}
+.lane i{position:absolute;top:-4px;left:0;width:10px;height:10px;border-radius:50%;background:var(--blue);animation:ride var(--t,1.4s) linear forwards;box-shadow:0 0 12px currentColor}
 .lane.r i{background:var(--red)}
-@keyframes ride{from{left:0}to{left:calc(100% - 10px)}}
+@keyframes ride{to{left:calc(100% - 10px)}}
 
-/* journey git graph */
-.jgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
-.jgrid>.code{border-right:1px solid var(--line)}
-.graph{padding:14px 18px;background:var(--panel)}
-.graph svg{width:100%;height:auto;display:block}
-.graph text{font-family:var(--f-code);font-size:11px;fill:var(--fg)}
-.graph .s{fill:var(--muted);font-size:10px}
-.gl{fill:none;stroke-width:3;stroke-linecap:round}
-.gl.j{stroke:var(--java)}.gl.p{stroke:var(--py)}
-.gc{stroke:var(--bg);stroke-width:2}
-.gc.j{fill:var(--java)}.gc.p{fill:var(--py)}.gc.m{fill:var(--accent-bg)}
-.draw{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);transition:stroke-dashoffset 1.6s ease}
-.drawn .draw{stroke-dashoffset:0}
-.graph .lang{display:flex;gap:10px;align-items:center;font-family:var(--f-code);font-size:11px;color:var(--muted);margin-bottom:10px}
-.graph .lang i{flex:1;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--java) 0 28%,var(--py) 36% 100%)}
+/* devices marquee */
+.marq{margin-top:64px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marq .t{display:flex;gap:40px;width:max-content;animation:mq 34s linear infinite;font-family:var(--m);color:var(--muted)}
+.marq .t span::before{content:"◆ ";color:var(--py)}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-/* extensions (skills) */
-.ext{padding:16px 18px 22px}
-.ext-top{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
-.ext-top input{flex:1;min-width:200px;background:var(--side);border:1px solid var(--line);border-radius:6px;padding:7px 10px;color:var(--fg);font-family:var(--f-code);font-size:12.5px}
-.ext-top button{font-size:12px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--muted);cursor:pointer}
-.ext-top button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
-.ext-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
-.xc{display:grid;grid-template-columns:42px 1fr;gap:12px;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--panel);transition:border-color .2s,transform .2s}
-.xc:hover{border-color:var(--dim);transform:translateY(-2px)}
-.xc .ic{width:42px;height:42px;border-radius:9px;display:grid;place-items:center;font-family:var(--f-code);font-weight:700;font-size:14px;color:#111}
-.xc b{font-size:14px;display:block;line-height:1.2}
-.xc small{display:block;color:var(--muted);font-size:12px;line-height:1.35;margin-top:2px}
-.xc .meta{display:flex;gap:8px;align-items:center;margin-top:6px;font-family:var(--f-code);font-size:10.5px;color:var(--dim)}
-.xc .st5{color:var(--accent);letter-spacing:1px}
-.xc .lvl{padding:0 6px;border-radius:4px;border:1px solid var(--line)}
-.xc .lvl.d{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,var(--line))}
-.xc.off{opacity:.6}.xc.off b{text-decoration:line-through;text-decoration-color:var(--java)}
-.xc .lvl.x{color:var(--java)}
+/* chailify */
+.chai{margin-top:120px;background:#1a0f09;color:#fff6ea;padding:110px 0;overflow:hidden}
+[data-theme="light"] .chai{background:#2a170b}
+.chai .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+@media(max-width:900px){.chai .grid{grid-template-columns:1fr}}
+.chai .k{font-family:var(--m);font-size:13px;letter-spacing:.14em;color:#e0913f}
+.chai h2{font-size:clamp(46px,6vw,78px);letter-spacing:-.04em;margin:12px 0 0;line-height:1}
+.chai h2 span{color:#e0913f}
+.chai .q{font-size:22px;margin:18px 0 0;color:#f3e6d6;max-width:520px}
+.feat{display:grid;gap:12px;margin-top:28px}
+.feat div{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:16px;background:rgba(255,246,234,.06);border:1px solid rgba(255,246,234,.08)}
+.feat b{display:block}
+.feat small{color:#c9a27a;font-size:14px}
+.feat .ic{flex:none;width:36px;height:36px;border-radius:10px;background:#e0913f;color:#1a0f09;display:grid;place-items:center;font-family:var(--m);font-weight:700;font-size:14px}
+.vid{position:relative;border-radius:22px;overflow:hidden;border:1px solid rgba(255,246,234,.15);box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 80px rgba(224,145,63,.18)}
+.vid video{width:100%;display:block}
+.chai .btn.pri{background:#e0913f;border-color:#e0913f;color:#1a0f09}
 
-/* novel */
-.bk-wrap{display:grid;grid-template-columns:minmax(0,480px) 1fr;gap:clamp(20px,4vw,48px);align-items:center;padding:28px clamp(18px,4vw,48px) 36px}
-.bk-stage{perspective:1400px;display:grid;place-items:center;padding:10px}
-.bk{position:relative;width:min(220px,40vw);aspect-ratio:560/869;transform-style:preserve-3d;transform:translateX(var(--tx,0%)) rotateY(var(--ry,-16deg)) rotateX(3deg);transition:transform .5s ease;cursor:pointer}
-.bk-page{position:absolute;inset:0;border-radius:3px 8px 8px 3px;background:linear-gradient(90deg,#e9e2d5,#f6f1e7 12%,#f3ede2);color:#2a2240;display:grid;align-content:center;justify-items:center;text-align:center;gap:8px;padding:18px;box-shadow:inset 6px 0 14px rgba(0,0,0,.18),0 24px 50px -20px rgba(0,0,0,.5)}
-.bk-page small{font-family:var(--f-code);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#6d5d93}
-.bk-page b{font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:1.15rem;line-height:1.2}
-.bk-page span{font-size:.64rem;letter-spacing:.3em;text-transform:uppercase}
-.bk-cover{position:absolute;inset:0;transform-origin:left center;transform:rotateY(var(--open,0deg));transform-style:preserve-3d;transition:transform 1.4s cubic-bezier(.4,.1,.2,1)}
-.bk-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:3px 8px 8px 3px;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 24px 50px -20px rgba(20,10,60,.6)}
-.bk-back{position:absolute;inset:0;border-radius:8px 3px 3px 8px;background:linear-gradient(90deg,#2d2363,#4a3a8f);transform:rotateY(180deg);backface-visibility:hidden;-webkit-backface-visibility:hidden}
-.bk.open{--open:-168deg;--ry:0deg;--tx:50%}
-.bk-t h2{border:0;margin:0 0 6px;font-size:clamp(1.6rem,1.2rem + 1.6vw,2.4rem);padding:0}
-.bk-t .bt{font-family:Georgia,serif;font-style:italic;font-size:1.3rem;color:var(--kw)}
-.bk-t .by{font-family:var(--f-code);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:6px 0 10px;display:block}
+/* skills */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px}
+.filters button{font-family:var(--m);font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--muted);cursor:pointer;transition:all .2s}
+.filters button.on{background:var(--py);color:#111;border-color:var(--py)}
+[data-theme="light"] .filters button.on{color:#fff}
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+@media(max-width:900px){.skills{grid-template-columns:1fr}}
+.sk{display:flex;gap:14px;padding:18px;border-radius:16px;border:1px solid var(--line);background:var(--card);transition:opacity .3s,transform .3s}
+.sk.hide{display:none}
+.sk .ic{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-family:var(--m);font-weight:700;font-size:13px;color:#111}
+.sk b{display:block}
+.sk small{color:var(--muted);font-size:14px;display:block}
+.bar{height:5px;border-radius:5px;background:var(--line);margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:5px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.sk.off{opacity:.5}
+
+/* book + edu */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+.panel{padding:34px;border-radius:24px;border:1px solid var(--line);background:var(--card)}
+.book{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.book .cover{perspective:900px;flex:none}
+.book .cover img{width:150px;border-radius:4px 10px 10px 4px;box-shadow:12px 18px 40px rgba(0,0,0,.45);transform:rotateY(-24deg);transition:transform .6s}
+.book:hover .cover img{transform:rotateY(0)}
+.edu li{margin-top:12px}
+.edu{padding-left:20px;color:var(--muted)}
+.edu b{color:var(--fg)}
 
 /* contact */
-.ct-act{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 22px 68px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:6px;border:1px solid var(--line);background:var(--side);color:var(--fg);text-decoration:none;font-size:13px;cursor:pointer}
-.btn:hover{border-color:var(--dim)}
-.btn.pri{background:var(--accent-bg);border-color:var(--accent-bg);color:#1a1400;font-weight:600}
-.foot{padding:18px 18px 40px 68px;color:var(--dim);font-family:var(--f-code);font-size:11.5px}
-
-/* terminal panel */
-.term{border-top:1px solid var(--line);background:var(--panel);display:grid;grid-template-rows:30px 1fr auto;height:var(--th,180px);min-height:0}
-.term[data-closed]{height:30px}
-.term[data-closed] .t-out,.term[data-closed] .t-in{display:none}
-.t-tabs{display:flex;align-items:center;gap:2px;padding:0 10px;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.t-tabs button{background:none;border:0;padding:6px 10px;cursor:pointer;color:var(--muted);border-bottom:1px solid transparent}
-.t-tabs button.on{color:var(--fg);border-bottom-color:var(--accent-bg)}
-.t-tabs .sp{flex:1}
-.t-out{overflow-y:auto;padding:6px 16px;font-family:var(--f-code);font-size:12.5px;line-height:1.65}
-.t-out .ln{white-space:pre-wrap;word-break:break-word}
-.t-out .p{color:var(--ok)}.t-out .a{color:var(--accent)}.t-out .b{color:var(--py)}.t-out .d{color:var(--dim)}.t-out .r{color:var(--red)}
-.t-in{display:flex;gap:8px;align-items:center;padding:4px 16px 8px;font-family:var(--f-code);font-size:12.5px}
-.t-in label{color:var(--ok);white-space:nowrap}
-.t-in input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:var(--fg);font:inherit;caret-color:var(--accent-bg)}
-.t-chips{display:flex;gap:5px;flex-wrap:wrap}
-.t-chips button{font-family:var(--f-code);font-size:10.5px;text-transform:none;letter-spacing:0;padding:1px 7px;border:1px solid var(--line);border-radius:4px}
-
-/* status bar */
-.status{display:flex;align-items:center;gap:2px;background:var(--py);color:#fff;font-size:12px;padding:0 max(8px,env(safe-area-inset-left,0px));overflow:hidden;white-space:nowrap}
-:root:not([data-theme="light"]) .status{color:#0b1220}
-@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .status{color:#fff}}
-:root[data-theme="light"] .status{color:#fff}
-.status span,.status button{display:inline-flex;align-items:center;gap:5px;padding:0 8px;height:24px;background:none;border:0;cursor:default;font-size:12px;color:inherit}
-.status button{cursor:pointer}
-.status button:hover{background:rgba(255,255,255,.15)}
-.status .sp{flex:1}
-.status .live::before{content:"";width:7px;height:7px;border-radius:50%;background:#ffd43b;box-shadow:0 0 0 0 #ffd43b;animation:pulse 2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 6px transparent}}
-
-/* palette */
-.pal-w{position:fixed;inset:0;z-index:50;display:grid;place-items:start center;padding:8vh 16px 16px;background:rgba(0,0,0,.25)}
-.pal-w[hidden]{display:none!important}
-.pal{width:min(600px,100%);background:var(--side);border:1px solid var(--line);border-radius:10px;box-shadow:0 30px 80px -20px rgba(0,0,0,.5);overflow:hidden}
-.pal input{width:100%;border:0;border-bottom:1px solid var(--line);background:var(--bg);color:var(--fg);font:inherit;font-size:14px;padding:12px 14px;outline:0}
-.pal ul{list-style:none;margin:0;padding:4px;max-height:50vh;overflow:auto}
-.pal li{display:flex;justify-content:space-between;gap:10px;padding:7px 10px;border-radius:6px;font-size:13.5px;cursor:pointer}
-.pal li small{color:var(--muted);font-family:var(--f-code);font-size:11px}
-.pal li[aria-selected="true"]{background:var(--sel);color:var(--fg)}
-
-
-/* ===== innovation layer ===== */
-:root[data-era="java"]{--accent-bg:#f0883e}
-:root[data-era="java"] .status{background:var(--java)!important}
-.tt{margin-top:18px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--panel)}
-.tt-h{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;font-size:13px}
-.tt-h code{font-family:var(--f-code);font-size:12px;color:var(--ok)}
-.tt-h b{font-family:var(--f-code);font-size:12.5px;color:var(--accent-bg)}
-.tt-h span{color:var(--muted);font-size:12.5px}
-.tt input{width:100%;margin:10px 0 2px;accent-color:var(--accent-bg);cursor:pointer}
-.tt-ticks{display:flex;justify-content:space-between;font-family:var(--f-code);font-size:10.5px;color:var(--dim)}
-.tt-ticks span{cursor:pointer}.tt-ticks span:hover{color:var(--fg)}
-.detached{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:7px 18px;background:color-mix(in srgb,var(--java) 18%,var(--bg));border-bottom:1px solid color-mix(in srgb,var(--java) 45%,var(--line));font-family:var(--f-code);font-size:12px}
-.detached[hidden]{display:none!important}
-.detached b{color:var(--java)}
-.detached button{margin-left:auto;font-family:var(--f-code);font-size:11.5px;padding:2px 9px;border-radius:5px;border:1px solid var(--java);background:none;color:var(--fg);cursor:pointer}
-.file.future>*:not(.fh){opacity:.28;filter:grayscale(.8);pointer-events:none}
-.file.future .fh::after{content:"// not created yet at this commit";margin-left:auto;color:var(--java)}
-.tree button.future,.tabs button.future{opacity:.35;text-decoration:line-through}
-.stat.past{opacity:.35}
-.code .iv{display:inline-block;margin-left:14px;padding:0 7px;border-radius:4px;background:color-mix(in srgb,var(--accent-bg) 16%,transparent);color:var(--fg);font-style:normal;font-size:11.5px;animation:ivin .25s ease both}
-@keyframes ivin{from{opacity:0;transform:translateX(-4px)}}
-.code .l.bp::after{content:"";position:absolute;left:54px;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--red)}
-.code .l.step{background:color-mix(in srgb,var(--accent-bg) 20%,transparent);box-shadow:inset 3px 0 0 var(--accent-bg)}
-.chipb.dbg{color:var(--red);border-color:color-mix(in srgb,var(--red) 50%,var(--line))}
-.tip{position:fixed;z-index:60;max-width:min(360px,90vw);background:var(--side);border:1px solid var(--line);border-radius:7px;box-shadow:0 14px 40px -12px rgba(0,0,0,.5);font-size:12.5px;pointer-events:none;overflow:hidden}
-.tip[hidden]{display:none!important}
-.tip code{display:block;padding:7px 10px;font-family:var(--f-code);font-size:12px;border-bottom:1px solid var(--line);color:var(--fn);background:var(--bg)}
-.tip p{margin:0;padding:7px 10px;color:var(--muted)}
-.code .fn[data-tip],.code .ac[data-tip]{cursor:help;text-decoration:underline dotted color-mix(in srgb,var(--fn) 50%,transparent);text-underline-offset:3px}
-.t-in{position:relative}
-.ghost{position:absolute;pointer-events:none;color:var(--dim);font-family:var(--f-code);font-size:12.5px;white-space:pre}
-.t-hint{font-family:var(--f-code);font-size:10.5px;color:var(--dim);white-space:nowrap}
-/* hire PR */
-.pull{padding:18px clamp(16px,3vw,32px) 26px;display:grid;gap:14px;max-width:980px}
-.pr-top{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.pr-top h3{margin:0;font-size:1.3rem}
-.pr-st{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:12.5px;font-weight:600;background:var(--ok);color:#fff}
-.pr-st.merged{background:var(--kw)}
-.pr-sub{font-family:var(--f-code);font-size:12px;color:var(--muted)}
-.pr-sub b{color:var(--fn);font-weight:500;background:var(--hl);padding:1px 6px;border-radius:5px}
-.checks{border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.checks div{display:flex;gap:10px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--line);font-size:13.5px;background:var(--panel)}
-.checks div:last-child{border-bottom:0}
-.checks i{width:16px;height:16px;border-radius:50%;flex:none;display:grid;place-items:center;font-style:normal;font-size:10px;border:2px solid var(--dim);border-top-color:transparent;animation:spin .8s linear infinite}
-.checks .ok i{border:0;background:var(--ok);color:#fff;animation:none}
-.checks .ok i::before{content:"✓"}
-.checks small{margin-left:auto;font-family:var(--f-code);font-size:11px;color:var(--muted)}
-@keyframes spin{to{transform:rotate(360deg)}}
-.diff{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-family:var(--f-code);font-size:12.5px;line-height:1.8}
-.diff span{display:block;padding:0 14px;white-space:pre-wrap}
-.diff .h{background:var(--hl);color:var(--muted)}
-.diff .a{background:color-mix(in srgb,var(--ok) 12%,transparent);color:var(--fg)}
-.diff .a::first-letter{color:var(--ok)}
-.diff .r{background:color-mix(in srgb,var(--red) 12%,transparent);color:var(--fg)}
-.merge{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
-.merge p{margin:0;flex:1;min-width:200px;font-size:13.5px}
-.btn.mg{background:var(--ok);border-color:var(--ok);color:#fff;font-weight:600}
-.btn.mg[disabled]{background:var(--kw);border-color:var(--kw);cursor:default}
-
-/* responsive */
-@media (max-width:1100px){.wb{grid-template-columns:48px 200px 1fr}}
-@media (max-width:900px){
-  .wb{grid-template-columns:1fr}.act,.side,.mm{display:none}.view{grid-template-columns:1fr}
-  .menu{display:none}.cmd{width:auto;flex:1;margin:0}
-  .split,.jgrid{grid-template-columns:1fr}.split>.code,.jgrid>.code{border-right:0;border-bottom:1px solid var(--line)}
-  .stats{grid-template-columns:1fr 1fr}
-  .bk-wrap{grid-template-columns:1fr}
-  .term{--th:170px}
-  .status .hide-m{display:none}
-  .t-chips,#probBtn{display:none}
-  .hero-md img{width:96px}
-}
-@media (max-width:560px){
-  .code{font-size:12px}.code .l{padding-left:44px;padding-right:12px}.code .l::before{width:30px;font-size:10.5px}.fold-btn{left:30px}
-  .ct-act,.foot{padding-left:16px}
-  .hero-md{grid-template-columns:1fr}
-  .title .tright .hide-s{display:none}
-}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.scroll{scroll-behavior:auto}}
+.contact{padding:140px 0 120px;text-align:center}
+.contact h2{font-size:clamp(44px,7vw,96px);letter-spacing:-.045em;line-height:1;margin:0}
+.contact h2 span{background:linear-gradient(90deg,var(--blue),var(--py));-webkit-background-clip:text;background-clip:text;color:transparent}
+.contact .cta{justify-content:center}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,120px);background:var(--fg);color:var(--bg);padding:12px 18px;border-radius:12px;font-weight:600;transition:transform .35s;z-index:70}
+.toast.show{transform:translate(-50%,0)}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--dim);font-family:var(--m);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hero h1 .w>span{transform:none}}
 </style>
 </head>
 <body>
+<div id="prog"></div>
+<div id="glow" aria-hidden="true"></div>
 
-
-<div class="app">
-  <header class="title">
-    <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
-    <nav class="menu" aria-label="Menu">
-      <button type="button" data-cmd="palette">File</button><button type="button" data-cmd="palette">Go</button><button type="button" data-cmd="term">Terminal</button><button type="button" data-cmd="theme">View</button><button type="button" data-cmd="help">Help</button>
-    </nav>
-    <button class="cmd" type="button" id="cmdBtn" aria-label="Open command palette"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>nishchal-ts</span><kbd>Ctrl K</kbd></button>
-    <div class="tright">
-      <button class="ico hide-s" type="button" data-cmd="term" aria-label="Toggle terminal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 15h18"/></svg></button>
-      <button class="ico" type="button" data-cmd="theme" aria-label="Toggle colour theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"/></svg></button>
+<nav class="top" id="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">nishchal<b>.py</b></a>
+    <div class="links">
+      <a href="#journey" class="hide-sm">Journey</a>
+      <a href="#work">Work</a>
+      <a href="#chailify" class="hide-xs">Chailify</a>
+      <a href="#skills" class="hide-sm">Skills</a>
+      <a href="#contact">Contact</a>
+      <button class="iconbtn" id="theme" type="button" aria-label="Switch light and dark theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
     </div>
-  </header>
+  </div>
+</nav>
 
-  <div class="wb">
-    <nav class="act" aria-label="Views">
-      <button type="button" aria-pressed="true" data-pane="explorer" aria-label="Explorer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></button>
-      <button type="button" aria-pressed="false" data-cmd="palette" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
-      <button type="button" aria-pressed="false" data-pane="scm" aria-label="Source control"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="5" r="2.2"/><circle cx="6" cy="19" r="2.2"/><circle cx="18" cy="8" r="2.2"/><path d="M6 7.2v9.6M18 10.2c0 4-6 3-11 6.5"/></svg></button>
-      <button type="button" aria-pressed="false" data-go="skills" aria-label="Extensions (skills)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></button>
-      <span class="sp"></span>
-      <button type="button" aria-pressed="false" data-go="contact" aria-label="Contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></button>
-    </nav>
-
-    <aside class="side">
-      <div class="sidepane" id="paneExplorer">
-        <h6>Explorer · nishchal-ts</h6>
-        <ul class="tree" id="tree"></ul>
+<header class="hero" id="top">
+  <div class="bgcode" id="bgcode" aria-hidden="true"></div>
+  <div class="wrap grid">
+    <div>
+      <span class="status"><span class="dot"></span>Open to backend &amp; full-stack roles · Bengaluru</span>
+      <h1 id="h1">Hi, I'm Nishchal. I build software for real networks.</h1>
+      <div class="type" aria-live="polite"><span>&gt; </span><b id="typed"></b><span class="caret"></span></div>
+      <p class="intro">Software engineer at <b>Infraon</b>. I started in <b>Java</b>, switched to <b>Python, Django and Angular</b> in July 2024, and now own whole modules of an enterprise network-monitoring platform. In my own time I built <b>Chailify</b>.</p>
+      <div class="cta">
+        <a class="btn pri" href="#work">See my work ↓</a>
+        <a class="btn" href="https://chailify.pages.dev" target="_blank" rel="noopener">Try Chailify ☕</a>
+        <button class="btn" type="button" data-copy>Copy email</button>
       </div>
-      <div class="sidepane" id="paneScm" hidden>
-        <h6>Source control · main</h6>
-        <div class="scm" id="scm"></div>
+    </div>
+    <div class="photo">
+      <div class="ring" aria-hidden="true"></div>
+      <img src="nishchal.webp" alt="Nishchal T S" width="560" height="700">
+      <span class="chip-float" style="left:-40px;top:14%;color:var(--py)">import django</span>
+      <span class="chip-float" style="right:-34px;top:46%;animation-delay:-2s;color:var(--red)">ng serve</span>
+      <span class="chip-float" style="left:-20px;bottom:10%;animation-delay:-3.5s;color:var(--green)">✓ 362 shipped</span>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">scroll<i></i></div>
+</header>
+
+<section class="wrap" id="impact">
+  <div class="rv">
+    <span class="kicker">At work, since July 2024</span>
+    <h2 class="title">Numbers from the board</h2>
+  </div>
+  <div class="stats">
+    <div class="stat rv" style="--c:var(--py)"><div class="n" data-count="362">0</div><div class="l">work items shipped</div></div>
+    <div class="stat rv d1" style="--c:var(--blue)"><div class="n" data-count="62">0</div><div class="l">features owned</div></div>
+    <div class="stat rv d2" style="--c:var(--green)"><div class="n" data-count="117">0</div><div class="l">user stories</div></div>
+    <div class="stat rv d3" style="--c:var(--red)"><div class="n" data-count="140" data-suffix="+">0</div><div class="l">bugs fixed</div></div>
+    <div class="stat rv d4" style="--c:var(--purple)"><div class="n" data-count="10" data-suffix="+">0</div><div class="l">releases, 7.3.15 → 7.5.2</div></div>
+  </div>
+</section>
+
+<section class="wrap sec" id="journey">
+  <div class="rv">
+    <span class="kicker">How I got here</span>
+    <h2 class="title">From Java to Python, on the job</h2>
+    <div class="morph"><span class="j">java</span><span class="mono" style="color:var(--dim)">→</span><span class="p" id="morph">python</span></div>
+  </div>
+  <div class="journey" id="jr">
+    <div class="jline"></div><div class="jfill" id="jfill"></div>
+    <div class="jstep rv" style="--c:var(--orange)"><span class="node"></span><div class="when">2019 – 2023</div><h3>B.E. Computer Science, GMIT</h3><p>Learned OOP, data structures, databases and networks. Our project <b>EasyNBA</b> automated student records for NBA accreditation and won <b>Best Project Implementation 2022–23</b>.</p><span class="tag">Java</span><span class="tag">PHP</span><span class="tag">SQL</span></div>
+    <div class="jstep rv" style="--c:var(--orange)"><span class="node"></span><div class="when">Jul 2023 – Jan 2024</div><h3>Java full-stack intern, KodNest</h3><p>Built <b>TuneHub</b>, a music streaming app on Spring Boot MVC where admins manage songs and subscriptions unlock the library.</p><span class="tag">Spring Boot</span><span class="tag">React</span><span class="tag">MySQL</span></div>
+    <div class="jstep rv" style="--c:var(--py)"><span class="node"></span><div class="when">Jul 2024 · the switch</div><h3>Joined a Python product team at Infraon</h3><p>A new language, a new framework and a large live codebase. I learned Python, Django and Angular on real tickets.</p><span class="tag">Python</span><span class="tag">Django</span><span class="tag">Angular</span></div>
+    <div class="jstep rv" style="--c:var(--py)"><span class="node"></span><div class="when">Oct 2024</div><h3>First feature shipped</h3><p>The single sign-on (OIDC) configuration screen, three months after switching stacks. Then I took over <b>IPAM</b>.</p></div>
+    <div class="jstep rv" style="--c:var(--blue)"><span class="node"></span><div class="when">Mar 2025</div><h3>Owned the attendance module end to end</h3><p>From the database model to the Angular widget to the Excel report managers download each morning.</p></div>
+    <div class="jstep rv" style="--c:var(--blue)"><span class="node"></span><div class="when">Oct 2025</div><h3>Made real hardware report cleanly</h3><p>Cisco SD-WAN across every tenant, Fortinet firewall HA pairs, Aruba ClearPass and WLC, Proxmox, EIGRP discovery.</p></div>
+    <div class="jstep rv" style="--c:var(--green)"><span class="node"></span><div class="when">2026</div><h3>Platform work, and my own product</h3><p>Kafka trap sync, Redis caching and topology rules at work. In my own time I designed, built and launched <b>Chailify</b>.</p></div>
+  </div>
+</section>
+
+<section class="wrap sec" id="work">
+  <div class="rv">
+    <span class="kicker">What I build at work</span>
+    <h2 class="title">Four things I own, running live</h2>
+    <p class="lead">I work on a platform that monitors company networks: routers, firewalls, servers and the IP addresses between them. Each card below is a small live sketch of what my code does.</p>
+  </div>
+  <div class="work">
+    <article class="card rv" style="--c:var(--green)">
+      <div class="viz" id="geoBox">
+        <div class="vlabel"><span class="live">● live</span> geofence</div>
+        <svg id="geo" viewBox="0 0 520 230" width="100%" height="100%" aria-label="People moving around an office; those inside the circle are marked present automatically" role="img">
+          <circle cx="260" cy="120" r="78" fill="none" stroke="var(--green)" stroke-dasharray="5 6" opacity=".7"/>
+          <circle cx="260" cy="120" r="6" fill="var(--green)"/>
+          <text x="260" y="104" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="var(--muted)">office</text>
+        </svg>
+        <div class="vstat"><span>auto-marked <b id="gIn">0</b></span><span>sent for approval <b id="gOut">0</b></span></div>
       </div>
-      <div class="who"><img src="nishchal.webp" alt="" width="560" height="700"><div><b>Nishchal T S</b><small>Software Engineer · Author</small></div></div>
-    </aside>
+      <div class="body">
+        <div class="when">Attendance · Mar 2025 → now · built end to end</div>
+        <h3>Attendance that marks itself</h3>
+        <p>Inside the office radius, you're marked present automatically. Outside it, the request goes to your manager. Every morning managers get an Excel report.</p>
+        <span class="tag">Django</span><span class="tag">Angular</span><span class="tag">MongoDB</span><span class="tag">Geolocation</span>
+      </div>
+    </article>
 
-    <section class="ed" aria-label="Editor">
-      <div class="tabs" id="tabs" role="tablist"></div>
-      <div class="crumbs" id="crumbs">nishchal-ts <span>›</span> <b>README.md</b></div>
-      <div class="view">
-        <div class="scroll" id="scroll">
-<div class="detached" id="det" hidden><span>⚠ detached HEAD at <b id="detL">2023</b>: you are viewing an older version of me.</span><button type="button" id="detBack">git checkout main</button></div>
+    <article class="card rv d1" style="--c:var(--blue)">
+      <div class="viz">
+        <div class="vlabel"><span class="live">● live</span> subnet 10.20.4.0/24 · hover an address</div>
+        <div id="sn"></div>
+        <div class="vstat"><span id="snTip">assigned <b id="snU">0</b> · reserved <b id="snR">0</b> · free <b id="snF">256</b></span></div>
+      </div>
+      <div class="body">
+        <div class="when">IPAM · Oct 2024 → now · my longest-running area</div>
+        <h3>Every IP address, accounted for</h3>
+        <p>Companies upload up to 5,000 rows at once. The code checks every subnet sits inside its parent, nothing overlaps, and keeps a history of who used each address and what it cost.</p>
+        <span class="tag">Django</span><span class="tag">MongoDB</span><span class="tag">Angular</span><span class="tag">Redis</span>
+      </div>
+    </article>
 
-<!-- README.md -->
-<article class="file" id="readme" data-file="README.md" data-path="README.md">
-  <div class="fh"><b>README.md</b><span>· preview</span></div>
-  <div class="md">
-    <div class="hero-md">
-      <img src="nishchal.webp" alt="Portrait of Nishchal T S" width="560" height="700">
-      <div>
-        <h1>Nishchal T S<span class="cur" aria-hidden="true"></span></h1>
-        <p class="typed" aria-live="polite">&gt; <span id="typed">Python · Django · Angular</span></p>
-        <div class="badges">
-          <span class="badge y"><b>role</b><span>software engineer</span></span>
-          <span class="badge b"><b>python</b><span>daily</span></span>
-          <span class="badge o"><b>java</b><span>where I started</span></span>
-          <span class="badge g"><b>status</b><span>open to roles</span></span>
-          <span class="badge p"><b>author</b><span>1 novel</span></span>
+    <article class="card rv" style="--c:var(--orange)">
+      <div class="viz">
+        <div class="vlabel"><span class="live">● live</span> scheduled polling</div>
+        <div class="sd">
+          <div class="col"><span class="pill">tenant A</span><span class="pill">tenant B</span><span class="pill">tenant C</span></div>
+          <div class="lanes"><svg viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true"><g id="sdLines" stroke="var(--line)" stroke-width="1.5" fill="none"><path d="M0 20 C100 20 100 60 200 60"/><path d="M0 60 L200 60"/><path d="M0 100 C100 100 100 60 200 60"/></g><g id="sdDots"></g></svg></div>
+          <div class="col"><span class="pill k">vManage → platform</span></div>
+        </div>
+        <div class="vstat"><span>device <b id="pD">0</b></span><span>interface <b id="pI">0</b></span><span>ipsla <b id="pS">0</b></span></div>
+      </div>
+      <div class="body">
+        <div class="when">Cisco SD-WAN · Oct 2025</div>
+        <h3>One dashboard for every customer's SD-WAN</h3>
+        <p>Finds each tenant, logs in to it, and on a schedule pulls device, interface and link-quality stats in bulk, so everything shows in one place.</p>
+        <span class="tag">Python</span><span class="tag">REST APIs</span><span class="tag">Celery</span>
+      </div>
+    </article>
+
+    <article class="card rv d1" style="--c:var(--py)">
+      <div class="viz">
+        <div class="vlabel"><span class="live">● live</span> which router is the parent?</div>
+        <div class="tp">
+          <div class="r" id="rA" style="left:8%;top:28%">R1</div>
+          <div class="meta" id="rAs" style="left:calc(8% - 44px);top:4%">BGP · 1G · .1</div>
+          <div class="r" id="rB" style="right:8%;top:28%">R2</div>
+          <div class="meta" id="rBs" style="right:calc(8% - 44px);top:4%">OSPF · 10G · .2</div>
+          <div class="rules"><span data-r="0">1 · protocol</span><span data-r="1">2 · link speed</span><span data-r="2">3 · smaller IP</span></div>
+          <div id="tpV">evaluating…</div>
         </div>
       </div>
-    </div>
-    <p>I trained as a <b>Java and Spring Boot</b> developer. In July 2024 I joined a product team whose platform runs on <b>Python, Django and Angular</b>, learned the stack on live tickets, and shipped my first feature three months later. Since then I've owned <b>IPAM</b>, built the <b>attendance module</b> end to end and adapted a run of network devices. I like the parts where software meets real hardware: making a firewall, an SD-WAN controller or a hypervisor report cleanly into one dashboard.</p>
-    <div class="stats">
-      <div class="stat" id="stWI"><b class="cnt" data-to="362">362</b><small id="stWIl">work items since Jul 2024</small></div>
-      <div class="stat sp2"><b class="cnt" data-to="62">62</b><small>features owned</small></div>
-      <div class="stat sp2"><b class="cnt" data-to="140" data-suf="+">140+</b><small>bugs fixed</small></div>
-      <div class="stat"><b class="cnt" data-to="10" data-suf="+">10+</b><small>releases, 7.3.15 → 7.5.2</small></div>
-    </div>
-    <div class="now"><code>$ git branch --show-current</code><span id="nowT">feature/47195-remote-diagnosis</span></div>
-    <div class="tt" id="tt">
-      <div class="tt-h"><code>$ git checkout</code><b id="ttLbl">main · now</b><span id="ttNote">Drag to travel through my history. The workspace changes with it.</span></div>
-      <input type="range" id="ttR" min="0" max="6" value="6" step="1" aria-label="Travel through my career history">
-      <div class="tt-ticks" id="ttTicks"><span data-v="0">2019</span><span data-v="1">2023</span><span data-v="2">Jul 24</span><span data-v="3">Oct 24</span><span data-v="4">Mar 25</span><span data-v="5">Oct 25</span><span data-v="6">now</span></div>
-    </div>
-    <p class="mono" style="font-size:12.5px;color:var(--muted)">Tip: hover dotted names in the code, press <b>Ctrl K</b>, hit <b>Debug</b> on attendance.py, or type <b>help</b> in the terminal.</p>
-  </div>
-</article>
-
-<!-- journey.py -->
-<article class="file" id="journey" data-file="journey.py" data-path="journey.py">
-  <div class="fh"><b>journey.py</b><span>· how a Java developer became a Python engineer</span><span class="act2"><button class="chipb run" type="button" data-run="journey">▶ Run</button></span></div>
-  <div class="jgrid">
-<pre class="code"><span class="l"><span class="cm"># journey.py: Java → Python, on the job</span></span><span class="l"><span class="kw">from</span> career <span class="kw">import</span> Milestone</span><span class="l"> </span><span class="l">journey = [</span><span class="l">    Milestone(<span class="st">"2019–2023"</span>, <span class="st">"B.E. Computer Science, GMIT"</span>, stack=[<span class="jv">"Java"</span>, <span class="jv">"PHP"</span>, <span class="jv">"SQL"</span>]),</span><span class="l">    Milestone(<span class="st">"2023-07"</span>, <span class="st">"Java full-stack intern, KodNest"</span>, stack=[<span class="jv">"Spring Boot"</span>, <span class="jv">"React"</span>]),</span><span class="l hl">    Milestone(<span class="st">"2024-07"</span>, <span class="st">"Joined a Python product team"</span>, stack=[<span class="ac">"Python"</span>, <span class="ac">"Django"</span>, <span class="ac">"Angular"</span>]),  <span class="cm"># the switch</span></span><span class="l">    Milestone(<span class="st">"2024-10"</span>, <span class="st">"First feature: OIDC single sign-on configuration UI"</span>),</span><span class="l">    Milestone(<span class="st">"2025-03"</span>, <span class="st">"Owned the attendance module end to end"</span>),</span><span class="l">    Milestone(<span class="st">"2025-10"</span>, <span class="st">"Cisco SD-WAN, Fortinet HA, Proxmox, Aruba ClearPass"</span>),</span><span class="l">    Milestone(<span class="st">"2026"</span>, <span class="st">"Kafka trap sync, Redis caching, topology rules"</span>),</span><span class="l">    Milestone(<span class="st">"2026-11"</span>, <span class="st">"Launched Chailify ☕, my own placement-prep app"</span>),  <span class="cm"># side project</span></span><span class="l">]</span><span class="l"> </span><span class="l"><span class="kw">assert</span> journey[-<span class="nu">1</span>].language == <span class="st">"python"</span></span></pre>
-    <div class="graph" id="graph">
-      <div class="lang"><span>java</span><i></i><span>python</span></div>
-      <svg viewBox="0 0 300 360" role="img" aria-label="Git graph: a java branch with two commits merges into a python main branch in July 2024, followed by four more commits">
-        <path class="gl j draw" style="--len:200" d="M40 20 L40 110 Q40 140 70 150"/>
-        <path class="gl p draw" style="--len:320" d="M70 150 L70 340"/>
-        <circle class="gc j" cx="40" cy="30" r="7"/><text x="58" y="34">2019 · B.E. in Java</text>
-        <circle class="gc j" cx="40" cy="90" r="7"/><text x="58" y="94">2023 · Spring Boot intern</text>
-        <circle class="gc m" cx="70" cy="150" r="9"/><text x="88" y="148">Jul 2024 · merge → python</text><text class="s" x="88" y="162">joined the Python team</text>
-        <circle class="gc p" cx="70" cy="200" r="7"/><text x="88" y="204">Oct 2024 · first feature</text>
-        <circle class="gc p" cx="70" cy="245" r="7"/><text x="88" y="249">Mar 2025 · attendance module</text>
-        <circle class="gc p" cx="70" cy="290" r="7"/><text x="88" y="294">Oct 2025 · SD-WAN polling</text>
-        <circle class="gc p" cx="70" cy="335" r="7"/><text x="88" y="339">2026 · Kafka, Redis, topology</text>
-        <text class="s" x="12" y="14">java</text><text class="s" x="60" y="356">HEAD → main</text>
-      </svg>
-    </div>
-  </div>
-</article>
-
-<!-- experience.json -->
-<article class="file" id="experience" data-file="experience.json" data-path="experience.json">
-  <div class="fh"><b>experience.json</b><span>· click ▾ to fold</span><span class="act2"><button class="chipb" type="button" id="foldAll">fold all</button><button class="chipb" type="button" id="unfoldAll">unfold all</button></span></div>
-<pre class="code" id="xpCode"></pre>
-</article>
-
-<!-- projects -->
-<article class="file" id="p-chailify" data-file="chailify.py" data-path="projects › chailify.py">
-  <div class="fh"><b>projects/chailify.py</b><span>· side project · live at <a href="https://chailify.pages.dev" target="_blank" rel="noopener">chailify.pages.dev</a></span></div>
-  <div class="split">
-<pre class="code"><span class="l"><span class="cm"># Chailify · 2026 · placement prep, simplified with chai ☕</span></span><span class="l"><span class="cm"># my own product, built and launched solo</span></span><span class="l"> </span><span class="l"><span class="kw">def</span> <span class="fn">mock_interview</span>(student):</span><span class="l">    q = ai.<span class="fn">ask</span>(stack=student.stack, resume=student.resume)</span><span class="l">    answer = <span class="fn">listen</span>(student)  <span class="cm"># speech to text</span></span><span class="l">    <span class="kw">for</span> _ <span class="kw">in</span> <span class="fn">range</span>(<span class="nu">2</span>):</span><span class="l">        q = ai.<span class="fn">cross_question</span>(answer)  <span class="cm"># on what they said</span></span><span class="l">    <span class="kw">return</span> ai.<span class="fn">review</span>()  <span class="cm"># score + model answers</span></span><span class="l"> </span><span class="l"><span class="kw">def</span> <span class="fn">submit</span>(solution):</span><span class="l">    <span class="kw">if</span> <span class="fn">run_tests</span>(solution).passed:  <span class="cm"># in the browser</span></span><span class="l">        github.<span class="fn">push</span>(solution)  <span class="cm"># one click, to their repo</span></span><span class="l"> </span><span class="l"><span class="cm"># also: time tracking, aptitude, mock tests,</span></span><span class="l"><span class="cm"># reports, Google sign-in, Telegram nudges</span></span></pre>
-    <div class="pv">
-      <div class="pv-h"><span>preview · what a student does</span><span>live</span></div>
-      <div class="pipe">
-        <div class="pr"><span class="pn">your answer</span><span class="lane" id="chLane1"></span><span class="pn k">AI cross-question</span></div>
-        <div class="pr"><span class="pn">write + run</span><span class="lane" id="chLane2"></span><span class="pn k">7/7 tests ✓</span></div>
-        <div class="pr"><span class="pn">one click</span><span class="lane r" id="chLane3"></span><span class="pn r">your GitHub</span></div>
+      <div class="body">
+        <div class="when">Topology · 2026</div>
+        <h3>Drawing the network map correctly</h3>
+        <p>When two devices connect, simple rules decide which is the parent: protocol first, then link speed, then the smaller IP. Manual fixes survive rediscovery.</p>
+        <span class="tag">Python</span><span class="tag">Graph logic</span><span class="tag">CMDB</span>
       </div>
-      <p style="margin:0;font-size:13px;color:var(--muted);line-height:1.6">A free app that takes students and developers from their first line of code to an offer letter. Built with Django REST Framework and Angular 20, Postgres on Neon, Gemini AI, GitHub OAuth and a Telegram bot. Hosted for ₹0 on Render and Cloudflare Pages.</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="https://chailify.pages.dev" target="_blank" rel="noopener">▶ Open Chailify</a></div>
-      <div class="tags"><span>Django</span><span>DRF</span><span>Angular</span><span>PostgreSQL</span><span>Gemini AI</span><span>OAuth</span><span>Telegram</span></div>
-    </div>
-  </div>
-</article>
+    </article>
 
-<article class="file" id="p-attendance" data-file="attendance.py" data-path="projects › attendance.py">
-  <div class="fh"><b>projects/attendance.py</b><span>· simplified sketch + live preview</span><span class="act2"><button class="chipb dbg" type="button" id="dbgBtn">● Debug</button></span></div>
-  <div class="split">
-<pre class="code" id="attCode"><span class="l"><span class="cm"># Attendance · Mar 2025 → present · built end to end</span></span><span class="l"><span class="kw">def</span> <span class="fn">mark_attendance</span>(user, location):</span><span class="l">    distance_m = <span class="fn">haversine</span>(location, user.base_location)</span><span class="l">    <span class="kw">if</span> distance_m &lt;= config.radius_m:</span><span class="l">        <span class="kw">return</span> Attendance.<span class="fn">auto</span>(user, distance_m)</span><span class="l">    <span class="kw">return</span> Attendance.<span class="fn">request_approval</span>(user, manager=user.reports_to)</span><span class="l"> </span><span class="l"><span class="cm"># also: auto clock-out on logout or timeout, role permissions,</span></span><span class="l"><span class="cm"># a live widget, a daily Excel report (H · P · A · WO legends)</span></span><span class="l"><span class="cm"># and absent logs generated for people with no entry</span></span></pre>
-    <div class="pv">
-      <div class="pv-h"><span>preview · geofence</span><span>live</span></div>
-      <svg class="vis" id="geo" viewBox="0 0 320 220" role="img" aria-label="Engineers moving around a geofence: inside are marked automatically, outside go to the manager">
-        <circle cx="160" cy="110" r="74" class="g-r"/><circle cx="160" cy="110" r="74" class="g-p"/>
-        <circle cx="160" cy="110" r="5" fill="var(--accent-bg)"/><text x="160" y="98" text-anchor="middle">base</text>
-      </svg>
-      <div class="vk"><span><i style="background:var(--ok)"></i>auto marked <b id="geoIn">0</b></span><span><i style="background:var(--num)"></i>sent for approval <b id="geoOut">0</b></span></div>
-      <div class="tags"><span>Django</span><span>Angular</span><span>MongoDB</span><span>Geolocation</span><span>xlsxwriter</span></div>
-    </div>
-  </div>
-</article>
-
-<article class="file" id="p-ipam" data-file="ipam.py" data-path="projects › ipam.py">
-  <div class="fh"><b>projects/ipam.py</b><span>· simplified sketch + live preview</span></div>
-  <div class="split">
-<pre class="code"><span class="l"><span class="cm"># IP Address Management · Oct 2024 → present · my longest-running area</span></span><span class="l"><span class="kw">for</span> row <span class="kw">in</span> <span class="fn">read_csv</span>(upload, limit=<span class="nu">5000</span>):</span><span class="l">    parent = <span class="fn">resolve_parent</span>(row)         <span class="cm"># container → sub-container → block</span></span><span class="l">    <span class="fn">validate_hierarchy</span>(row, parent)     <span class="cm"># inside parent range, no overlaps</span></span><span class="l">    <span class="fn">check_msp_scope</span>(row, user.customer) <span class="cm"># MSP ownership</span></span><span class="l">    subnet = Subnet.<span class="fn">create</span>(row)</span><span class="l">    IPAsset.<span class="fn">generate_for</span>(subnet)        <span class="cm"># one asset per usable address</span></span><span class="l"> </span><span class="l"><span class="cm"># also: per-IP audit trail (cost, assignment, procurement),</span></span><span class="l"><span class="cm"># block and sub-container merge, bulk tagging, state-change events</span></span></pre>
-    <div class="pv">
-      <div class="pv-h"><span>preview · 10.20.4.0/24</span><span class="mono" id="snTip">hover an address</span></div>
-      <div class="sn" id="snGrid" aria-label="Example subnet map of 256 addresses"></div>
-      <div class="vk"><span><i style="background:var(--py)"></i>assigned <b id="snU">0</b></span><span><i style="background:var(--kw)"></i>reserved <b id="snR">0</b></span><span><i style="background:var(--hl);border:1px solid var(--line)"></i>free <b id="snF">256</b></span></div>
-      <div class="tags"><span>Django</span><span>MongoDB</span><span>Angular</span><span>Redis</span></div>
-    </div>
-  </div>
-</article>
-
-<article class="file" id="p-sdwan" data-file="sdwan.py" data-path="projects › sdwan.py">
-  <div class="fh"><b>projects/sdwan.py</b><span>· simplified sketch + live preview</span></div>
-  <div class="split">
-<pre class="code"><span class="l"><span class="cm"># Cisco SD-WAN, every tenant · Oct 2025</span></span><span class="l"><span class="kw">for</span> tenant <span class="kw">in</span> vmanage.<span class="fn">discover_tenants</span>():</span><span class="l">    session = vmanage.<span class="fn">login</span>(tenant)</span><span class="l">    <span class="kw">for</span> kind <span class="kw">in</span> (<span class="st">"device"</span>, <span class="st">"interface"</span>, <span class="st">"ipsla"</span>):</span><span class="l">        stats = session.<span class="fn">bulk_api</span>(kind, since=last_poll)</span><span class="l">        <span class="fn">publish</span>(stats)</span><span class="l"> </span><span class="l"><span class="cm"># runs on a schedule across all tenants</span></span></pre>
-    <div class="pv">
-      <div class="pv-h"><span>preview · bulk polling</span><span>live</span></div>
-      <svg class="vis" viewBox="0 0 320 200" role="img" aria-label="Three tenants polled through vManage into the platform">
-        <path class="sw-l" d="M80 40 C140 40 120 100 160 100"/><path class="sw-l" d="M80 100 L160 100"/><path class="sw-l" d="M80 160 C140 160 120 100 160 100"/><path class="sw-a" d="M186 100 L244 100"/>
-        <rect class="sw-n" x="12" y="26" width="68" height="28" rx="6"/><text class="t" x="46" y="44">tenant A</text>
-        <rect class="sw-n" x="12" y="86" width="68" height="28" rx="6"/><text class="t" x="46" y="104">tenant B</text>
-        <rect class="sw-n" x="12" y="146" width="68" height="28" rx="6"/><text class="t" x="46" y="164">tenant C</text>
-        <circle class="sw-c" cx="160" cy="100" r="26"/><text class="t" x="160" y="104">vManage</text>
-        <rect class="sw-n" x="244" y="82" width="68" height="36" rx="7" style="stroke:var(--accent-bg)"/><text class="t" x="278" y="104">platform</text>
-        <circle r="4" fill="var(--py)"><animateMotion dur="2.2s" repeatCount="indefinite" path="M80 40 C140 40 120 100 160 100 L244 100"/></circle>
-        <circle r="4" fill="var(--ok)"><animateMotion dur="2.6s" begin=".7s" repeatCount="indefinite" path="M80 100 L244 100"/></circle>
-        <circle r="4" fill="var(--num)"><animateMotion dur="2.4s" begin="1.3s" repeatCount="indefinite" path="M80 160 C140 160 120 100 160 100 L244 100"/></circle>
-      </svg>
-      <div class="vk"><span>device <b id="pD">0</b></span><span>interface <b id="pI">0</b></span><span>ipsla <b id="pS">0</b></span></div>
-      <div class="tags"><span>REST APIs</span><span>Python</span><span>Scheduling</span></div>
-    </div>
-  </div>
-</article>
-
-<article class="file" id="p-topology" data-file="topology.py" data-path="projects › topology.py">
-  <div class="fh"><b>projects/topology.py</b><span>· simplified sketch + live preview</span></div>
-  <div class="split">
-<pre class="code" id="topoCode"><span class="l"><span class="cm"># Topology engine · 2026 · which device is the parent?</span></span><span class="l">RULES = [</span><span class="l" data-r="0">    protocol_rank,   <span class="cm"># BGP beats OSPF</span></span><span class="l" data-r="1">    link_speed,      <span class="cm"># higher configured speed</span></span><span class="l" data-r="2">    smaller_ip,      <span class="cm"># final tie-breaker</span></span><span class="l">]</span><span class="l"> </span><span class="l"><span class="kw">def</span> <span class="fn">pick_parent</span>(a, b):</span><span class="l">    <span class="kw">for</span> rule <span class="kw">in</span> RULES:</span><span class="l">        <span class="kw">if</span> winner := <span class="fn">rule</span>(a, b):</span><span class="l">            <span class="kw">return</span> winner</span><span class="l"> </span><span class="l"><span class="cm"># manual link swaps survive rediscovery</span></span></pre>
-    <div class="pv">
-      <div class="pv-h"><span>preview · rule evaluation</span><span>live</span></div>
-      <svg class="vis" viewBox="0 0 320 210" role="img" aria-label="Two routers compared rule by rule until a parent is chosen">
-        <line x1="100" y1="80" x2="220" y2="80" stroke="var(--line)" stroke-width="2"/><line x1="100" y1="80" x2="70" y2="170" stroke="var(--line)" stroke-width="2"/><line x1="100" y1="80" x2="140" y2="170" stroke="var(--line)" stroke-width="2"/><line x1="220" y1="80" x2="250" y2="170" stroke="var(--line)" stroke-width="2"/>
-        <g class="tp-n" id="rA"><circle cx="100" cy="80" r="22"/><text class="t" x="100" y="84">R1</text><text x="100" y="44" text-anchor="middle" id="rAs">BGP · 1G · .1</text></g>
-        <g class="tp-n" id="rB"><circle cx="220" cy="80" r="22"/><text class="t" x="220" y="84">R2</text><text x="220" y="44" text-anchor="middle" id="rBs">OSPF · 10G · .2</text></g>
-        <circle cx="70" cy="170" r="11" class="sw-c"/><circle cx="140" cy="170" r="11" class="sw-c"/><circle cx="250" cy="170" r="11" class="sw-c"/>
-        <text class="tp-v" x="160" y="202" id="tpV">evaluating…</text>
-      </svg>
-      <div class="tags"><span>Python</span><span>Graph logic</span><span>CMDB</span></div>
-    </div>
-  </div>
-</article>
-
-<article class="file" id="p-platform" data-file="platform.py" data-path="projects › platform.py">
-  <div class="fh"><b>projects/platform.py</b><span>· Kafka, Redis and multi-vendor devices</span></div>
-  <div class="split">
-<pre class="code"><span class="l"><span class="cm"># Platform work · 2026</span></span><span class="l"><span class="kw">def</span> <span class="fn">delete_trap_config</span>(cfg_id):</span><span class="l">    TrapConfig.<span class="fn">soft_delete</span>(cfg_id)</span><span class="l">    kafka.<span class="fn">produce</span>(<span class="st">"trap_config"</span>, {<span class="st">"op"</span>: <span class="st">"delete"</span>, <span class="st">"id"</span>: cfg_id})</span><span class="l"> </span><span class="l"><span class="ac">@invalidates</span>(<span class="st">"license:ip_asset_count"</span>)  <span class="cm"># Redis cache</span></span><span class="l"><span class="kw">def</span> <span class="fn">create_ip_asset</span>(data): ...</span><span class="l"> </span><span class="l">ADAPTED = [<span class="st">"Fortinet HA"</span>, <span class="st">"Aruba ClearPass"</span>, <span class="st">"Aruba WLC"</span>,</span><span class="l">           <span class="st">"Cisco vPC/VDC"</span>, <span class="st">"EIGRP"</span>, <span class="st">"Proxmox"</span>, <span class="st">"HP"</span>]</span></pre>
-    <div class="pv">
-      <div class="pv-h"><span>preview · event flow</span><span>live</span></div>
-      <div class="pipe">
-        <div class="pr"><span class="pn">API delete</span><span class="lane" id="lane1"></span><span class="pn k">kafka topic</span></div>
-        <div class="pr"><span class="pn k">kafka topic</span><span class="lane" id="lane2"></span><span class="pn">trap consumers</span></div>
-        <div class="pr"><span class="pn">IP asset created</span><span class="lane r" id="lane3"></span><span class="pn r">redis count reset</span></div>
-      </div>
-      <div class="tags"><span>Kafka</span><span>Redis</span><span>SNMP</span><span>Celery</span></div>
-    </div>
-  </div>
-</article>
-
-<article class="file" id="p-legacy" data-file="TuneHub.java" data-path="legacy › TuneHub.java">
-  <div class="fh"><b>legacy/TuneHub.java</b><span>· archived · before Python</span></div>
-<pre class="code"><span class="l"><span class="cm">// legacy/ · the Java years, kept for history</span></span><span class="l"><span class="kw">@RestController</span> <span class="kw">class</span> <span class="jv">TuneHub</span> {  <span class="cm">// 2023 · Spring Boot · React · MySQL</span></span><span class="l">  <span class="cm">// music streaming on MVC; admins manage songs; subscriptions unlock the library</span></span><span class="l">}</span><span class="l"> </span><span class="l"><span class="cm">// legacy/EasyNBA.php · 2022–23 · PHP · JavaScript · SQL</span></span><span class="l"><span class="cm">// automates student records for NBA accreditation at GMIT</span></span><span class="l"><span class="cm">// won Best Project Implementation 2022–23</span></span></pre>
-</article>
-
-<!-- skills -->
-<article class="file" id="skills" data-file="Extensions" data-path="Extensions: skills">
-  <div class="fh"><b>Extensions</b><span>· installed skills</span></div>
-  <div class="ext">
-    <div class="ext-top">
-      <input id="extQ" type="search" placeholder="Search installed skills…" aria-label="Search skills">
-      <div id="extCats" style="display:flex;gap:6px;flex-wrap:wrap"></div>
-    </div>
-    <div class="ext-list" id="extList"></div>
-  </div>
-</article>
-
-<!-- novel.md -->
-<article class="file" id="novel" data-file="novel.md" data-path="novel.md">
-  <div class="fh"><b>novel.md</b><span>· preview</span><span class="act2"><button class="chipb" type="button" id="bkBtn">open book</button></span></div>
-  <div class="bk-wrap md">
-    <div class="bk-stage"><div class="bk" id="bk" role="button" tabindex="0" aria-label="Open or close the book">
-      <div class="bk-page"><small>a novel</small><b>Somewhere, Somehow and Some-One</b><span>Nishchal Tharayil</span><i style="font-style:normal;color:#b03a5b">♥</i></div>
-      <div class="bk-cover"><img src="book-cover.webp" alt="Cover of the novel Somewhere, Somehow and Some-One by Nishchal Tharayil" width="560" height="869" loading="lazy"><span class="bk-back"></span></div>
-    </div></div>
-    <div class="bk-t">
-      <h2># I also write novels.</h2>
-      <div class="bt">Somewhere, Somehow and Some-One</div>
-      <span class="by">by Nishchal Tharayil</span>
-      <p>A romance novel I wrote and published. Writing a book takes the same things as shipping a feature: a plan, hundreds of small drafts and the patience to see it through to the last page.</p>
-      <div class="tags"><span>author</span><span>romance fiction</span><span>storytelling</span></div>
-    </div>
-  </div>
-</article>
-
-<!-- education.toml -->
-<article class="file" id="education" data-file="education.toml" data-path="education.toml">
-  <div class="fh"><b>education.toml</b></div>
-<pre class="code"><span class="l"><span class="pu">[</span><span class="ky">degree</span><span class="pu">]</span></span><span class="l">name    = <span class="st">"B.E. Computer Science Engineering"</span></span><span class="l">college = <span class="st">"GM Institute of Technology, Davanagere"</span></span><span class="l">years   = <span class="st">"2019–2023"</span></span><span class="l">studied = [<span class="st">"OOP"</span>, <span class="st">"data structures"</span>, <span class="st">"RDBMS"</span>, <span class="st">"web development"</span>, <span class="st">"networks"</span>]</span><span class="l"> </span><span class="l"><span class="pu">[</span><span class="ky">pre_university</span><span class="pu">]</span></span><span class="l">stream  = <span class="st">"PCMB"</span></span><span class="l">college = <span class="st">"Siddaganga PU College, Davanagere"</span></span><span class="l">years   = <span class="st">"2017–2019"</span></span><span class="l"> </span><span class="l"><span class="pu">[[</span><span class="ky">recognition</span><span class="pu">]]</span></span><span class="l">title = <span class="st">"Best Project Implementation 2022–23"</span>  <span class="cm"># team award for EasyNBA</span></span><span class="l"><span class="pu">[[</span><span class="ky">recognition</span><span class="pu">]]</span></span><span class="l">title = <span class="st">"NPTEL · Database Management Systems · IIT Kharagpur"</span></span><span class="l"><span class="pu">[[</span><span class="ky">recognition</span><span class="pu">]]</span></span><span class="l">title = <span class="st">"NPTEL Silver · The Joy of Computing using Python · IIT Madras"</span>  <span class="cm"># Python, years before it became my job</span></span></pre>
-</article>
-
-<!-- hire-me pull request -->
-<article class="file" id="hire" data-file="Pull request #1" data-path="Pull requests › #1 hire/nishchal-ts">
-  <div class="fh"><b>Pull request #1</b><span>· hire/nishchal-ts</span></div>
-  <div class="pull">
-    <div class="pr-top"><span class="pr-st" id="prSt">⇄ Open</span><h3>Add Nishchal T S to your team</h3></div>
-    <div class="pr-sub"><b>hire/nishchal-ts</b> → <b>your-team:main</b> · 1 commit · +5 −1</div>
-    <div class="checks" id="checks">
-      <div><i></i>build · python, django, angular<small>daily</small></div>
-      <div><i></i>tests · 362 work items shipped since Jul 2024<small>passing</small></div>
-      <div><i></i>coverage · IPAM, attendance, SD-WAN, topology, devices<small>5 areas</small></div>
-      <div><i></i>docs · clear writing, plus a published novel<small>1 book</small></div>
-      <div><i></i>review · 10+ product releases<small>approved</small></div>
-    </div>
-<pre class="diff"><span class="h">@@ team.py @@</span><span class="a">+ python, django, angular · daily, in production</span><span class="a">+ 2+ years shipping features on an enterprise platform</span><span class="a">+ owns modules end to end: IPAM and attendance</span><span class="a">+ makes real hardware report cleanly: SNMP, SD-WAN, firewalls</span><span class="a">+ explains things clearly, and wrote a novel</span><span class="r">- java  # moved to legacy/, still fluent</span></pre>
-    <div class="merge"><p id="mgTxt">All checks have passed. This branch has no conflicts with your team.</p><button class="btn mg" type="button" id="mgBtn">Merge pull request</button><a class="btn" href="mailto:nishchaltharayil2001@gmail.com?subject=Let%27s%20talk">Email instead</a></div>
-  </div>
-</article>
-
-<!-- contact.sh -->
-<article class="file" id="contact" data-file="contact.sh" data-path="contact.sh">
-  <div class="fh"><b>contact.sh</b><span class="act2"><button class="chipb run" type="button" data-run="contact">▶ Run</button></span></div>
-<pre class="code"><span class="l"><span class="cm">#!/usr/bin/env bash</span></span><span class="l"><span class="cm"># contact.sh: let's build something reliable</span></span><span class="l">EMAIL=<span class="st">"nishchaltharayil2001@gmail.com"</span></span><span class="l">LOCATION=<span class="st">"Bengaluru · IST (UTC+5:30)"</span></span><span class="l">OPEN_TO=(<span class="st">"backend"</span> <span class="st">"full-stack"</span> <span class="st">"network software"</span>)</span><span class="l"> </span><span class="l"><span class="fn">echo</span> <span class="st">"Reach me at $EMAIL"</span></span></pre>
-  <div class="ct-act">
-    <button class="btn pri" type="button" id="copyBtn">Copy email</button>
-    <a class="btn" href="mailto:nishchaltharayil2001@gmail.com">Open mail app</a>
-    <button class="btn" type="button" data-run="contact">▶ Run in terminal</button>
-  </div>
-  <div class="foot" id="footA">© <span id="yr">2026</span> Nishchal T S · built like an editor, because that's where I live · <span id="mailTxt">nishchaltharayil2001@gmail.com</span></div>
-</article>
-
-
+    <article class="card rv" style="--c:var(--purple);grid-column:1/-1">
+      <div class="viz" style="height:190px">
+        <div class="vlabel"><span class="live">● live</span> event flow</div>
+        <div class="ev">
+          <div class="row"><span class="pill">API delete</span><span class="lane" id="l1"></span><span class="pill k">Kafka topic</span></div>
+          <div class="row"><span class="pill k">Kafka topic</span><span class="lane" id="l2"></span><span class="pill">trap consumers</span></div>
+          <div class="row"><span class="pill">IP asset created</span><span class="lane r" id="l3"></span><span class="pill" style="border-color:var(--red);color:var(--red)">Redis count reset</span></div>
         </div>
-        <div class="mm" id="mm" aria-hidden="true"><canvas id="mmc"></canvas><div class="vp" id="mmv"></div></div>
       </div>
-    </section>
+      <div class="body">
+        <div class="when">Platform · 2026</div>
+        <h3>Keeping everything in sync, instantly</h3>
+        <p>When a trap configuration changes, a Kafka event tells every consumer. When IP assets are created, the cached licence count in Redis resets so nobody sees a stale number.</p>
+        <span class="tag">Kafka</span><span class="tag">Redis</span><span class="tag">SNMP</span><span class="tag">Celery</span>
+      </div>
+    </article>
   </div>
+  <div class="marq rv" aria-label="Devices and systems I've integrated">
+    <div class="t" id="marq"></div>
+  </div>
+</section>
 
-  <section class="term" id="term" aria-label="Terminal">
-    <div class="t-tabs"><button class="on" type="button">Terminal</button><button type="button" id="probBtn">Problems <span style="color:var(--ok)">0</span></button><span class="sp"></span><span class="t-chips" id="tChips"></span><button type="button" data-cmd="term" aria-label="Collapse or expand terminal" id="tToggle">▾</button></div>
-    <div class="t-out" id="tOut" aria-live="polite"></div>
-    <form class="t-in" id="tForm" autocomplete="off"><label for="tIn">visitor@nishchal-ts:~$</label><input id="tIn" type="text" spellcheck="false" placeholder="type help" aria-label="Terminal command"><span class="ghost" id="ghost" aria-hidden="true"></span><span class="t-hint">Tab ↹ complete · ↑ history</span></form>
-  </section>
+<section class="chai" id="chailify">
+  <div class="wrap grid">
+    <div class="rv">
+      <span class="k">MY OWN PRODUCT · LIVE</span>
+      <h2>Chai<span>lify</span></h2>
+      <p class="q">Most freshers walk into their first real interview having never faced one. Chailify lets them face it first, for free.</p>
+      <div class="feat">
+        <div><span class="ic">AI</span><span><b>AI mock interviews</b><small>Knows your stack and resume, listens, and cross-questions you. Then a score and a model answer.</small></span></div>
+        <div><span class="ic">&gt;_</span><span><b>Write and run code in the browser</b><small>Python with tests and daily problems at your level.</small></span></div>
+        <div><span class="ic">⇪</span><span><b>One click to GitHub</b><small>Every solved problem lands in your own repo.</small></span></div>
+        <div><span class="ic">24</span><span><b>Your whole day, tracked</b><small>Aptitude, weekly mock tests, reports and Telegram nudges.</small></span></div>
+      </div>
+      <div class="cta">
+        <a class="btn pri" href="https://chailify.pages.dev" target="_blank" rel="noopener">Open chailify.pages.dev</a>
+        <span class="mono" style="color:#c9a27a;font-size:13px;align-self:center">Django · Angular · PostgreSQL · Gemini AI</span>
+      </div>
+    </div>
+    <div class="vid rv d2">
+      <video src="media/chailify-promo.mp4" poster="media/chailify-poster.jpg" muted loop playsinline preload="metadata" id="vid" aria-label="Chailify promo video"></video>
+    </div>
+  </div>
+</section>
 
-  <footer class="status">
-    <span id="brS">⎇ main</span><span class="hide-m">⟳ synced</span><span>✓ 0 problems</span><span class="hide-m">362 work items</span>
-    <span class="sp"></span>
-    <span class="hide-m" id="lnCol">Ln 1, Col 1</span><span class="hide-m" id="langS">Python 3.13</span><span class="hide-m">UTF-8</span><span id="clock">IST</span><button type="button" class="live" data-go="contact">open to roles</button>
-  </footer>
-</div>
+<section class="wrap sec" id="skills">
+  <div class="rv">
+    <span class="kicker">Tools I use</span>
+    <h2 class="title">Skills, with honest levels</h2>
+  </div>
+  <div class="filters rv" id="filters" role="group" aria-label="Filter skills"></div>
+  <div class="skills" id="skillList"></div>
+</section>
 
-<div class="tip" id="tip" hidden><code id="tipC"></code><p id="tipP"></p></div>
-<div class="pal-w" id="pal" hidden><div class="pal" role="dialog" aria-label="Command palette"><input id="palIn" type="text" placeholder="Go to file or run a command…" aria-label="Search files and commands" autocomplete="off"><ul id="palList" role="listbox"></ul></div></div>
+<section class="wrap sec">
+  <div class="two">
+    <div class="panel rv book">
+      <div class="cover"><img src="book-cover.webp" alt="Cover of the novel Somewhere, Somehow and Some-One" width="560" height="869"></div>
+      <div style="flex:1 1 220px">
+        <span class="kicker">Off the keyboard</span>
+        <h3 style="font-size:28px;margin:8px 0 0;letter-spacing:-.02em">I also write novels</h3>
+        <p style="color:var(--muted)">I wrote and published a romance novel, <b style="color:var(--fg)">Somewhere, Somehow and Some-One</b>. A book takes the same things as a feature: a plan, hundreds of small drafts, and the patience to finish.</p>
+      </div>
+    </div>
+    <div class="panel rv d1">
+      <span class="kicker">Education</span>
+      <h3 style="font-size:28px;margin:8px 0 0;letter-spacing:-.02em">Where I studied</h3>
+      <ul class="edu">
+        <li><b>B.E. Computer Science Engineering</b>, GM Institute of Technology, Davanagere · 2019–2023</li>
+        <li><b>PU (PCMB)</b>, Siddaganga PU College, Davanagere · 2017–2019</li>
+        <li><b>Best Project Implementation 2022–23</b> · EasyNBA (team)</li>
+        <li><b>NPTEL</b> · Database Management Systems, IIT Kharagpur</li>
+        <li><b>NPTEL Silver</b> · The Joy of Computing using Python, IIT Madras</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact wrap" id="contact">
+  <div class="rv">
+    <span class="kicker">Let's talk</span>
+    <h2 style="margin-top:14px">Building something reliable?<br><span>Let's build it together.</span></h2>
+    <p class="lead" style="margin:22px auto 0">Open to backend, full-stack and network-software roles · Bengaluru, IST (UTC+5:30)</p>
+    <div class="cta">
+      <a class="btn pri" href="mailto:nishchaltharayil2001@gmail.com?subject=Let%27s%20talk">nishchaltharayil2001@gmail.com</a>
+      <button class="btn" type="button" data-copy>Copy email</button>
+      <a class="btn" href="https://www.linkedin.com/in/nishchalts" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/NishchalTharayil" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Nishchal T S</span><span>Made with Python-coloured pixels · <a href="workspace.html">the old code-editor version</a></span></div></footer>
+<div class="toast" id="toast" role="status">Email copied</div>
 
 <script>
-(function(){
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-const root=document.documentElement,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const sc=$('#scroll');
-const FILES=[
-  {id:'readme',name:'README.md',ic:'M',col:'var(--py)',gd:'',d:0,s:0},
-  {id:'journey',name:'journey.py',s:0,ic:'py',col:'var(--accent)',gd:'M',d:0},
-  {id:'experience',name:'experience.json',s:2,ic:'{}',col:'var(--num)',gd:'M',d:0},
-  {dir:'projects',d:0},
-  {id:'p-chailify',name:'chailify.py',s:6,ic:'py',col:'var(--accent)',gd:'A',d:1},
-  {id:'p-attendance',name:'attendance.py',s:4,ic:'py',col:'var(--accent)',gd:'U',d:1},
-  {id:'p-ipam',name:'ipam.py',s:3,ic:'py',col:'var(--accent)',gd:'M',d:1},
-  {id:'p-sdwan',name:'sdwan.py',s:5,ic:'py',col:'var(--accent)',gd:'U',d:1},
-  {id:'p-topology',name:'topology.py',s:6,ic:'py',col:'var(--accent)',gd:'U',d:1},
-  {id:'p-platform',name:'platform.py',s:6,ic:'py',col:'var(--accent)',gd:'U',d:1},
-  {dir:'legacy',d:0,legacy:true},
-  {id:'p-legacy',name:'TuneHub.java',s:1,ic:'J',col:'var(--java)',gd:'A',d:1,legacy:true},
-  {id:'skills',name:'extensions',ic:'⊞',col:'var(--kw)',gd:'',d:0},
-  {id:'novel',name:'novel.md',ic:'M',col:'var(--kw)',gd:'',d:0},
-  {id:'education',name:'education.toml',s:0,ic:'≡',col:'var(--muted)',gd:'',d:0},
-  {id:'hire',name:'hire-me.pr',ic:'⇄',col:'var(--ok)',gd:'U',d:0,s:0},
-  {id:'contact',name:'contact.sh',s:0,ic:'$',col:'var(--ok)',gd:'',d:0},
-];
-const go=id=>{const el=document.getElementById(id);if(el)sc.scrollTo({top:el.offsetTop,behavior:reduce?'auto':'smooth'})};
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* explorer + tabs */
-const tree=$('#tree'),tabs=$('#tabs');
-FILES.forEach(f=>{const li=document.createElement('li');
-  if(f.dir){li.innerHTML=`<button type="button" class="dir ${f.legacy?'legacy':''}" style="--d:${f.d}" tabindex="-1"><span class="fi">▾</span>${f.dir}/</button>`}
-  else{li.innerHTML=`<button type="button" data-id="${f.id}" class="${f.legacy?'legacy':''}" style="--d:${f.d}"><span class="fi" style="color:${f.col}">${f.ic}</span>${f.name}${f.gd?`<span class="gd ${f.gd.toLowerCase()}">${f.gd}</span>`:''}</button>`;
-    const t=document.createElement('button');t.type='button';t.setAttribute('role','tab');t.dataset.id=f.id;t.innerHTML=`<span class="fi" style="color:${f.col}">${f.ic}</span>${f.name}`;t.onclick=()=>go(f.id);tabs.appendChild(t)}
-  tree.appendChild(li)});
-tree.addEventListener('click',e=>{const b=e.target.closest('button[data-id]');if(b)go(b.dataset.id)});
+/* theme */
+const root=document.documentElement;
+try{const t=localStorage.getItem('theme');if(t)root.dataset.theme=t}catch(e){}
+$('#theme').onclick=()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}};
 
-/* source control pane */
-const COMMITS=[['#47195','Remote diagnosis UI mockups','Oct 2026'],['#46234','Branch Summary grouped by ISP name / link mode','Oct 2026'],['#46176','BGP router as topology parent','Oct 2026'],['#45584','Redis licence-count cache for IP assets','Oct 2026'],['#44053','Aruba WLC device adoption','Sep 2026'],['#42783','Kafka-based trap config sync','Aug 2026'],['#42308','Topology CI relation with device precedence','Aug 2026'],['#36829','IPAM CSV subnet import with IP assets','May 2026'],['#33565','Aruba ClearPass marketplace integration','Mar 2026'],['#31017','Fortinet firewall HA monitoring','Jan 2026'],['#26629','Cisco SD-WAN bulk API polling','Oct 2025'],['#19811','Daily user attendance report','Jun 2025'],['#16533','Attendance approval flow','Apr 2025'],['#13519','Attendance on web','Mar 2025'],['#9321','IPAM audit with filters and export','Dec 2024'],['#6259','OIDC SSO configuration UI','Oct 2024']];
-$('#scm').innerHTML=COMMITS.map(c=>`<div class="c"><i></i><div>${c[1]}<small>${c[0]} · ${c[2]}</small></div></div>`).join('');
-$$('.act button[data-pane]').forEach(b=>b.onclick=()=>{$$('.act button').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#paneExplorer').hidden=b.dataset.pane!=='explorer';$('#paneScm').hidden=b.dataset.pane!=='scm'});
-$$('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+/* hero words */
+const h1=$('#h1');h1.innerHTML=h1.textContent.split(' ').map((w,i)=>`<span class="w"><span style="animation-delay:${.08*i+.1}s">${w}</span></span>`).join(' ');
 
-/* scroll spy, crumbs, ln/col, minimap viewport */
-const files=$$('.file'),crumbs=$('#crumbs'),lnCol=$('#lnCol');let cur='';
-const spy=()=>{const y=sc.scrollTop+60;let a=files[0];files.forEach(f=>{if(f.offsetTop<=y)a=f});
-  if(a.id!==cur){cur=a.id;$$('#tree button[data-id]').forEach(b=>b.classList.toggle('on',b.dataset.id===cur));$$('#tabs button').forEach(b=>{const on=b.dataset.id===cur;b.classList.toggle('on',on);if(on)b.scrollIntoView({block:'nearest',inline:'nearest'})});
-    crumbs.innerHTML='nishchal-ts <span>›</span> '+a.dataset.path.split(' › ').map((p,i,ar)=>i===ar.length-1?`<b>${p}</b>`:p+' <span>›</span>').join(' ')}
-  lnCol.textContent=`Ln ${Math.round(sc.scrollTop/23)+1}, Col 1`;mmView()};
-sc.addEventListener('scroll',()=>requestAnimationFrame(spy),{passive:true});
+/* typing */
+const lines=['python · django · angular','owning IPAM and attendance end to end','making firewalls and SD-WAN report cleanly','building Chailify ☕ in my own time','author of a published novel'];
+const ty=$('#typed');let li=0,ci=0,del=false;
+const tick=()=>{const s=lines[li];ty.textContent=s.slice(0,ci);if(!del&&ci<s.length){ci++;setTimeout(tick,45)}else if(!del){del=true;setTimeout(tick,1600)}else if(ci>0){ci--;setTimeout(tick,22)}else{del=false;li=(li+1)%lines.length;setTimeout(tick,300)}};
+reduce?ty.textContent=lines[0]:tick();
 
-/* minimap */
-const mm=$('#mm'),mmc=$('#mmc'),mmv=$('#mmv');
-const css=n=>getComputedStyle(root).getPropertyValue(n).trim();
-const drawMM=()=>{if(!mm.offsetWidth)return;const W=mm.clientWidth,H=mm.clientHeight,d=Math.min(devicePixelRatio,2);mmc.width=W*d;mmc.height=H*d;const x=mmc.getContext('2d');x.scale(d,d);x.clearRect(0,0,W,H);
-  const total=sc.scrollHeight,k=H/total,base=sc.getBoundingClientRect().top-sc.scrollTop;
-  $$('.scroll .l, .scroll .md p, .scroll .md h1, .scroll .stat, .scroll .xc, .scroll .pv-h').forEach(el=>{const r=el.getBoundingClientRect();const y=(r.top-base)*k;const len=Math.min(1,(el.textContent.length||10)/90);
-    const cls=el.querySelector('.kw')?'--kw':el.querySelector('.cm')?'--cmt':el.querySelector('.st')?'--str':'--dim';x.fillStyle=css(cls);x.globalAlpha=.75;x.fillRect(6+(el.classList.contains('l')?(el.textContent.match(/^\s*/)[0].length*.9):0),y,Math.max(4,(W-14)*len),Math.max(1.2,r.height*k*.6))});mmView()};
-const mmView=()=>{if(!mm.offsetWidth)return;const H=mm.clientHeight,k=H/sc.scrollHeight;mmv.style.top=sc.scrollTop*k+'px';mmv.style.height=Math.max(14,sc.clientHeight*k)+'px'};
-mm.addEventListener('click',e=>{const r=mm.getBoundingClientRect();sc.scrollTo({top:(e.clientY-r.top)/r.height*sc.scrollHeight-sc.clientHeight/2,behavior:'smooth'})});
-addEventListener('resize',()=>{drawMM();spy()});
+/* drifting code in the background */
+const snippets=['def mark_attendance(user, location):','Subnet.create(row)','kafka.produce("trap_config", event)','@invalidates("license:ip_asset_count")','for tenant in vmanage.discover_tenants():','return Attendance.auto(user, distance_m)','validate_hierarchy(row, parent)','pick_parent(a, b)','ng generate component widget','python manage.py migrate'];
+const bg=$('#bgcode');snippets.forEach((s,i)=>{const e=document.createElement('span');e.textContent=s;e.style.left=(5+(i*37)%85)+'%';e.style.top=(100+(i*23)%60)+'%';e.style.animationDuration=(26+i*3)+'s';e.style.animationDelay=(-i*4)+'s';bg.appendChild(e)});
 
-/* typed + now */
-const roles=['Python · Django · Angular','Java developer → Python engineer','IPAM · topology · SNMP','built the attendance module','Cisco SD-WAN · Kafka · Redis'];
-const ty=$('#typed');if(!reduce){let i=0,j=roles[0].length,del=true;const tick=()=>{if(del){j--;if(j<=0){del=false;i=(i+1)%roles.length}}else{j++;if(j>=roles[i].length){del=true;ty.textContent=roles[i];return setTimeout(tick,2200)}}ty.textContent=roles[i].slice(0,Math.max(j,0));setTimeout(tick,del?26:52)};setTimeout(tick,2400)}
-const branches=['feature/47195-remote-diagnosis','feature/46234-branch-summary-widget','bugfix/46176-bgp-topology-parent'];let bi=0;const nowT=$('#nowT');if(!reduce)setInterval(()=>{nowT.style.opacity=0;setTimeout(()=>{bi=(bi+1)%branches.length;nowT.textContent=branches[bi];nowT.style.opacity=1},350)},3800);
-const inView=(el,cb,th=.3)=>{if(!('IntersectionObserver' in window)){cb();return}const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){cb();o.disconnect()}}),{root:sc,threshold:th});o.observe(el)};
-inView($('.stats'),()=>$$('.cnt').forEach(c=>{const to=+c.dataset.to,s=c.dataset.suf||'';if(reduce)return;const t0=performance.now();const f=t=>{const p=Math.min(1,(t-t0)/1200);c.textContent=Math.round(to*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}));
-inView($('#graph'),()=>$('#graph').classList.add('drawn'),.2);
-if(reduce)$('#graph').classList.add('drawn');
+/* cursor glow + progress + nav */
+const glow=$('#glow');addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
+const nav=$('#nav'),prog=$('#prog');
+const secs=['journey','work','chailify','skills','contact'].map(id=>document.getElementById(id));
+const onScroll=()=>{const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';nav.classList.toggle('solid',h.scrollTop>40);
+  let cur='';secs.forEach(s=>{if(s.getBoundingClientRect().top<innerHeight*.4)cur=s.id});$$('.links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));
+  const jr=$('#jr').getBoundingClientRect();const p=Math.min(1,Math.max(0,(innerHeight*.6-jr.top)/jr.height));$('#jfill').style.height=(p*jr.height)+'px';
+  $$('.jstep').forEach(s=>s.classList.toggle('lit',s.getBoundingClientRect().top<innerHeight*.6))};
+addEventListener('scroll',onScroll,{passive:true});onScroll();
 
-/* experience.json with folding */
-const X={role:'Software Engineer',company:'Infraon',since:'2024-07',location:'Bengaluru',
-  board:{work_items:362,features:62,stories:117,bugs_fixed:'140+',releases:'7.3.15 → 7.5.2'},
-  impact:{attendance:['web clock-in / clock-out with auto clock-out','geofence against a base-location radius, manager approval outside it','role permissions, live widget, daily Excel report, auto absent logs'],
-    ipam:['per-IP audit trail incl. cost, assignment, procurement','CSV management of containers, sub-containers, blocks, subnets','hierarchy, overlap and MSP validation; block and sub-container merge'],
-    sdwan:['tenant discovery through vManage','per-tenant auth and sessions','scheduled bulk-API polling of device, interface and IPSLA stats'],
-    devices:['Fortinet firewall HA pairs over SNMP','Aruba ClearPass + CMDB reconciliation report, Aruba WLC','Cisco vPC/VDC, EIGRP discovery, Proxmox VM disk metrics'],
-    platform:['Kafka-based trap configuration sync','Redis licence-count caching with invalidation','topology parent rules: protocol, link speed, IP'],
-    quality:['140+ production, regression and dev bugs fixed','fixes back-ported to stable release branches','regression cases for shipped features']},
-  previously:{role:'Java Full Stack Intern',company:'KodNest',period:'2023-07 → 2024-01'}};
-const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
-const val=v=>typeof v==='number'?`<span class="nu">${v}</span>`:`<span class="st">"${esc(v)}"</span>`;
-const ind=n=>'  '.repeat(n);
-const render=(obj,depth,key,last)=>{const isArr=Array.isArray(obj),open=isArr?'[':'{',close=isArr?']':'}';const k=key!=null?`<span class="ky">"${key}"</span><span class="pu">: </span>`:'';
-  const entries=isArr?obj.map((v,i)=>[null,v]):Object.entries(obj);
-  let inner=entries.map(([kk,v],i)=>{const l=i===entries.length-1;if(v&&typeof v==='object')return render(v,depth+1,kk,l);return `<span class="l">${ind(depth+1)}${kk!=null?`<span class="ky">"${kk}"</span><span class="pu">: </span>`:''}${val(v)}${l?'':'<span class="pu">,</span>'}</span>`}).join('');
-  const fold=depth>0?`<button class="fold-btn" type="button" aria-label="Fold ${key||''}">▾</button>`:'';
-  return `<div class="fg"><span class="l">${fold}${ind(depth)}${k}<span class="pu">${open}</span><span class="ell">…</span></span><div class="fb">${inner}</div><span class="l">${ind(depth)}<span class="pu">${close}${last?'':','}</span></span></div>`};
-const xc=$('#xpCode');xc.innerHTML=render(X,0,null,true);
-xc.addEventListener('click',e=>{const b=e.target.closest('.fold-btn');if(b){b.closest('.fg').classList.toggle('closed');drawMM()}});
-$('#foldAll').onclick=()=>{$$('#xpCode .fg .fg').forEach(g=>g.classList.add('closed'));drawMM()};
-$('#unfoldAll').onclick=()=>{$$('#xpCode .fg').forEach(g=>g.classList.remove('closed'));drawMM()};
+/* reveals */
+const inView=(el,fn,th=.2)=>{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){fn(e.target);io.unobserve(e.target)}}),{threshold:th});io.observe(el)};
+$$('.rv').forEach(el=>inView(el,t=>t.classList.add('in'),.12));
+
+/* counters */
+$$('[data-count]').forEach(el=>inView(el,()=>{const to=+el.dataset.count,suf=el.dataset.suffix||'';const card=el.closest('.stat');card.style.setProperty('--w','100%');
+  if(reduce){el.textContent=to+suf;return}const t0=performance.now();const step=t=>{const k=Math.min(1,(t-t0)/1600);el.textContent=Math.round(to*(1-Math.pow(1-k,3)))+suf;if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)}));
+
+/* java → python morph */
+const mo=$('#morph');const words=['python','django','angular'];let mi=0;if(!reduce)setInterval(()=>{mi=(mi+1)%words.length;mo.style.opacity=0;setTimeout(()=>{mo.textContent=words[mi];mo.style.opacity=1},250)},2200);mo.style.transition='opacity .25s';
 
 /* geofence */
-const geo=$('#geo'),NS='http://www.w3.org/2000/svg',U=[];
-for(let i=0;i<13;i++){const c=document.createElementNS(NS,'circle');c.setAttribute('r',4.5);geo.appendChild(c);const a=Math.random()*6.28,d=20+Math.random()*110;U.push({c,x:160+Math.cos(a)*d,y:110+Math.sin(a)*d*.75,vx:(Math.random()-.5)*.6,vy:(Math.random()-.5)*.6})}
-const gi=$('#geoIn'),gO=$('#geoOut');const gstep=()=>{let a=0,b=0;U.forEach(u=>{if(!reduce&&!u.paused){u.x+=u.vx;u.y+=u.vy;if(u.x<8||u.x>312)u.vx*=-1;if(u.y<8||u.y>212)u.vy*=-1;if(Math.random()<.01){u.vx=(Math.random()-.5)*.7;u.vy=(Math.random()-.5)*.7}}const ins=Math.hypot(u.x-160,u.y-110)<74;ins?a++:b++;u.c.setAttribute('cx',u.x.toFixed(1));u.c.setAttribute('cy',u.y.toFixed(1));u.c.style.fill=ins?'var(--ok)':'var(--num)'});gi.textContent=a;gO.textContent=b;if(!reduce)requestAnimationFrame(gstep)};gstep();
-/* subnet */
-const sg=$('#snGrid'),cells=[];for(let i=0;i<256;i++){const c=document.createElement('i');c.addEventListener('mouseenter',()=>{$('#snTip').textContent='10.20.4.'+i+' · '+(c.classList.contains('u')?'assigned':c.classList.contains('r')?'reserved':'free')});sg.appendChild(c);cells.push(c)}
+const NS='http://www.w3.org/2000/svg',geo=$('#geo'),P=[];
+for(let i=0;i<16;i++){const c=document.createElementNS(NS,'circle');c.setAttribute('r',6);geo.appendChild(c);const a=Math.random()*6.28,d=30+Math.random()*170;P.push({c,x:260+Math.cos(a)*d,y:120+Math.sin(a)*d*.5,vx:(Math.random()-.5)*.9,vy:(Math.random()-.5)*.6})}
+const gIn=$('#gIn'),gOut=$('#gOut');const gstep=()=>{let a=0,b=0;P.forEach(u=>{u.x+=u.vx;u.y+=u.vy;if(u.x<10||u.x>510)u.vx*=-1;if(u.y<30||u.y>215)u.vy*=-1;if(Math.random()<.01){u.vx=(Math.random()-.5)*.9;u.vy=(Math.random()-.5)*.6}const ins=Math.hypot(u.x-260,u.y-120)<78;ins?a++:b++;u.c.setAttribute('cx',u.x.toFixed(1));u.c.setAttribute('cy',u.y.toFixed(1));u.c.style.fill=ins?'var(--green)':'var(--orange)'});gIn.textContent=a;gOut.textContent=b;if(!reduce)requestAnimationFrame(gstep)};gstep();
+
+/* subnet grid */
+const sn=$('#sn'),cells=[];for(let i=0;i<256;i++){const c=document.createElement('i');c.addEventListener('mouseenter',()=>{$('#snTip').textContent='10.20.4.'+i+' · '+(c.classList.contains('u')?'assigned':c.classList.contains('r')?'reserved':'free')});sn.appendChild(c);cells.push(c)}
 const plan=cells.map((c,i)=>i<2||i>253?'r':(Math.random()<.62?'u':(Math.random()<.07?'r':'')));
-const fillSn=()=>{let u=0,r=0,k=0;const g=()=>{for(let s=0;s<8&&k<256;s++,k++){if(plan[k]){cells[k].classList.add(plan[k]);plan[k]==='u'?u++:r++}}$('#snU').textContent=u;$('#snR').textContent=r;$('#snF').textContent=256-u-r;if(k<256)requestAnimationFrame(g)};g()};
-reduce?fillSn():inView(sg,fillSn);
-/* sdwan counters */
-let pd=0,pi=0,ps=0;const pt=()=>{pd+=3;pi+=41;ps+=7;$('#pD').textContent=pd.toLocaleString('en-IN');$('#pI').textContent=pi.toLocaleString('en-IN');$('#pS').textContent=ps.toLocaleString('en-IN')};pt();if(!reduce)setInterval(pt,700);
+inView(sn,()=>{let u=0,r=0,k=0;const g=()=>{for(let s=0;s<6&&k<256;s++,k++){if(plan[k]){cells[k].classList.add(plan[k]);plan[k]==='u'?u++:r++}}$('#snU')&&($('#snU').textContent=u);$('#snR')&&($('#snR').textContent=r);$('#snF')&&($('#snF').textContent=256-u-r);if(k<256)requestAnimationFrame(g)};g()});
+
+/* sdwan dots + counters */
+const paths=$$('#sdLines path'),dots=$('#sdDots');
+const fire=()=>{const p=paths[Math.floor(Math.random()*3)];const c=document.createElementNS(NS,'circle');c.setAttribute('r',3.2);c.setAttribute('fill','var(--orange)');dots.appendChild(c);const L=p.getTotalLength(),t0=performance.now();const mv=t=>{const k=(t-t0)/1100;if(k>=1){c.remove();return}const pt=p.getPointAtLength(L*k);c.setAttribute('cx',pt.x);c.setAttribute('cy',pt.y);requestAnimationFrame(mv)};requestAnimationFrame(mv)};
+let pd=0,pi=0,ps=0;const pt=()=>{pd+=3;pi+=41;ps+=7;$('#pD').textContent=pd.toLocaleString('en-IN');$('#pI').textContent=pi.toLocaleString('en-IN');$('#pS').textContent=ps.toLocaleString('en-IN')};pt();
+if(!reduce){setInterval(fire,280);setInterval(pt,700)}
+
 /* topology */
-const rl=$$('#topoCode [data-r]'),rA=$('#rA'),rB=$('#rB'),tv=$('#tpV');
-const scen=[{a:'BGP · 1G · .1',b:'OSPF · 10G · .2',w:0,r:0,v:'R1 wins: BGP beats OSPF'},{a:'OSPF · 1G · .1',b:'OSPF · 10G · .2',w:1,r:1,v:'tie on protocol, R2 wins on speed'},{a:'OSPF · 10G · .1',b:'OSPF · 10G · .2',w:0,r:2,v:'tie on speed, R1 wins on smaller IP'}];
+const rl=$$('.rules [data-r]'),rA=$('#rA'),rB=$('#rB'),tv=$('#tpV');
+const scen=[{a:'BGP · 1G · .1',b:'OSPF · 10G · .2',w:0,r:0,v:'R1 wins: BGP beats OSPF'},{a:'OSPF · 1G · .1',b:'OSPF · 10G · .2',w:1,r:1,v:'same protocol, R2 wins on speed'},{a:'OSPF · 10G · .1',b:'OSPF · 10G · .2',w:0,r:2,v:'same speed, R1 wins on smaller IP'}];
 let si=0;const run=()=>{const s=scen[si];$('#rAs').textContent=s.a;$('#rBs').textContent=s.b;[rA,rB].forEach(n=>n.classList.remove('win','lose'));rl.forEach(l=>l.classList.remove('hl'));tv.textContent='evaluating…';let k=0;
   const st=()=>{rl.forEach(l=>l.classList.remove('hl'));rl[k].classList.add('hl');if(k<s.r){k++;setTimeout(st,700)}else{(s.w?rB:rA).classList.add('win');(s.w?rA:rB).classList.add('lose');tv.textContent=s.v}};setTimeout(st,400);si=(si+1)%scen.length};
 run();if(!reduce)setInterval(run,4200);
-/* pipeline */
-const L=['#lane1','#lane2','#lane3'].map(s=>$(s));{const CL=['#chLane1','#chLane2','#chLane3'].map(s=>$(s));if(!reduce&&CL[0]){const sh=(l,t)=>{const d=document.createElement('i');d.style.setProperty('--t',t+'s');l.appendChild(d);setTimeout(()=>d.remove(),t*1000+50)};setInterval(()=>{sh(CL[0],1.2);setTimeout(()=>sh(CL[1],1.2),900);setTimeout(()=>sh(CL[2],1.0),1800)},2900)}}if(!reduce){const shoot=(l,t)=>{const d=document.createElement('i');d.style.setProperty('--t',t+'s');l.appendChild(d);setTimeout(()=>d.remove(),t*1000+50)};setInterval(()=>{shoot(L[0],1.3);setTimeout(()=>shoot(L[1],1.3),1300)},2200);setInterval(()=>shoot(L[2],1.1),1700)}
 
-/* extensions */
-const EX=[
- ['Python','Py','#ffd43b','Backend','My main language since Jul 2024.',5,'daily'],['Django · DRF','Dj','#7ee787','Backend','APIs, models, permissions, reports.',5,'daily'],['REST API integrations','API','#6cb0ff','Backend','vManage, Proxmox, ClearPass, marketplace cards.',4,'strong'],['Celery · RabbitMQ','Ce','#7ee787','Backend','Scheduled polling and async jobs.',3,'working'],['FastAPI','Fa','#7ee787','Backend','Service endpoints in the platform.',3,'working'],
+/* event lanes */
+const shoot=(l,t)=>{const d=document.createElement('i');d.style.setProperty('--t',t+'s');l.appendChild(d);setTimeout(()=>d.remove(),t*1000+60)};
+if(!reduce){setInterval(()=>{shoot($('#l1'),1.2);setTimeout(()=>shoot($('#l2'),1.2),1200)},2400);setInterval(()=>shoot($('#l3'),1),1700)}
+
+/* card tilt */
+if(!reduce&&matchMedia('(pointer:fine)').matches)$$('.card').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(1000px) rotateX(${-y*4}deg) rotateY(${x*5}deg) translateY(-4px)`});c.addEventListener('pointerleave',()=>c.style.transform='')});
+
+/* devices marquee */
+const dev=['Cisco SD-WAN (vManage)','Fortinet HA pairs','Aruba ClearPass','Aruba WLC','Cisco vPC / VDC','EIGRP discovery','Proxmox VMs','HP devices','SNMP traps','OIDC single sign-on'];
+$('#marq').innerHTML=[...dev,...dev].map(d=>`<span>${d}</span>`).join('');
+
+/* chailify video plays when visible */
+const vid=$('#vid');if(!reduce)new IntersectionObserver(es=>es.forEach(e=>{e.isIntersecting?vid.play().catch(()=>{}):vid.pause()}),{threshold:.4}).observe(vid);else vid.controls=true;
+
+/* skills */
+const EX=[['Python','Py','#ffd43b','Backend','My main language since Jul 2024.',5,'daily'],['Django · DRF','Dj','#7ee787','Backend','APIs, models, permissions, reports.',5,'daily'],['REST API integrations','API','#6cb0ff','Backend','vManage, Proxmox, ClearPass.',4,'strong'],['Celery · RabbitMQ','Ce','#7ee787','Backend','Scheduled polling and async jobs.',3,'working'],['FastAPI','Fa','#7ee787','Backend','Service endpoints in the platform.',3,'working'],
  ['Angular','Ng','#ff7b72','Frontend','Screens, widgets, sliders, i18n.',4,'strong'],['TypeScript','TS','#6cb0ff','Frontend','Typed front-end logic.',4,'strong'],['HTML · CSS · SCSS','Css','#d2a8ff','Frontend','Layouts and dark-mode fixes.',5,'daily'],
  ['MongoDB','Mo','#7ee787','Data','Primary store for IPAM and attendance.',5,'daily'],['PostgreSQL · MySQL','SQL','#6cb0ff','Data','Relational data and audits.',4,'strong'],['Redis','Re','#ff7b72','Data','Licence-count caching and invalidation.',3,'working'],['Kafka','Ka','#d2a8ff','Data','Trap configuration sync.',3,'working'],
- ['SNMP · traps','SN','#f0a35e','Networking','Polling, OIDs, trap bindings, TimeTicks.',4,'strong'],['IPAM · subnetting','IP','#6cb0ff','Networking','Containers, blocks, subnets, audits.',5,'daily'],['Topology L2/L3','Tp','#ffd43b','Networking','Parent rules, link swaps, CI relations.',4,'strong'],['SD-WAN · firewalls · WLC','Nw','#f0a35e','Networking','Cisco SD-WAN, Fortinet HA, Aruba.',3,'working'],
- ['Git · Azure DevOps','Git','#f0a35e','Workflow','362 work items, PRs, back-porting.',5,'daily'],['Linux · SSH · SFTP','Lx','#d6dbe2','Workflow','Servers and remote debugging.',4,'strong'],['AI-assisted development','AI','#d2a8ff','Workflow','Agents, skills and reviews in the loop.',4,'strong'],
+ ['SNMP · traps','SN','#f0a35e','Networking','Polling, OIDs, trap bindings.',4,'strong'],['IPAM · subnetting','IP','#6cb0ff','Networking','Containers, blocks, subnets, audits.',5,'daily'],['Topology L2/L3','Tp','#ffd43b','Networking','Parent rules, link swaps, CI relations.',4,'strong'],['SD-WAN · firewalls · WLC','Nw','#f0a35e','Networking','Cisco SD-WAN, Fortinet HA, Aruba.',3,'working'],
+ ['Git · Azure DevOps','Git','#f0a35e','Workflow','362 work items, PRs, back-porting.',5,'daily'],['Linux · SSH · SFTP','Lx','#d6dbe2','Workflow','Servers and remote debugging.',4,'strong'],['AI-assisted development','AI','#d2a8ff','Workflow','Agents and reviews in the loop.',4,'strong'],
  ['Creative writing','Wr','#d2a8ff','Beyond code','Published a romance novel.',5,'daily'],['Problem solving','PS','#7ee787','Beyond code','Customer bug triage to root cause.',5,'daily'],
- ['Java · Spring Boot','J','#f0883e','Legacy','Where I started. Replaced by Python.',3,'disabled']];
-const cats=['All','Backend','Frontend','Data','Networking','Workflow','Beyond code','Legacy'];let cat='All';
-const lvl={daily:'d',strong:'',working:'',disabled:'x','not installed':'x'};
-let ERA=6;const PRE=['Python','Django · DRF','Angular','TypeScript','MongoDB','Redis','Kafka','SNMP · traps','IPAM · subnetting','Topology L2/L3','SD-WAN · firewalls · WLC','Celery · RabbitMQ','FastAPI','REST API integrations','AI-assisted development'];
-const eraOf=e=>{if(ERA<=1){if(e[0].startsWith('Java'))return [...e.slice(0,6),'daily'];if(PRE.includes(e[0]))return [...e.slice(0,6),'not installed']}return e};
-const drawEx=()=>{const q=$('#extQ').value.toLowerCase();$('#extList').innerHTML=EX.map(eraOf).filter(e=>(cat==='All'||e[3]===cat)&&(e[0]+e[4]+e[3]).toLowerCase().includes(q)).map(e=>`<div class="xc ${e[6]==='disabled'||e[6]==='not installed'?'off':''}"><span class="ic" style="background:${e[2]}">${e[1]}</span><div><b>${e[0]}</b><small>${e[4]}</small><div class="meta"><span class="st5">${'★'.repeat(e[5])}${'☆'.repeat(5-e[5])}</span><span class="lvl ${lvl[e[6]]}">${e[6]}</span><span>${e[3].toLowerCase()}</span></div></div></div>`).join('')||'<p class="mono" style="color:var(--muted)">No skills match.</p>';drawMM()};
-$('#extCats').innerHTML=cats.map(c=>`<button type="button" aria-pressed="${c==='All'}" data-c="${c}">${c}</button>`).join('');
-$('#extCats').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;cat=b.dataset.c;$$('#extCats button').forEach(x=>x.setAttribute('aria-pressed',x===b));drawEx()});
-$('#extQ').addEventListener('input',drawEx);drawEx();
-
-/* book */
-const bk=$('#bk'),bkBtn=$('#bkBtn');const setBk=o=>{bk.classList.toggle('open',o);bkBtn.textContent=o?'close book':'open book'};
-bk.addEventListener('click',()=>setBk(!bk.classList.contains('open')));bk.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setBk(!bk.classList.contains('open'))}});bkBtn.onclick=()=>setBk(!bk.classList.contains('open'));
-if('IntersectionObserver' in window&&!reduce){let t;new IntersectionObserver(es=>es.forEach(e=>{clearTimeout(t);if(e.isIntersecting&&e.intersectionRatio>.75)t=setTimeout(()=>setBk(true),900);else if(!e.isIntersecting)setBk(false)}),{root:sc,threshold:[0,.75,1]}).observe(bk)}
-
-/* terminal */
-const out=$('#tOut'),tin=$('#tIn'),term=$('#term');
-const line=(h,c='')=>{const d=document.createElement('div');d.className='ln '+c;d.innerHTML=h;out.appendChild(d);out.scrollTop=out.scrollHeight};
-const C={
- help:()=>['<span class="a">commands</span>  whoami · ls · cat &lt;file&gt; · open &lt;file&gt; · journey · stats · skills · book · contact · theme · clear'],
- whoami:()=>['Nishchal T S · software engineer · Bengaluru','Java developer turned Python engineer. Also a published author.'],
- ls:()=>[FILES.filter(f=>!f.dir).map(f=>f.d?'  '+f.name:f.name).join('   ')],
- journey:()=>{go('journey');return['<span class="d">2019–23</span> <span class="r">java</span>  computer science','<span class="d">2023   </span> <span class="r">java</span>  spring boot internship','<span class="a">2024-07 merge → python</span>','<span class="d">2025   </span> <span class="b">python</span> attendance module','<span class="d">2026   </span> <span class="b">python</span> kafka · redis · topology']},
- stats:()=>['362  work items since Jul 2024','62   features · 117 stories','140+ bugs fixed','10+  releases (7.3.15 → 7.5.2)'],
- skills:()=>{go('skills');return['python django angular mongodb redis kafka snmp ipam topology','<span class="d">disabled: java spring-boot</span>']},
- book:()=>{go('novel');setTimeout(()=>setBk(true),700);return['<span class="a">Somewhere, Somehow and Some-One</span> · a romance novel by Nishchal Tharayil']},
- contact:()=>{go('contact');return['<span class="p">$ ./contact.sh</span>','Reach me at <span class="a">nishchaltharayil2001@gmail.com</span>','location: Bengaluru · IST (UTC+5:30)','open to: backend · full-stack · network software']},
- theme:()=>{toggleTheme();return['theme → '+(root.dataset.theme)]},
- sudo:()=>['<span class="r">permission denied.</span> nice try.'],
- exit:()=>{term.setAttribute('data-closed','');return[]},
-};
-const runCmd=raw=>{const s=raw.trim();line('<span class="p">visitor@nishchal-ts:~$</span> '+esc(s));if(!s)return;const [c,...a]=s.split(/\s+/);const lc=c.toLowerCase();
-  if(lc==='clear'){out.innerHTML='';return}
-  if(lc==='cat'||lc==='open'){const f=FILES.find(f=>!f.dir&&f.name.toLowerCase()===(a[0]||'').toLowerCase());if(f){go(f.id);line(`opened <span class="b">${f.name}</span> in the editor`)}else line(`<span class="r">no such file:</span> ${esc(a[0]||'')} · try <span class="a">ls</span>`);return}
-  const f=C[lc];(f?f():[`<span class="r">command not found:</span> ${esc(lc)} · try <span class="a">help</span>`]).forEach(l=>line(l))};
-$('#tForm').addEventListener('submit',e=>{e.preventDefault();runCmd(tin.value);tin.value=''});
-['help','whoami','journey','stats','contact'].forEach(c=>{const b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=()=>{term.removeAttribute('data-closed');runCmd(c)};$('#tChips').appendChild(b)});
-$$('[data-run]').forEach(b=>b.addEventListener('click',()=>{term.removeAttribute('data-closed');runCmd(b.dataset.run==='journey'?'journey':'contact');if(b.dataset.run==='contact')setTimeout(()=>go('contact'),50)}));
-const BOOT=['<span class="p">$</span> git clone https://github.com/NishchalTharayil/nishchal-ts.git','Cloning into \'nishchal-ts\'...','remote: Enumerating objects: 362, done.','Receiving objects: 100% (362/362) · 62 features · 140+ bugs fixed','Resolving deltas: <span class="r">java</span> → <span class="b">python</span>, done.','<span class="p">✓</span> workspace ready · type <span class="a">help</span>, or tap a command'];
-if(reduce){BOOT.forEach(l=>line(l))}else{let bi2=0;const nb=()=>{if(bi2<BOOT.length){line(BOOT[bi2++]);setTimeout(nb,bi2===1?500:280)}};nb()}
-if(matchMedia('(max-width:900px)').matches)term.setAttribute('data-closed','');
-const toggleTerm=()=>{term.toggleAttribute('data-closed');$('#tToggle').textContent=term.hasAttribute('data-closed')?'▴':'▾';setTimeout(()=>{drawMM();spy()},50)};
-
-/* theme */
-const isDark=()=>root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
-try{const t=localStorage.getItem('nts-theme');if(t)root.dataset.theme=t}catch(e){}
-const toggleTheme=()=>{root.dataset.theme=isDark()?'light':'dark';try{localStorage.setItem('nts-theme',root.dataset.theme)}catch(e){}setTimeout(drawMM,30)};
-
-/* palette */
-const pal=$('#pal'),pin=$('#palIn'),pl=$('#palList');
-const ITEMS=[...FILES.filter(f=>!f.dir).map(f=>[f.name,'file',()=>go(f.id)]),['Toggle colour theme','command',toggleTheme],['Toggle terminal','command',toggleTerm],['Copy email address','command',()=>copy()],['Run contact.sh','command',()=>{term.removeAttribute('data-closed');runCmd('contact')}],['Fold all in experience.json','command',()=>{go('experience');$('#foldAll').click()}]];
-let ps2=0,vis=ITEMS;
-const rp=()=>{pl.innerHTML=vis.map((it,i)=>`<li role="option" aria-selected="${i===ps2}" data-i="${i}"><span>${it[0]}</span><small>${it[1]}</small></li>`).join('')};
-const openP=()=>{pal.hidden=false;pin.value='';vis=ITEMS;ps2=0;rp();pin.focus()},closeP=()=>{pal.hidden=true};
-const act=it=>{closeP();if(it)it[2]()};
-pin.addEventListener('input',()=>{const q=pin.value.toLowerCase().replace(/^>\s*/,'');vis=ITEMS.filter(i=>i[0].toLowerCase().includes(q));ps2=0;rp()});
-pin.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){ps2=Math.min(ps2+1,vis.length-1);rp();e.preventDefault()}else if(e.key==='ArrowUp'){ps2=Math.max(ps2-1,0);rp();e.preventDefault()}else if(e.key==='Enter')act(vis[ps2]);else if(e.key==='Escape')closeP()});
-pl.addEventListener('click',e=>{const li=e.target.closest('li');if(li)act(vis[+li.dataset.i])});
-pal.addEventListener('click',e=>{if(e.target===pal)closeP()});
-addEventListener('keydown',e=>{const k=e.key.toLowerCase();if((e.ctrlKey||e.metaKey)&&(k==='k'||k==='p')){e.preventDefault();pal.hidden?openP():closeP()}else if((e.ctrlKey||e.metaKey)&&k==='`'){e.preventDefault();toggleTerm()}else if(k==='escape'&&!pal.hidden)closeP()});
-$('#cmdBtn').onclick=openP;
-$$('[data-cmd]').forEach(b=>b.addEventListener('click',()=>{const c=b.dataset.cmd;if(c==='palette')openP();else if(c==='term')toggleTerm();else if(c==='theme')toggleTheme();else if(c==='help'){term.removeAttribute('data-closed');runCmd('help')}}));
+ ['Java · Spring Boot','J','#f0883e','Legacy','Where I started. Still fluent.',3,'earlier']];
+const cats=['All','Backend','Frontend','Data','Networking','Workflow','Beyond code','Legacy'];
+$('#filters').innerHTML=cats.map((c,i)=>`<button type="button" class="${i?'':'on'}" data-cat="${c}">${c}</button>`).join('');
+$('#skillList').innerHTML=EX.map(e=>`<div class="sk ${e[6]==='earlier'?'off':''}" data-cat="${e[3]}"><span class="ic" style="background:${e[2]}">${e[1]}</span><div style="flex:1;min-width:0"><b>${e[0]}</b><small>${e[4]}</small><div class="bar"><i style="background:${e[2]}" data-w="${e[5]*20}"></i></div><small class="mono" style="font-size:12px;margin-top:6px">${e[6]} · ${e[3].toLowerCase()}</small></div></div>`).join('');
+const fillBars=()=>$$('.sk:not(.hide) .bar i').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*40));
+inView($('#skillList'),fillBars,.1);
+$('#filters').onclick=e=>{const b=e.target.closest('button');if(!b)return;$$('#filters button').forEach(x=>x.classList.toggle('on',x===b));const c=b.dataset.cat;$$('.sk').forEach(s=>{s.classList.toggle('hide',c!=='All'&&s.dataset.cat!==c);s.querySelector('.bar i').style.width='0'});setTimeout(fillBars,30)};
 
 /* copy email */
-const copy=()=>{const m='nishchaltharayil2001@gmail.com',b=$('#copyBtn');const done=()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy email',1800)};const sel=()=>{const r=document.createRange();r.selectNodeContents($('#mailTxt'));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press Ctrl+C';setTimeout(()=>b.textContent='Copy email',2400)};try{navigator.clipboard.writeText(m).then(done,sel)}catch(e){sel()}};
-$('#copyBtn').onclick=copy;
-
-/* clock */
-const ck=$('#clock');const upd=()=>{try{ck.textContent=new Intl.DateTimeFormat('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date())+' IST'}catch(e){}};upd();setInterval(upd,30000);
-$('#yr').textContent=new Date().getFullYear();
-
-
-/* ===== innovation layer ===== */
-/* 1. time travel */
-const ERAS=[{l:'2019',n:'B.E. student · writing Java',wi:0,lang:'Java 8'},{l:'2023',n:'Spring Boot intern at KodNest',wi:0,lang:'Java 17'},{l:'Jul 2024',n:'day one on a Python team',wi:1,lang:'Python 3.11'},{l:'Oct 2024',n:'first feature shipped',wi:9,lang:'Python 3.11'},{l:'Mar 2025',n:'starting the attendance module',wi:42,lang:'Python 3.12'},{l:'Oct 2025',n:'into SD-WAN and device integrations',wi:165,lang:'Python 3.12'},{l:'now',n:'',wi:362,lang:'Python 3.13'}];
-const ttR=$('#ttR'),det=$('#det');
-const setEra=v=>{v=+v;ERA=v;ttR.value=v;const e=ERAS[v],now=v===6;
-  root.dataset.era=v<=1?'java':'python';
-  $('#ttLbl').textContent=now?'main · now':`${e.l} · ${e.n}`;$('#ttNote').textContent=now?'Drag to travel through my history. The workspace changes with it.':'Files, stats, skills and colours now show this point in time.';
-  det.hidden=now;$('#detL').textContent=e.l;
-  $('#brS').textContent=now?'⎇ main':`⎇ (HEAD detached at ${e.l})`;$('#langS').textContent=e.lang;
-  FILES.forEach(f=>{if(f.dir)return;const fut=(f.s||0)>v;const a=document.getElementById(f.id);if(a)a.classList.toggle('future',fut);$$(`[data-id="${f.id}"]`).forEach(b=>b.classList.toggle('future',fut))});
-  const wi=$('#stWI b');wi.textContent=e.wi;$('#stWIl').textContent=now?'work items since Jul 2024':`work items by ${e.l}`;$$('.stat.sp2').forEach(x=>x.classList.toggle('past',!now));
-  drawEx();setTimeout(drawMM,60)};
-ttR.addEventListener('input',()=>setEra(ttR.value));
-$('#ttTicks').addEventListener('click',e=>{const t=e.target.closest('[data-v]');if(t)setEra(t.dataset.v)});
-$('#detBack').onclick=()=>setEra(6);
-
-/* 2. debugger on attendance.py */
-const aL=$$('#attCode .l'),dbg=$('#dbgBtn');let debugging=false;
-const clearDbg=()=>{aL.forEach(l=>{l.classList.remove('step');l.querySelectorAll('.iv').forEach(x=>x.remove())})};
-const iv=(l,t)=>{const x=document.createElement('span');x.className='iv';x.textContent=t;l.appendChild(x)};
-const runDebug=async()=>{if(debugging)return;debugging=true;dbg.textContent='■ Stop';aL[3].classList.add('bp');
-  const wait=ms=>new Promise(r=>setTimeout(r,ms));
-  for(let round=0;round<3&&debugging;round++){
-    const u=U[(Math.random()*U.length)|0];u.paused=true;
-    const ring=document.createElementNS(NS,'circle');ring.setAttribute('r',10);ring.setAttribute('fill','none');ring.setAttribute('stroke','var(--accent-bg)');ring.setAttribute('stroke-width','2');ring.setAttribute('cx',u.x);ring.setAttribute('cy',u.y);geo.appendChild(ring);
-    const line2=document.createElementNS(NS,'line');line2.setAttribute('x1',160);line2.setAttribute('y1',110);line2.setAttribute('x2',u.x);line2.setAttribute('y2',u.y);line2.setAttribute('stroke','var(--accent-bg)');line2.setAttribute('stroke-dasharray','3 3');geo.appendChild(line2);
-    const dm=(Math.hypot(u.x-160,u.y-110)*1.62).toFixed(1),ins=+dm<=120;
-    clearDbg();aL[1].classList.add('step');iv(aL[1],`user = "engineer_${String(10+round*7).padStart(2,'0')}"`);await wait(900);if(!debugging)break;
-    clearDbg();aL[2].classList.add('step');iv(aL[2],`distance_m = ${dm}`);await wait(1000);if(!debugging)break;
-    clearDbg();aL[3].classList.add('step');iv(aL[3],`${dm} <= 120 → ${ins?'True':'False'}`);await wait(1000);if(!debugging)break;
-    clearDbg();const t=ins?aL[4]:aL[5];t.classList.add('step');iv(t,ins?'→ marked present ✓':'→ request sent to manager');await wait(1400);
-    ring.remove();line2.remove();u.paused=false}
-  clearDbg();aL[3].classList.remove('bp');debugging=false;dbg.textContent='● Debug'};
-dbg.onclick=()=>{if(debugging){debugging=false}else runDebug()};
-
-/* 3. hover docs on code */
-const TIPS={
- haversine:['haversine(a: LatLng, b: LatLng) -> float','Distance in metres between the user and their base location.'],
- auto:['Attendance.auto(user, distance_m) -> Attendance','Marks the user present without approval.'],
- request_approval:['Attendance.request_approval(user, manager) -> Request','Outside the radius, the request goes to the reporting manager.'],
- mark_attendance:['mark_attendance(user, location) -> Attendance | Request','Entry point for web clock-in.'],
- read_csv:['read_csv(file, limit=5000) -> Iterator[Row]','Streams rows and rejects files over the row limit.'],
- resolve_parent:['resolve_parent(row) -> Container | SubContainer | Block','Finds where the new range belongs in the hierarchy.'],
- validate_hierarchy:['validate_hierarchy(row, parent) -> None','Range must sit inside its parent and not overlap a sibling.'],
- check_msp_scope:['check_msp_scope(row, customer) -> None','A customer can only import into ranges they own.'],
- generate_for:['IPAsset.generate_for(subnet) -> list[IPAsset]','Creates one IP asset per usable address in the subnet.'],
- create:['Subnet.create(row) -> Subnet','Persists the subnet and writes an audit entry.'],
- discover_tenants:['vmanage.discover_tenants() -> list[Tenant]','Lists every tenant configured in the vManage controller.'],
- login:['vmanage.login(tenant) -> Session','Per-tenant authentication and session handling.'],
- bulk_api:['session.bulk_api(kind, since) -> list[Stat]','Device, interface or IPSLA statistics since the last poll.'],
- publish:['publish(stats) -> None','Hands the stats to the monitoring pipeline.'],
- pick_parent:['pick_parent(a: Device, b: Device) -> Device','Runs the rules in order until one decides.'],
- rule:['rule(a, b) -> Device | None','Returns the winner, or None on a tie.'],
- soft_delete:['TrapConfig.soft_delete(id) -> None','Keeps the record for audit and marks it deleted.'],
- produce:['kafka.produce(topic, message) -> None','Every consumer gets the change without polling.'],
- '@invalidates':['@invalidates(key)','Clears the Redis licence count when assets change.'],
-};
-const tip=$('#tip'),tipC=$('#tipC'),tipP=$('#tipP');
-$$('.code .fn, .code .ac').forEach(el=>{const t=TIPS[el.textContent.trim()];if(!t)return;el.dataset.tip=1;el.tabIndex=0;
-  const show=()=>{tipC.textContent=t[0];tipP.textContent=t[1];tip.hidden=false;const r=el.getBoundingClientRect();const w=Math.min(360,innerWidth*.9);let x=Math.min(r.left,innerWidth-w-10);tip.style.left=Math.max(8,x)+'px';tip.style.top=(r.bottom+6+90>innerHeight?r.top-92:r.bottom+6)+'px'};
-  el.addEventListener('mouseenter',show);el.addEventListener('focus',show);el.addEventListener('click',show);el.addEventListener('mouseleave',()=>tip.hidden=true);el.addEventListener('blur',()=>tip.hidden=true)});
-sc.addEventListener('scroll',()=>{tip.hidden=true},{passive:true});
-
-/* 4. terminal autocomplete + history */
-const CMDS=['help','whoami','ls','journey','stats','skills','book','contact','theme','clear','hire','open README.md','open journey.py','open experience.json','open attendance.py','open ipam.py','open sdwan.py','open topology.py','open platform.py','open novel.md','open contact.sh','git checkout 2023','git checkout main','sudo'];
-const ghost=$('#ghost'),hist=[];let hi=-1;
-const meas=document.createElement('canvas').getContext('2d');
-const sugg=()=>{const v=tin.value;if(!v){ghost.textContent='';return ''}const m=CMDS.find(c=>c.startsWith(v.toLowerCase())&&c!==v.toLowerCase());if(!m){ghost.textContent='';return ''}
-  meas.font=getComputedStyle(tin).font;const x=tin.offsetLeft+meas.measureText(v).width;ghost.style.left=x+'px';ghost.style.top=tin.offsetTop+'px';ghost.style.lineHeight=getComputedStyle(tin).lineHeight;ghost.textContent=m.slice(v.length);return m};
-tin.addEventListener('input',sugg);
-tin.addEventListener('keydown',e=>{if(e.key==='Tab'||(e.key==='ArrowRight'&&tin.selectionStart===tin.value.length)){const m=sugg();if(m){e.preventDefault();tin.value=m;ghost.textContent=''}}
-  else if(e.key==='ArrowUp'){if(hist.length){hi=Math.min(hi+1,hist.length-1);tin.value=hist[hist.length-1-hi];ghost.textContent='';e.preventDefault()}}
-  else if(e.key==='ArrowDown'){hi=Math.max(hi-1,-1);tin.value=hi<0?'':hist[hist.length-1-hi];ghost.textContent='';e.preventDefault()}});
-$('#tForm').addEventListener('submit',()=>{if(tin.value.trim())hist.push(tin.value.trim());hi=-1;ghost.textContent=''},true);
-C.hire=()=>{go('hire');return['opening <span class="b">pull request #1</span> · hire/nishchal-ts → your-team:main']};
-const _run=runCmd;
-const gitCk=raw=>{const m=raw.trim().toLowerCase().match(/^git checkout\s+(.+)$/);if(!m)return false;line('<span class="p">visitor@nishchal-ts:~$</span> '+esc(raw.trim()));const t=m[1];
-  const idx=t==='main'||t==='now'?6:ERAS.findIndex(e=>e.l.toLowerCase().includes(t));if(idx<0){line(`<span class="r">error:</span> pathspec '${esc(t)}' did not match · try 2019, 2023, 2024, 2025 or main`);return true}
-  setEra(idx);go('readme');line(idx===6?'Switched to branch <span class="a">main</span>':`HEAD is now at <span class="a">${ERAS[idx].l}</span> · ${ERAS[idx].n}`);return true};
-$('#tForm').addEventListener('submit',e=>{if(gitCk(tin.value)){e.stopImmediatePropagation();e.preventDefault();tin.value=''}},true);
-C.help=()=>['<span class="a">commands</span>  whoami · ls · open &lt;file&gt; · journey · stats · skills · book · hire · contact · theme · clear','<span class="a">time travel</span> git checkout 2023 · git checkout main','<span class="d">Tab completes · ↑ ↓ history · Ctrl+K palette · Ctrl+` terminal</span>'];
-
-/* 5. pull request */
-const checks=$$('#checks div');
-const runChecks=()=>{checks.forEach((c,i)=>setTimeout(()=>c.classList.add('ok'),reduce?0:500+i*550))};
-inView($('#checks'),runChecks,.4);
-$('#mgBtn').onclick=()=>{const b=$('#mgBtn');b.disabled=true;b.textContent='Merged';$('#prSt').textContent='⇄ Merged';$('#prSt').classList.add('merged');
-  $('#mgTxt').innerHTML='Merged. Reach me at <b class="mono">nishchaltharayil2001@gmail.com</b>. Say hi!';
-  const ok=()=>{$('#mgTxt').innerHTML+=' <span style="color:var(--ok)">(copied)</span>'};try{navigator.clipboard.writeText('nishchaltharayil2001@gmail.com').then(ok,()=>{})}catch(e){}
-  term.removeAttribute('data-closed');line('<span class="p">✓</span> merged <span class="b">hire/nishchal-ts</span> into <span class="a">your-team:main</span> · reach me at <span class="a">nishchaltharayil2001@gmail.com</span>')};
-ITEMS.push(['Time travel: 2023 (Java era)','command',()=>{setEra(1);go('readme')}],['Time travel: back to main','command',()=>setEra(6)],['Debug attendance.py','command',()=>{go('p-attendance');setTimeout(runDebug,600)}],['Open pull request #1 (hire me)','command',()=>go('hire')]);
-
-spy();setTimeout(drawMM,300);addEventListener('load',drawMM);
-})();
+const toast=$('#toast');$$('[data-copy]').forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText('nishchaltharayil2001@gmail.com');toast.textContent='Email copied'}catch(e){toast.textContent='nishchaltharayil2001@gmail.com'}toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800)});
 </script>
-
 </body>
 </html>
