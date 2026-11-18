@@ -458,7 +458,7 @@ a{color:var(--fn)}
 <article class="file" id="journey" data-file="journey.py" data-path="journey.py">
   <div class="fh"><b>journey.py</b><span>· how a Java developer became a Python engineer</span><span class="act2"><button class="chipb run" type="button" data-run="journey">▶ Run</button></span></div>
   <div class="jgrid">
-<pre class="code"><span class="l"><span class="cm"># journey.py: Java → Python, on the job</span></span><span class="l"><span class="kw">from</span> career <span class="kw">import</span> Milestone</span><span class="l"> </span><span class="l">journey = [</span><span class="l">    Milestone(<span class="st">"2019–2023"</span>, <span class="st">"B.E. Computer Science, GMIT"</span>, stack=[<span class="jv">"Java"</span>, <span class="jv">"PHP"</span>, <span class="jv">"SQL"</span>]),</span><span class="l">    Milestone(<span class="st">"2023-07"</span>, <span class="st">"Java full-stack intern, KodNest"</span>, stack=[<span class="jv">"Spring Boot"</span>, <span class="jv">"React"</span>]),</span><span class="l hl">    Milestone(<span class="st">"2024-07"</span>, <span class="st">"Joined a Python product team"</span>, stack=[<span class="ac">"Python"</span>, <span class="ac">"Django"</span>, <span class="ac">"Angular"</span>]),  <span class="cm"># the switch</span></span><span class="l">    Milestone(<span class="st">"2024-10"</span>, <span class="st">"First feature: OIDC single sign-on configuration UI"</span>),</span><span class="l">    Milestone(<span class="st">"2025-03"</span>, <span class="st">"Owned the attendance module end to end"</span>),</span><span class="l">    Milestone(<span class="st">"2025-10"</span>, <span class="st">"Cisco SD-WAN, Fortinet HA, Proxmox, Aruba ClearPass"</span>),</span><span class="l">    Milestone(<span class="st">"2026"</span>, <span class="st">"Kafka trap sync, Redis caching, topology rules"</span>),</span><span class="l">]</span><span class="l"> </span><span class="l"><span class="kw">assert</span> journey[-<span class="nu">1</span>].language == <span class="st">"python"</span></span></pre>
+<pre class="code"><span class="l"><span class="cm"># journey.py: Java → Python, on the job</span></span><span class="l"><span class="kw">from</span> career <span class="kw">import</span> Milestone</span><span class="l"> </span><span class="l">journey = [</span><span class="l">    Milestone(<span class="st">"2019–2023"</span>, <span class="st">"B.E. Computer Science, GMIT"</span>, stack=[<span class="jv">"Java"</span>, <span class="jv">"PHP"</span>, <span class="jv">"SQL"</span>]),</span><span class="l">    Milestone(<span class="st">"2023-07"</span>, <span class="st">"Java full-stack intern, KodNest"</span>, stack=[<span class="jv">"Spring Boot"</span>, <span class="jv">"React"</span>]),</span><span class="l hl">    Milestone(<span class="st">"2024-07"</span>, <span class="st">"Joined a Python product team"</span>, stack=[<span class="ac">"Python"</span>, <span class="ac">"Django"</span>, <span class="ac">"Angular"</span>]),  <span class="cm"># the switch</span></span><span class="l">    Milestone(<span class="st">"2024-10"</span>, <span class="st">"First feature: OIDC single sign-on configuration UI"</span>),</span><span class="l">    Milestone(<span class="st">"2025-03"</span>, <span class="st">"Owned the attendance module end to end"</span>),</span><span class="l">    Milestone(<span class="st">"2025-10"</span>, <span class="st">"Cisco SD-WAN, Fortinet HA, Proxmox, Aruba ClearPass"</span>),</span><span class="l">    Milestone(<span class="st">"2026"</span>, <span class="st">"Kafka trap sync, Redis caching, topology rules"</span>),</span><span class="l">    Milestone(<span class="st">"2026-11"</span>, <span class="st">"Launched Chailify ☕, my own placement-prep app"</span>),  <span class="cm"># side project</span></span><span class="l">]</span><span class="l"> </span><span class="l"><span class="kw">assert</span> journey[-<span class="nu">1</span>].language == <span class="st">"python"</span></span></pre>
     <div class="graph" id="graph">
       <div class="lang"><span>java</span><i></i><span>python</span></div>
       <svg viewBox="0 0 300 360" role="img" aria-label="Git graph: a java branch with two commits merges into a python main branch in July 2024, followed by four more commits">
@@ -484,6 +484,24 @@ a{color:var(--fn)}
 </article>
 
 <!-- projects -->
+<article class="file" id="p-chailify" data-file="chailify.py" data-path="projects › chailify.py">
+  <div class="fh"><b>projects/chailify.py</b><span>· side project · live at <a href="https://chailify.pages.dev" target="_blank" rel="noopener">chailify.pages.dev</a></span></div>
+  <div class="split">
+<pre class="code"><span class="l"><span class="cm"># Chailify · 2026 · placement prep, simplified with chai ☕</span></span><span class="l"><span class="cm"># my own product, built and launched solo</span></span><span class="l"> </span><span class="l"><span class="kw">def</span> <span class="fn">mock_interview</span>(student):</span><span class="l">    q = ai.<span class="fn">ask</span>(stack=student.stack, resume=student.resume)</span><span class="l">    answer = <span class="fn">listen</span>(student)  <span class="cm"># speech to text</span></span><span class="l">    <span class="kw">for</span> _ <span class="kw">in</span> <span class="fn">range</span>(<span class="nu">2</span>):</span><span class="l">        q = ai.<span class="fn">cross_question</span>(answer)  <span class="cm"># on what they said</span></span><span class="l">    <span class="kw">return</span> ai.<span class="fn">review</span>()  <span class="cm"># score + model answers</span></span><span class="l"> </span><span class="l"><span class="kw">def</span> <span class="fn">submit</span>(solution):</span><span class="l">    <span class="kw">if</span> <span class="fn">run_tests</span>(solution).passed:  <span class="cm"># in the browser</span></span><span class="l">        github.<span class="fn">push</span>(solution)  <span class="cm"># one click, to their repo</span></span><span class="l"> </span><span class="l"><span class="cm"># also: time tracking, aptitude, mock tests,</span></span><span class="l"><span class="cm"># reports, Google sign-in, Telegram nudges</span></span></pre>
+    <div class="pv">
+      <div class="pv-h"><span>preview · what a student does</span><span>live</span></div>
+      <div class="pipe">
+        <div class="pr"><span class="pn">your answer</span><span class="lane" id="chLane1"></span><span class="pn k">AI cross-question</span></div>
+        <div class="pr"><span class="pn">write + run</span><span class="lane" id="chLane2"></span><span class="pn k">7/7 tests ✓</span></div>
+        <div class="pr"><span class="pn">one click</span><span class="lane r" id="chLane3"></span><span class="pn r">your GitHub</span></div>
+      </div>
+      <p style="margin:0;font-size:13px;color:var(--muted);line-height:1.6">A free app that takes students and developers from their first line of code to an offer letter. Built with Django REST Framework and Angular 20, Postgres on Neon, Gemini AI, GitHub OAuth and a Telegram bot. Hosted for ₹0 on Render and Cloudflare Pages.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="https://chailify.pages.dev" target="_blank" rel="noopener">▶ Open Chailify</a></div>
+      <div class="tags"><span>Django</span><span>DRF</span><span>Angular</span><span>PostgreSQL</span><span>Gemini AI</span><span>OAuth</span><span>Telegram</span></div>
+    </div>
+  </div>
+</article>
+
 <article class="file" id="p-attendance" data-file="attendance.py" data-path="projects › attendance.py">
   <div class="fh"><b>projects/attendance.py</b><span>· simplified sketch + live preview</span><span class="act2"><button class="chipb dbg" type="button" id="dbgBtn">● Debug</button></span></div>
   <div class="split">
@@ -674,6 +692,7 @@ const FILES=[
   {id:'journey',name:'journey.py',s:0,ic:'py',col:'var(--accent)',gd:'M',d:0},
   {id:'experience',name:'experience.json',s:2,ic:'{}',col:'var(--num)',gd:'M',d:0},
   {dir:'projects',d:0},
+  {id:'p-chailify',name:'chailify.py',s:6,ic:'py',col:'var(--accent)',gd:'A',d:1},
   {id:'p-attendance',name:'attendance.py',s:4,ic:'py',col:'var(--accent)',gd:'U',d:1},
   {id:'p-ipam',name:'ipam.py',s:3,ic:'py',col:'var(--accent)',gd:'M',d:1},
   {id:'p-sdwan',name:'sdwan.py',s:5,ic:'py',col:'var(--accent)',gd:'U',d:1},
@@ -773,7 +792,7 @@ let si=0;const run=()=>{const s=scen[si];$('#rAs').textContent=s.a;$('#rBs').tex
   const st=()=>{rl.forEach(l=>l.classList.remove('hl'));rl[k].classList.add('hl');if(k<s.r){k++;setTimeout(st,700)}else{(s.w?rB:rA).classList.add('win');(s.w?rA:rB).classList.add('lose');tv.textContent=s.v}};setTimeout(st,400);si=(si+1)%scen.length};
 run();if(!reduce)setInterval(run,4200);
 /* pipeline */
-const L=['#lane1','#lane2','#lane3'].map(s=>$(s));if(!reduce){const shoot=(l,t)=>{const d=document.createElement('i');d.style.setProperty('--t',t+'s');l.appendChild(d);setTimeout(()=>d.remove(),t*1000+50)};setInterval(()=>{shoot(L[0],1.3);setTimeout(()=>shoot(L[1],1.3),1300)},2200);setInterval(()=>shoot(L[2],1.1),1700)}
+const L=['#lane1','#lane2','#lane3'].map(s=>$(s));{const CL=['#chLane1','#chLane2','#chLane3'].map(s=>$(s));if(!reduce&&CL[0]){const sh=(l,t)=>{const d=document.createElement('i');d.style.setProperty('--t',t+'s');l.appendChild(d);setTimeout(()=>d.remove(),t*1000+50)};setInterval(()=>{sh(CL[0],1.2);setTimeout(()=>sh(CL[1],1.2),900);setTimeout(()=>sh(CL[2],1.0),1800)},2900)}}if(!reduce){const shoot=(l,t)=>{const d=document.createElement('i');d.style.setProperty('--t',t+'s');l.appendChild(d);setTimeout(()=>d.remove(),t*1000+50)};setInterval(()=>{shoot(L[0],1.3);setTimeout(()=>shoot(L[1],1.3),1300)},2200);setInterval(()=>shoot(L[2],1.1),1700)}
 
 /* extensions */
 const EX=[
