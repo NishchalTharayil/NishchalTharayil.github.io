@@ -72,14 +72,13 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:
 .btn:hover{border-color:var(--blue)}
 .btn.pri{background:var(--py);color:#111;border-color:var(--py)}
 [data-theme="light"] .btn.pri{color:#fff}
-.photo{position:relative;justify-self:center}
-.photo img{width:min(340px,80vw);aspect-ratio:4/5;object-fit:cover;border-radius:28px;position:relative;z-index:2;filter:saturate(1.05)}
-.ring{position:absolute;inset:-18px;border-radius:36px;z-index:1;background:conic-gradient(from var(--a,0deg),var(--blue),var(--py),var(--green),var(--purple),var(--blue));animation:spin 6s linear infinite;filter:blur(2px);opacity:.75}
-.ring::after{content:"";position:absolute;inset:3px;border-radius:33px;background:var(--bg)}
-@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
-@keyframes spin{to{--a:360deg}}
-.chip-float{position:absolute;z-index:3;font-family:var(--m);font-size:13px;padding:8px 12px;border-radius:10px;background:var(--card);border:1px solid var(--line);box-shadow:0 12px 30px rgba(0,0,0,.35);animation:bob 5s ease-in-out infinite;white-space:nowrap}
-@keyframes bob{50%{transform:translateY(-12px)}}
+.photo{position:relative;justify-self:center;width:min(360px,82vw)}
+.photo .halo{position:absolute;inset:8% -10% -6%;border-radius:40px;background:radial-gradient(60% 60% at 50% 40%,color-mix(in srgb,var(--blue) 35%,transparent),transparent 70%);filter:blur(30px);z-index:0}
+.photo img{position:relative;z-index:1;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:20px;box-shadow:0 30px 70px -30px rgba(0,0,0,.6)}
+.namecard{position:relative;z-index:2;margin:-38px 18px 0;padding:14px 18px;border-radius:14px;background:var(--card);border:1px solid var(--line);box-shadow:0 18px 40px -18px rgba(0,0,0,.55);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.namecard b{display:block;font-size:16px}
+.namecard small{color:var(--muted);font-size:13px}
+.namecard .yrs{font-family:var(--m);font-size:12px;color:var(--py);white-space:nowrap}
 .bgcode{position:absolute;inset:0;z-index:-1;overflow:hidden;opacity:.5;pointer-events:none;mask-image:radial-gradient(70% 70% at 50% 50%,#000,transparent)}
 .bgcode span{position:absolute;font-family:var(--m);font-size:14px;color:var(--dim);white-space:nowrap;animation:drift linear infinite}
 @keyframes drift{from{transform:translateY(0)}to{transform:translateY(-120vh)}}
@@ -203,10 +202,6 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:
 .two{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
 @media(max-width:900px){.two{grid-template-columns:1fr}}
 .panel{padding:34px;border-radius:24px;border:1px solid var(--line);background:var(--card)}
-.book{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
-.book .cover{perspective:900px;flex:none}
-.book .cover img{width:150px;border-radius:4px 10px 10px 4px;box-shadow:12px 18px 40px rgba(0,0,0,.45);transform:rotateY(-24deg);transition:transform .6s}
-.book:hover .cover img{transform:rotateY(0)}
 .edu li{margin-top:12px}
 .edu{padding-left:20px;color:var(--muted)}
 .edu b{color:var(--fg)}
@@ -257,12 +252,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <button class="btn" type="button" data-copy>Copy email</button>
       </div>
     </div>
-    <div class="photo">
-      <div class="ring" aria-hidden="true"></div>
+    <div class="photo rv d2">
+      <div class="halo" aria-hidden="true"></div>
       <img src="nishchal.webp" alt="Nishchal T S" width="560" height="700">
-      <span class="chip-float" style="left:-40px;top:14%;color:var(--py)">import django</span>
-      <span class="chip-float" style="right:-34px;top:46%;animation-delay:-2s;color:var(--red)">ng serve</span>
-      <span class="chip-float" style="left:-20px;bottom:10%;animation-delay:-3.5s;color:var(--green)">✓ 362 shipped</span>
+      <div class="namecard"><span><b>Nishchal T S</b><small>Software Engineer · Infraon</small></span><span class="yrs">2+ yrs Python</span></div>
     </div>
   </div>
   <div class="scroll-cue" aria-hidden="true">scroll<i></i></div>
@@ -433,13 +426,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <section class="wrap sec">
   <div class="two">
-    <div class="panel rv book">
-      <div class="cover"><img src="book-cover.webp" alt="Cover of the novel Somewhere, Somehow and Some-One" width="560" height="869"></div>
-      <div style="flex:1 1 220px">
-        <span class="kicker">Off the keyboard</span>
-        <h3 style="font-size:28px;margin:8px 0 0;letter-spacing:-.02em">I also write novels</h3>
-        <p style="color:var(--muted)">I wrote and published a romance novel, <b style="color:var(--fg)">Somewhere, Somehow and Some-One</b>. A book takes the same things as a feature: a plan, hundreds of small drafts, and the patience to finish.</p>
-      </div>
+    <div class="panel rv">
+      <span class="kicker">Off the keyboard</span>
+      <h3 style="font-size:28px;margin:8px 0 0;letter-spacing:-.02em">I also write</h3>
+      <p style="color:var(--muted);margin:12px 0 0">I wrote and published a romance novel, <b style="color:var(--fg)">Somewhere, Somehow and Some-One</b>.</p>
+      <p style="color:var(--muted);margin:12px 0 0">Writing a book takes the same things as shipping a feature: a plan, hundreds of small drafts, and the patience to see it through to the last page.</p>
     </div>
     <div class="panel rv d1">
       <span class="kicker">Education</span>
